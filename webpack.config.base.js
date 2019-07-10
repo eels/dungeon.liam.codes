@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    polyfills: './src/js/polyfills.js',
+    polyfills: './src/js/polyfill.js',
     script: './src/js/index.js'
   },
   output: {
@@ -26,7 +26,13 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {},
+    alias: {
+      classes: path.resolve(__dirname, 'src', 'js', 'classes/'),
+      components: path.resolve(__dirname, 'src', 'js', 'components/'),
+      instances: path.resolve(__dirname, 'src', 'js', 'instances/'),
+      library: path.resolve(__dirname, 'src', 'js', 'library/'),
+      utilities: path.resolve(__dirname, 'src', 'js', 'utilities/')
+    },
     extensions: ['.js', '.json']
   }
 };

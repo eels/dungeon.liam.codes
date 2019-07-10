@@ -1,51 +1,52 @@
-function createTimer() {
-  const timer = document.createElement('div');
-  timer.style.width = '0';
-  timer.style.height = '10px';
-  timer.style.backgroundColor = '#1f1f1f';
-  timer.style.transition = 'width 0.1s linear';
-  timer.classList.add('timer');
-  return timer;
-}
+import { on, fire } from 'utilities/delegation';
+import { nodize } from 'utilities/nodize';
+import Board from 'components/board';
+import Stats from 'components/stats';
+import Timer from 'components/timer';
+import Title from 'components/title';
+import { Player } from 'instances/player';
+import { Tick } from 'instances/tick';
 
-const timer = createTimer();
+const field = document.getElementById('dungeon');
 
-document.body.appendChild(timer);
+field.appendChild(nodize(Title('Title')));
+field.appendChild(nodize(Board()));
+field.appendChild(nodize(Stats()));
 
-let actionTaken = false;
+field.insertAdjacentHTML('beforeend', '<input type="button" class="action" value="Click" style="color: black" />');
+field.insertAdjacentHTML('beforeend', '<input type="button" class="toggle" value="Toggle" style="color: black" />');
+field.insertAdjacentHTML('beforeend', `<div class="flag">${Player.store.state.actionTaken}</div>`);
 
-setInterval(() => {
-  const timer = document.querySelector('.timer');
-  const width = parseInt(timer.style.width) + 1;
-
-  if (width > 100) {
-    timer.parentNode.removeChild(timer);
-    document.body.appendChild(createTimer());
-    actionTaken = false;
-    document.querySelector('.flag').innerHTML = actionTaken.toString();
-  } else {
-    timer.style.width = `${width}%`;
-  }
-}, 50);
-
-const input = document.createElement('input');
-input.type = 'button';
-input.value = 'Take Action';
-input.classList.add('input');
-
-document.body.appendChild(input);
-
-document.querySelector('.input').addEventListener('click', function() {
-  if (actionTaken) {
-    return;
-  }
-
-  actionTaken = true;
-  document.querySelector('.flag').innerHTML = actionTaken.toString();
+on('click', '.action', () => {
+  fire('PLAYER_ACTION', { 'PLAYER_ACTION': true });
 });
 
-const flag = document.createElement('div');
-flag.innerHTML = actionTaken.toString();
-flag.classList.add('flag');
+on('click', '.toggle', () => {
+  fire('TOGGLE_TICK');
+});
 
-document.body.appendChild(flag);
+on('PLAYER_ACTION', 'body', event => {
+  Player.store.commit({ actionTaken: event.detail.PLAYER_ACTION });
+  document.querySelector('.flag').innerHTML = Player.store.state.actionTaken;
+});
+
+on('PLAYER_UPDATE', 'body', event => {
+  document.querySelector('.tm-c-stats').outerHTML = Stats();
+  document.body.classList.add('tm-c-body--hit');
+  setTimeout(() => {
+    document.body.classList.remove('tm-c-body--hit');
+  }, 200);
+});
+
+on('TOGGLE_TICK', 'body', event => {
+  Player.store.commit({ status: Player.store.state.status === 'ticking' ? 'paused': 'staged' });
+});
+
+on('TICK', 'body', event => {
+  const hit = Player.store.state.hp - Math.round(Math.random() * 10);
+  Player.store.commit({ hp: hit > 0 ? hit : 0 });
+  fire('PLAYER_UPDATE');
+});
+
+Tick.process();
+Player.tick();

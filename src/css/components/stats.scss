@@ -1,0 +1,35 @@
+.#{$prefix}-c-stats {
+  user-select: none;
+
+  @at-root #{&}__stat {
+    display: inline-block;
+    border: 5px solid $white;
+    padding: 5px;
+  }
+
+  @at-root #{&}__label {
+    font-size: 32px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @at-root #{&}__value {
+    font-size: 24px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @at-root #{&}__bar {
+    height: 10px;
+    margin-top: 5px;
+    background-color: $white;
+
+    [data-stat="health"] & {
+      background-color: $health;
+    }
+
+    [data-stat="mana"] & {
+      background-color: $mana;
+    }
+  }
+}
