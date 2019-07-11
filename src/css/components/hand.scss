@@ -1,0 +1,38 @@
+.#{$prefix}-c-hand {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  width: 750px;
+  margin: 0 auto;
+
+  @at-root #{&}--disabled {
+    opacity: 0.35;
+  }
+
+  @at-root #{&}__discard {
+    border: 5px solid $white;
+    border-radius: 6px;
+    width: 100px;
+    height: 130px;
+    position: relative;
+    background-image: url('/assets/img/discard.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+
+    [class*="card"] {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      background-color: $black;
+      border: 5px solid $white;
+      background-image: url('/assets/img/card-back.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30px;
+      cursor: default;
+    }
+  }
+}

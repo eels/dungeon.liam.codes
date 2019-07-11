@@ -1,26 +1,29 @@
 .#{$prefix}-c-stats {
-  user-select: none;
+  font-size: 0;
+  white-space: nowrap;
 
   @at-root #{&}__stat {
     display: inline-block;
     border: 5px solid $white;
-    padding: 5px;
+    padding: 5px 10px 10px;
+    margin-right: 20px;
   }
 
   @at-root #{&}__label {
-    font-size: 32px;
+    font-size: 36px;
     display: inline-block;
     vertical-align: middle;
+    padding-right: 30px;
   }
 
   @at-root #{&}__value {
-    font-size: 24px;
+    font-size: 26px;
     display: inline-block;
     vertical-align: middle;
   }
 
   @at-root #{&}__bar {
-    height: 10px;
+    height: 15px;
     margin-top: 5px;
     background-color: $white;
 
@@ -31,5 +34,19 @@
     [data-stat="mana"] & {
       background-color: $mana;
     }
+  }
+
+  @at-root #{&}__information {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 24px;
+  }
+
+  @at-root #{&}__gold {
+    padding-bottom: 5px;
+  }
+
+  @at-root #{&}__level {
+    text-transform: capitalize;
   }
 }

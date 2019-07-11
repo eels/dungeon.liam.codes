@@ -6,6 +6,8 @@ const on = (type, selector, cb) => {
       return;
     }
 
+    event.selector = target;
+
     const callback = cb.bind(target);
     callback(event);
   });

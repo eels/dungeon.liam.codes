@@ -8,7 +8,7 @@ export default class {
     });
   }
 
-  process() {
+  start() {
     setInterval(() => {
       fire('TICK');
     }, this.store.state.length);

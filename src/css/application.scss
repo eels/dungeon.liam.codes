@@ -38,6 +38,11 @@
 // Specific UI components. This is where majority of our work takes place and
 // our UI components are often composed of Objects and Components
 @import 'components/board';
+@import 'components/card';
+@import 'components/creature';
+@import 'components/dungeon';
+@import 'components/footer';
+@import 'components/hand';
 @import 'components/stats';
 @import 'components/timer';
 @import 'components/title';

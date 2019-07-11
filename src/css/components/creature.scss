@@ -1,0 +1,69 @@
+.#{$prefix}-c-creature {
+  font-size: 0;
+  white-space: nowrap;
+  width: 750px;
+  margin: 20px auto 0;
+
+  @at-root #{&}__tunnel {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 200px);
+    height: 250px;
+    font-size: 18px;
+    background-image: url('/assets/img/dungeon-gate.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+  }
+
+  @at-root #{&}__name {
+    text-transform: capitalize;
+    font-size: 22px;
+    padding-bottom: 5px;
+  }
+
+  @at-root #{&}__level {
+    text-transform: capitalize;
+    font-size: 16px;
+  }
+
+  @at-root #{&}__stats {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    font-size: 18px;
+  }
+
+  @at-root #{&}__stat {
+    position: relative;
+    border: 5px solid $white;
+    padding: 0px 5px 0 5px;
+    margin-bottom: 20px;
+    font-size: 0;
+    white-space: nowrap;
+  }
+
+  @at-root #{&}__label {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 32px;
+    padding-right: 5px;
+    z-index: 1;
+  }
+
+  @at-root #{&}__bar {
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    max-width: 143px;
+    background-color: $white;
+
+    [data-stat="health"] & {
+      background-color: $health;
+    }
+
+    [data-stat="mana"] & {
+      background-color: $mana;
+    }
+  }
+}

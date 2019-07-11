@@ -29,6 +29,7 @@ module.exports = {
     alias: {
       classes: path.resolve(__dirname, 'src', 'js', 'classes/'),
       components: path.resolve(__dirname, 'src', 'js', 'components/'),
+      functions: path.resolve(__dirname, 'src', 'js', 'functions/'),
       instances: path.resolve(__dirname, 'src', 'js', 'instances/'),
       library: path.resolve(__dirname, 'src', 'js', 'library/'),
       utilities: path.resolve(__dirname, 'src', 'js', 'utilities/')
