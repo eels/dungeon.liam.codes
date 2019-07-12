@@ -1,0 +1,15 @@
+.#{$prefix}-c-message {
+  padding: 30px;
+  height: 485px;
+  background-color: rgba($black, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @at-root #{&}__container {
+    background-color: $black;
+    border: 5px solid $white;
+    padding: 10px;
+    text-align: center;
+  }
+}

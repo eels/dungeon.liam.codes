@@ -1,0 +1,31 @@
+.#{$prefix}-c-start {
+  @at-root #{&}__heading {
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+
+  @at-root #{&}__icon {
+    width: 100px;
+    margin: 30px auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @at-root #{&}__start {
+    width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 5px solid $white;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}

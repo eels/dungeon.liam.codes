@@ -15,6 +15,7 @@ export default class {
       status: 'ticking',
       deck: [],
       gold: 0,
+      kills: 0,
       hp: 50,
       maxHp: 50,
       mp: 50,
@@ -26,27 +27,30 @@ export default class {
   }
 
   tick() {
-    setInterval(() => {
+    on('TICK_SEGMENT', 'body', event => {
       const timer = document.querySelector('.tm-c-timer');
-      const width = parseFloat(timer.style.width) + (100 / (this.TickInstance.store.state.length / 50));
+      const currentWidth = parseFloat(timer.style.width);
+      const increment = ((100 / (this.TickInstance.store.state.length / 50) * 100)) / 100;
+      const width = currentWidth + increment;
 
       if (this.store.state.status === 'paused' || this.store.state.status === 'staged') {
         return;
       }
 
-      if (width > 100) {
-        timer.parentNode.insertBefore(nodize(Timer()), timer);
-        timer.parentNode.removeChild(timer);
-        fire('PLAYER_ACTION', { 'PLAYER_ACTION': false });
-        document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
-      } else {
-        timer.style.width = `${width}%`;
-      }
-    }, 50);
+      timer.style.width = `${width}%`;
+    });
 
     on('TICK', 'body', event => {
       if (this.store.state.status === 'staged') {
         this.store.commit({ status: 'ticking' });
+      }
+
+      if (this.store.state.status !== 'paused' && this.store.state.status !== 'staged') {
+        const timer = document.querySelector('.tm-c-timer');
+        timer.parentNode.insertBefore(nodize(Timer()), timer);
+        timer.parentNode.removeChild(timer);
+        fire('PLAYER_ACTION', { 'PLAYER_ACTION': false });
+        document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
       }
     });
   }

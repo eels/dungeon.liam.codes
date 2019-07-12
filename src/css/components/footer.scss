@@ -2,12 +2,14 @@
   text-align: right;
   font-size: 14px;
   padding-top: 5px;
+  padding-bottom: 30px;
   user-select: none;
 
   a {
     color: $white;
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
+    outline: none;
 
     &:hover {
       border-bottom: 2px solid $white;

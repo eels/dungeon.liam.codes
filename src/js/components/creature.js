@@ -5,7 +5,7 @@ function create() {
   const creature = `
     <div class="tm-c-creature">
       <div class="tm-c-creature__tunnel">
-        <div class="tm-c-creature__name">${current.store.state.raw.name}</div>
+        <div class="tm-c-creature__name">${current.store.state.raw.name} ${current.store.state.status !== 'active' ? '&lt;' + current.store.state.status + '&gt;' : ''}</div>
         <div class="tm-c-creature__level">Lv. ${current.store.state.raw.level}</div>
       </div>
       <div class="tm-c-creature__stats">

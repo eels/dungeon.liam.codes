@@ -8,6 +8,7 @@ function create(data) {
       ${data.damage !== undefined ? `<div class="tm-c-card__effect">${data.damage} ATK</div>` : ''}
       ${data.health !== undefined ? `<div class="tm-c-card__effect">+${data.health} HP</div>` : ''}
       ${data.mana !== undefined ? `<div class="tm-c-card__effect">+${data.mana} MP</div>` : ''}
+      ${data.keyword !== undefined ? `<div class="tm-c-card__effect">${data.keyword}</div>` : ''}
     </div>
   `;
 

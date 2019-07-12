@@ -1,6 +1,7 @@
 import Timer from 'components/timer';
 import Hand from 'components/hand';
 import Creature from 'components/creature';
+import Message from 'components/message';
 import { Player } from 'instances/player';
 
 function create() {
@@ -9,6 +10,7 @@ function create() {
       <div class="tm-c-board__timer">${Timer()}</div>
       <div class="tm-c-board__creature">${Creature()}</div>
       <div class="tm-c-board__hand">${Hand()}</div>
+      <div class="tm-c-board__message">${Message()}</div>
     </div>
   `;
 

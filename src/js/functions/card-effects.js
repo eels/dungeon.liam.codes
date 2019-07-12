@@ -25,11 +25,18 @@ const applyCardEffect = (data) => {
       creature.store.commit({ hp: hit });
     } else {
       Player.store.commit({ gold: Player.store.state.gold + creature.store.state.raw.gold });
+      Player.store.commit({ kills: Player.store.state.kills + 1 });
       Dungeon.advance();
     }
 
     fire('CREATURE_UPDATE');
     fire('PLAYER_UPDATE');
+  }
+
+  if (data.effect === 'freeze') {
+    const creature = Dungeon.store.state.creatures[0];
+    creature.store.commit({ status: 'frozen', statusDuration: data.duration });
+    fire('CREATURE_UPDATE');
   }
 };
 

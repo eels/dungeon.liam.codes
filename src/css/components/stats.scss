@@ -2,6 +2,10 @@
   font-size: 0;
   white-space: nowrap;
 
+  @at-root #{&}--disabled {
+    opacity: 0.1;
+  }
+
   @at-root #{&}__stat {
     display: inline-block;
     border: 5px solid $white;

@@ -19,6 +19,14 @@ export default [
     icon: 'magic'
   },
   {
+    name: 'blizzard',
+    cost: 5,
+    effect: 'freeze',
+    duration: 2,
+    keyword: 'freeze',
+    icon: 'magic'
+  },
+  {
     name: 'h. potion',
     health: 3,
     effect: 'health potion',
