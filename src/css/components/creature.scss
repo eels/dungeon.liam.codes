@@ -1,7 +1,7 @@
 .#{$prefix}-c-creature {
   font-size: 0;
   white-space: nowrap;
-  width: 750px;
+  width: 775px;
   margin: 20px auto 0;
 
   @at-root #{&}__tunnel {
@@ -19,12 +19,27 @@
   @at-root #{&}__name {
     text-transform: capitalize;
     font-size: 22px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
   }
 
   @at-root #{&}__level {
     text-transform: capitalize;
     font-size: 16px;
+    padding-bottom: 10px;
+  }
+
+  @at-root #{&}__weakness {
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+
+  @at-root #{&}__weakness-icon {
+    width: 12px;
+
+    img {
+      width: 100%;
+    }
   }
 
   @at-root #{&}__stats {
@@ -65,5 +80,37 @@
     [data-stat="mana"] & {
       background-color: $mana;
     }
+  }
+
+  @at-root #{&}__status-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  @at-root #{&}__status-effect {
+    text-align: center;
+  }
+
+  @at-root #{&}__status-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 9px;
+    vertical-align: middle;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @at-root #{&}__status-duration {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+    padding-left: 10px;
   }
 }

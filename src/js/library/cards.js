@@ -6,6 +6,13 @@ export default [
     icon: 'sword'
   },
   {
+    name: 'flame sword',
+    damage: 5,
+    effect: 'damage',
+    element: 'fire',
+    icon: 'sword'
+  },
+  {
     name: 'axe',
     damage: 3,
     effect: 'damage',
@@ -16,6 +23,7 @@ export default [
     damage: 2,
     cost: 3,
     effect: 'damage',
+    element: 'fire',
     icon: 'magic'
   },
   {
@@ -23,6 +31,7 @@ export default [
     cost: 5,
     effect: 'freeze',
     duration: 2,
+    element: 'ice',
     keyword: 'freeze',
     icon: 'magic'
   },
@@ -37,5 +46,11 @@ export default [
     mana: 3,
     effect: 'mana potion',
     icon: 'potion'
+  },
+  {
+    name: 'whirlwind',
+    effect: 'shuffle',
+    keyword: 'shuffle',
+    icon: 'shuffle'
   }
 ];

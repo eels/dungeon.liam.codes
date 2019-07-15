@@ -9,21 +9,15 @@ import Store from 'utilities/store';
 import Cards from 'library/cards';
 
 export default class {
-  constructor(TickInstance) {
-    this.store = new Store({
-      actionTaken: false,
-      status: 'ticking',
-      deck: [],
-      gold: 0,
-      kills: 0,
-      hp: 50,
-      maxHp: 50,
-      mp: 50,
-      maxMp: 50
-    });
-
+  constructor(TickInstance, state) {
+    this.store = new Store(state);
     this.TickInstance = TickInstance;
     this.store.commit({ deck: this.generateDeck() });
+  }
+
+  start() {
+    this.tick();
+    this.bindCardEvent();
   }
 
   tick() {
@@ -52,6 +46,17 @@ export default class {
         fire('PLAYER_ACTION', { 'PLAYER_ACTION': false });
         document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
       }
+    });
+  }
+
+  bindCardEvent() {
+    on('click', '.js-card', event => {
+      if (!this.store.state.actionTaken) {
+        this.playCard(event.selector.getAttribute('data-id'));
+      }
+
+      fire('PLAYER_ACTION', { 'PLAYER_ACTION': true });
+      document.querySelector('.tm-c-hand').classList.add('tm-c-hand--disabled');
     });
   }
 
@@ -84,7 +89,7 @@ export default class {
           return;
         } else {
           this.store.commit({ mp: this.store.state.mp - played.cost });
-          fire('PLAYER_UPDATE');
+          fire('PLAYER_UPDATE_STATS');
         }
       }
 
@@ -97,9 +102,9 @@ export default class {
     }
 
     addToDiscard();
-    applyCardEffect(played);
-
     this.store.commit({ deck: deck });
+
+    applyCardEffect(played);
     fire('PLAYER_UPDATE_HAND', { 'discard': document.querySelector('.js-discard').children });
   }
 };

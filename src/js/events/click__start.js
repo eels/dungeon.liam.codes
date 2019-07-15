@@ -1,0 +1,12 @@
+import { on } from 'utilities/delegation';
+import { Player } from 'instances/player';
+import { Tick } from 'instances/tick';
+
+export default function() {
+  on('click', '.js-start', () => {
+    document.querySelector('.tm-c-board__message').classList.remove('tm-c-board__message--active');
+    document.querySelector('.tm-c-stats').classList.remove('tm-c-stats--disabled');
+    Tick.start();
+    Player.start();
+  });
+};

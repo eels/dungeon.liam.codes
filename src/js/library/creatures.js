@@ -5,7 +5,8 @@ export default [
     health: 6,
     mana: 20,
     attack: 2,
-    gold: 4
+    gold: 4,
+    weakness: 'fire'
   },
   {
     name: 'goblin',

@@ -1,5 +1,10 @@
 import DungeonClass from 'classes/dungeon';
 
-const Dungeon = new DungeonClass();
+const DungeonState = {
+  level: 1,
+  creatures: []
+};
+
+const Dungeon = new DungeonClass(DungeonState);
 
 export { Dungeon };

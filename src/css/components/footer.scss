@@ -3,7 +3,12 @@
   font-size: 14px;
   padding-top: 5px;
   padding-bottom: 30px;
+  display: none;
   user-select: none;
+
+  &[class*="active"] {
+    display: block;
+  }
 
   a {
     color: $white;

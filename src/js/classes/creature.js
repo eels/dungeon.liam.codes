@@ -8,7 +8,7 @@ export default class {
       maxHp: creature.health,
       mp: creature.mana,
       maxMp: creature.mana,
-      status: 'active',
+      status: 'normal',
       statusDuration: 0
     });
   }

@@ -30,6 +30,19 @@
     padding: 5px 9px;
   }
 
+  @at-root #{&}__element {
+    border-radius: 100px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: $cost;
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+
   @at-root #{&}__name {
 
   }

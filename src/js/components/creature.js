@@ -5,8 +5,9 @@ function create() {
   const creature = `
     <div class="tm-c-creature">
       <div class="tm-c-creature__tunnel">
-        <div class="tm-c-creature__name">${current.store.state.raw.name} ${current.store.state.status !== 'active' ? '&lt;' + current.store.state.status + '&gt;' : ''}</div>
+        <div class="tm-c-creature__name">${current.store.state.raw.name}</div>
         <div class="tm-c-creature__level">Lv. ${current.store.state.raw.level}</div>
+        ${current.store.state.raw.weakness !== undefined ? `<div class="tm-c-creature__weakness">Weakness</div><div class="tm-c-creature__weakness-icon"><img src="/assets/img/${current.store.state.raw.weakness}.png" /></div>` : ''}
       </div>
       <div class="tm-c-creature__stats">
         <div class="tm-c-creature__stat" data-stat="health">
@@ -16,6 +17,17 @@ function create() {
         <div class="tm-c-creature__stat" data-stat="mana">
           <div class="tm-c-creature__label">MP</div>
           <div class="tm-c-creature__bar" style="width: ${(current.store.state.mp / current.store.state.maxMp) * 100}%"></div>
+        </div>
+        <div class="tm-c-creature__stat">
+          <div class="tm-c-creature__status-label">Status Effects</div>
+          <div class="tm-c-creature__status-effect">
+            <div class="tm-c-creature__status-icon">
+              ${current.store.state.status !== 'normal' ? `<img src="/assets/img/${current.store.state.status}.png" />` : ''}
+            </div>
+            <div class="tm-c-creature__status-duration">
+              ${current.store.state.status !== 'normal' ? `x ${current.store.state.statusDuration} turns` : ''}
+            </div>
+          </div>
         </div>
       </div>
     </div>
