@@ -4,7 +4,7 @@
   "author": "Liam Howell <liamp.howell@googlemail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "NODE_ENV=development gulp watch",
+    "dev": "NODE_ENV=development gulp && NODE_ENV=development gulp watch",
     "build": "NODE_ENV=production gulp build"
   },
   "browserslist": [

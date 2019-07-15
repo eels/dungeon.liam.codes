@@ -29,6 +29,7 @@ export default function() {
     Tick.start();
 
     document.querySelector('.tm-c-board__message').classList.remove('tm-c-board__message--active');
+    document.querySelector('.tm-c-log__container').innerHTML = '';
     const timer = document.querySelector('.tm-c-timer');
     timer.parentNode.insertBefore(nodize(Timer()), timer);
     timer.parentNode.removeChild(timer);

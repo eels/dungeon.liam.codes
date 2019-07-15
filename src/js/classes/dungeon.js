@@ -2,7 +2,6 @@ import { shuffle } from 'utilities/array';
 import { fire } from 'utilities/delegation';
 import Store from 'utilities/store';
 import Creature from 'classes/creature';
-
 import Creatures from 'library/creatures';
 
 export default class {

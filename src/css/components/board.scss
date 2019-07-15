@@ -4,6 +4,10 @@
   margin-bottom: 10px;
   position: relative;
 
+  @at-root #{&}__creature {
+    position: relative;
+  }
+
   @at-root #{&}__hand {
     border-top: 5px solid $white;
   }

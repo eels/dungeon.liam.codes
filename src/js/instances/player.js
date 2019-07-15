@@ -1,5 +1,4 @@
 import PlayerClass from 'classes/player';
-import { Tick } from 'instances/tick';
 
 const PlayerState = {
   actionTaken: false,
@@ -13,6 +12,6 @@ const PlayerState = {
   maxMp: 50
 };
 
-const Player = new PlayerClass(Tick, PlayerState);
+const Player = new PlayerClass(PlayerState);
 
 export { Player };

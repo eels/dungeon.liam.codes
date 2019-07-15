@@ -2,9 +2,4 @@ body {
   background-color: $black;
   color: $white;
   font-family: $mono;
-  transition: background-color 0.8s ease-out;
-
-  &.tm-c-body--hit {
-    background-color: $hit;
-  }
 }

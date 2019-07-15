@@ -22,10 +22,10 @@ function create() {
           <div class="tm-c-creature__status-label">Status Effects</div>
           <div class="tm-c-creature__status-effect">
             <div class="tm-c-creature__status-icon">
-              ${current.store.state.status !== 'normal' ? `<img src="/assets/img/${current.store.state.status}.png" />` : ''}
+              ${current.store.state.status !== 'normal' && current.store.state.statusDuration !== 0 ? `<img src="/assets/img/${current.store.state.status}.png" />` : ''}
             </div>
             <div class="tm-c-creature__status-duration">
-              ${current.store.state.status !== 'normal' ? `x ${current.store.state.statusDuration} turns` : ''}
+              ${current.store.state.status !== 'normal' && current.store.state.statusDuration !== 0 ? `x ${current.store.state.statusDuration} turns` : ''}
             </div>
           </div>
         </div>

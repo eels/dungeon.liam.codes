@@ -95,13 +95,13 @@
 
   @at-root #{&}__status-icon {
     display: inline-block;
-    width: 20px;
     height: 20px;
     margin-bottom: 9px;
     vertical-align: middle;
 
     img {
-      width: 100%;
+      width: auto;
+      height: 20px;
     }
   }
 

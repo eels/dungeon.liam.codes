@@ -15,7 +15,11 @@
 
 // Tools
 // Globally used mixins and functions.
-// It’s important not to output any CSS in the first 2 layers
+
+// Animations
+// Keyframe animation declarations.
+// It’s important not to output any CSS in the first 3 layers
+@import 'animations/blink';
 
 // Generic
 // Reset and/or normalize styles, box-sizing definition, etc.
@@ -43,6 +47,7 @@
 @import 'components/dungeon';
 @import 'components/footer';
 @import 'components/hand';
+@import 'components/log';
 @import 'components/message';
 @import 'components/screen-death';
 @import 'components/screen-start';
@@ -53,3 +58,4 @@
 // Utilities
 // Utilities and helper classes with ability to override anything
 // which goes before it in the triangle, eg. hide helper class
+@import 'utilities/type';

@@ -1,0 +1,12 @@
+.#{$prefix}-u-type {
+  @at-root #{&}--typing {
+    &:after {
+      content: '_';
+      font-weight: bold;
+      padding-left: 5px;
+      animation-name: blink;
+      animation-duration: 0.75s;
+      animation-iteration-count: infinite;
+    }
+  }
+}

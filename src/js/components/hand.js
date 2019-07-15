@@ -1,5 +1,5 @@
-import Card from 'components/card';
 import { Player } from 'instances/player';
+import Card from 'components/card';
 
 function create() {
   const hand = `

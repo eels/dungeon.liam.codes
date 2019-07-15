@@ -1,14 +1,14 @@
-import Timer from 'components/timer';
-import Hand from 'components/hand';
 import Creature from 'components/creature';
+import Hand from 'components/hand';
+import Log from 'components/log';
 import Message from 'components/message';
-import { Player } from 'instances/player';
+import Timer from 'components/timer';
 
 function create() {
   const board = `
     <div class="tm-c-board">
       <div class="tm-c-board__timer">${Timer()}</div>
-      <div class="tm-c-board__creature">${Creature()}</div>
+      <div class="tm-c-board__creature">${Creature()}${Log()}</div>
       <div class="tm-c-board__hand">${Hand()}</div>
       <div class="tm-c-board__message">${Message()}</div>
     </div>

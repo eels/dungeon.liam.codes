@@ -1,5 +1,3 @@
-import { Player } from 'instances/player';
-
 function create(data) {
   const card = `
     <div class="tm-c-hand__card tm-c-card js-card" data-id="${data.id}" style="background-image: url('/assets/img/${data.icon}.png')">

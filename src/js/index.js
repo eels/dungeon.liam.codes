@@ -1,6 +1,6 @@
 import { on, fire } from 'utilities/delegation';
 import { nodize } from 'utilities/nodize';
-import Dispatcher from 'dispatcher';
+import EventDispatcher from 'dispatcher';
 import Board from 'components/board';
 import StartScreen from 'components/start-screen';
 import Stats from 'components/stats';
@@ -11,7 +11,7 @@ field.appendChild(nodize(Title('Dungeon Delver')));
 field.appendChild(nodize(Board()));
 field.appendChild(nodize(Stats()));
 
-Dispatcher();
+EventDispatcher();
 
 document.querySelector('.tm-c-footer').classList.add('tm-c-footer--active');
 document.querySelector('.tm-c-stats').classList.add('tm-c-stats--disabled');
