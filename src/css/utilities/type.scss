@@ -2,6 +2,7 @@
   @at-root #{&}--typing {
     &:after {
       content: '_';
+      color: $white;
       font-weight: bold;
       padding-left: 5px;
       animation-name: blink;

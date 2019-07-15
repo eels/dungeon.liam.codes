@@ -33,7 +33,7 @@ const processCreatureStatusEffect = () => {
     if (statusDuration >= 0) {
       const statusDamage = creature.store.state.hp - 2;
 
-      log(`* << Enemy ${capitalize(creature.store.state.raw.name)} takes ${2} damage from its <div class="tm-c-log__keyword">${status === 'fire' ? 'burn' : 'poison'}</div>.`);
+      log(`* << Enemy ${capitalize(creature.store.state.raw.name)} takes ${2} damage from its <div class="tm-c-log__keyword">${status === 'fire' ? 'burn' : 'poison'}</div>`);
 
       if (statusDamage > 0) {
         creature.store.commit({ hp: statusDamage });

@@ -10,7 +10,7 @@ const applyCardEffect = (data) => {
     const hp = Player.store.state.hp + data.health;
     const maxHp = Player.store.state.maxHp;
     Player.store.commit({ hp: hp > maxHp ? maxHp : hp });
-    log(`* << You restore ${data.health} HP.`);
+    log(`* << You restore ${data.health} <div class="tm-c-log__keyword">HP</div>`);
     fire('PLAYER_UPDATE_STATS');
   }
 
@@ -18,7 +18,7 @@ const applyCardEffect = (data) => {
     const mp = Player.store.state.mp + data.mana;
     const maxMp = Player.store.state.maxMp;
     Player.store.commit({ mp: mp > maxMp ? maxMp : mp });
-    log(`* << You restore ${data.mana} MP.`);
+    log(`* << You restore ${data.mana} <div class="tm-c-log__keyword">MP</div>`);
     fire('PLAYER_UPDATE_STATS');
   }
 
@@ -41,7 +41,7 @@ const applyCardEffect = (data) => {
       }
     }
 
-    log(`* << Your attack on enemy ${capitalize(creature.store.state.raw.name)} lands for ${damage} damage.`);
+    log(`* << Your attack on enemy ${capitalize(creature.store.state.raw.name)} lands for ${damage} damage`);
 
     if (hit > 0) {
       creature.store.commit({ hp: hit });
@@ -56,11 +56,11 @@ const applyCardEffect = (data) => {
   if (data.effect === 'freeze') {
     const creature = Dungeon.store.state.creatures[0];
     creature.store.commit({ status: 'ice', statusDuration: creature.store.state.status === 'ice' ? creature.store.state.statusDuration + data.duration : data.duration });
-    log(`* << You <div class="tm-c-log__keyword">freeze</div> enemy ${capitalize(creature.store.state.raw.name)} for ${creature.store.state.statusDuration} turns.`);
+    log(`* << You <div class="tm-c-log__keyword">freeze</div> enemy ${capitalize(creature.store.state.raw.name)} for ${data.duration} turns`);
     fire('CREATURE_UPDATE');
   }
 
-  if (data.effect === 'shuffle') {
+  if (data.effect === 're-draw') {
     const deck = Player.store.state.deck;
     const shuffled = deck.splice(0, 5);
     shuffled.forEach(card => deck.push(card));
@@ -69,6 +69,7 @@ const applyCardEffect = (data) => {
 
   if (data.effect === 'armor') {
     Player.store.commit({ armor: data.armor, ad: data.durability, maxAd: data.durability });
+    log(`* << You gain ${data.armor} <div class="tm-c-log__keyword">armor</div> from your equipment`);
     fire('PLAYER_UPDATE_STATS');
   }
 };

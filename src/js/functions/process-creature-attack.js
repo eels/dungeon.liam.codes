@@ -24,7 +24,7 @@ const processCreatureAttack = () => {
 
   Player.store.commit({ hp: hit > 0 ? hit : 0 });
   fire('PLAYER_UPDATE_STATS');
-  log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} hits you for ${creatureAttack} damage.`);
+  log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} hits you for ${creatureAttack} damage`);
 
   if (hit <= 0) {
     processPlayerDeath();

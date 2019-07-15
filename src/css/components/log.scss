@@ -2,7 +2,7 @@
   width: 100%;
   height: 100px;
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
 
   @at-root #{&}__container {
     width: calc(100% - 300px);
@@ -23,6 +23,10 @@
 
   @at-root #{&}__death {
     color: $log--death;
+  }
+
+  @at-root #{&}__advance {
+    color: $log--advance;
   }
 
   @at-root #{&}__keyword {

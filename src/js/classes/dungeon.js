@@ -28,9 +28,7 @@ export default class {
     if (creatures.length > 0) {
       this.store.commit({ creatures: creatures });
     } else {
-      this.store.commit({ level: this.store.state.level + 1 });
-      this.store.commit({ creatures: this.generateCreatures() });
-      fire('PLAYER_UPDATE_STATS');
+      fire('ENTER_SHOP');
     }
   }
 };

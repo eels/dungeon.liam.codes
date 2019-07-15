@@ -1,16 +1,19 @@
 const type = (element, copy, cb = () => {}, speed = 15) => {
-  const initialSplit = copy.split(/\s*(<[^>]*>)\s*/gi);
+  const initialSplit = copy.split(/(<[^><]*>)/gi);
   const typed = [];
   let characters = [];
+
+  console.log(initialSplit);
 
   initialSplit.forEach(chunk => {
     if (chunk[0] !== '<') {
       characters = characters.concat(chunk.split(''));
-      characters.push(' ');
     } else {
       characters.push(chunk);
     }
   });
+
+  console.log(characters);
 
   const keypress = () => {
     typed.push(characters[0]);

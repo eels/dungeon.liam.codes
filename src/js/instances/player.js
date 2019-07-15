@@ -3,6 +3,7 @@ import PlayerClass from 'classes/player';
 const PlayerState = {
   actionTaken: false,
   status: 'ticking',
+  availableCards: [],
   deck: [],
   gold: 0,
   kills: 0,

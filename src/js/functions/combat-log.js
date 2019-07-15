@@ -5,23 +5,16 @@ let combatProcessing = false;
 
 const processCombatQueue = () => {
   setInterval(() => {
-    if (combatProcessing) {
-      return;
-    }
-
-    if (combatQueue.length === 0) {
+    if (combatProcessing === true || combatQueue.length === 0) {
       return;
     }
 
     combatProcessing = true;
     postCombatEntry(combatQueue[0]);
-  }, 100);
+  }, 50);
 };
 
 const postCombatEntry = data => {
-
-  console.log('pce', combatProcessing, combatQueue.length);
-
   const id = Math.round(Math.random() * (999999999 - 100000000) + 100000000);
   const combatEntry = document.createElement('div');
   combatEntry.classList.add('tm-c-log__entry');
@@ -31,18 +24,19 @@ const postCombatEntry = data => {
     combatEntry.classList.add('tm-c-log__death');
   }
 
+  if (data.state === 'DUNGEON_ADVANCE') {
+    combatEntry.classList.add('tm-c-log__advance');
+  }
+
   document.querySelector('.tm-c-log__container').appendChild(combatEntry);
   type(`.tm-c-log__entry[data-id="${id}"]`, data.copy, () => {
-    combatQueue = combatQueue.splice(0, 1);
     combatProcessing = false;
+    combatQueue.splice(0, 1);
   });
 };
 
 const log = (copy, state = '') => {
-  combatQueue.push({
-    copy,
-    state
-  });
+  combatQueue.push({ copy, state });
 };
 
 export { processCombatQueue, log };
