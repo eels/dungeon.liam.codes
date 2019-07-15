@@ -9,7 +9,10 @@ const PlayerState = {
   hp: 50,
   maxHp: 50,
   mp: 50,
-  maxMp: 50
+  maxMp: 50,
+  armor: 0,
+  ad: 0,
+  maxAd: 0
 };
 
 const Player = new PlayerClass(PlayerState);

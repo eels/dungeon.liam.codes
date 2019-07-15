@@ -1,4 +1,4 @@
-const type = (element, copy, speed = 15) => {
+const type = (element, copy, cb = () => {}, speed = 15) => {
   const initialSplit = copy.split(/\s*(<[^>]*>)\s*/gi);
   const typed = [];
   let characters = [];
@@ -23,6 +23,7 @@ const type = (element, copy, speed = 15) => {
       }, speed);
     } else {
       document.querySelector(element).classList.remove('tm-u-type--typing');
+      cb();
     }
   };
 

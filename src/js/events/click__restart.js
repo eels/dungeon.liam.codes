@@ -14,7 +14,10 @@ export default function() {
       gold: 0,
       kills: 0,
       hp: Player.store.state.maxHp,
-      mp: Player.store.state.maxMp
+      mp: Player.store.state.maxMp,
+      armor: 0,
+      ad: 0,
+      maxAd: 0
     });
 
     Dungeon.store.commit({

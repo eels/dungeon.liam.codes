@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    polyfills: './src/js/polyfill.js',
+    polyfill: './src/js/polyfill.js',
     script: './src/js/index.js'
   },
   output: {

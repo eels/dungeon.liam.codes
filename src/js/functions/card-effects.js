@@ -66,6 +66,11 @@ const applyCardEffect = (data) => {
     shuffled.forEach(card => deck.push(card));
     Player.store.commit({ deck: deck });
   }
+
+  if (data.effect === 'armor') {
+    Player.store.commit({ armor: data.armor, ad: data.durability, maxAd: data.durability });
+    fire('PLAYER_UPDATE_STATS');
+  }
 };
 
 export { applyCardEffect };

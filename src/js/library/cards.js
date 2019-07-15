@@ -52,5 +52,13 @@ export default [
     effect: 'shuffle',
     keyword: 'shuffle',
     icon: 'shuffle'
+  },
+  {
+    name: 'breastplate',
+    armor: 5,
+    durability: 10,
+    effect: 'armor',
+    keyword: 'armor',
+    icon: 'breastplate'
   }
 ];

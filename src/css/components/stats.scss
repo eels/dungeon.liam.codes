@@ -8,6 +8,7 @@
 
   @at-root #{&}__stat {
     display: inline-block;
+    width: 190px;
     border: 5px solid $white;
     padding: 5px 10px 10px;
     margin-right: 20px;
@@ -24,6 +25,9 @@
     font-size: 26px;
     display: inline-block;
     vertical-align: middle;
+    float: right;
+    position: relative;
+    top: 5px;
   }
 
   @at-root #{&}__bar {
@@ -37,6 +41,10 @@
 
     [data-stat="mana"] & {
       background-color: $mana;
+    }
+
+    [data-stat="armor"] & {
+      background-color: $armor;
     }
   }
 

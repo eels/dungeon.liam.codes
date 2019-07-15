@@ -1,28 +1,48 @@
-import { on, fire } from 'utilities/delegation';
 import { type } from 'utilities/type';
 
-const combatQueue = [];
+let combatQueue = [];
+let combatProcessing = false;
 
-const log = (copy, state = '') => {
-  combatQueue.push([copy, state]);
-  fire('COMBAT_QUEUE_UPDATE');
+const processCombatQueue = () => {
+  setInterval(() => {
+    if (combatProcessing) {
+      return;
+    }
+
+    if (combatQueue.length === 0) {
+      return;
+    }
+
+    combatProcessing = true;
+    postCombatEntry(combatQueue[0]);
+  }, 100);
 };
 
-export { log };
+const postCombatEntry = data => {
 
-/*
+  console.log('pce', combatProcessing, combatQueue.length);
 
-const id = Math.round(Math.random() * (999999999 - 100000000) + 100000000);
-const combatEntry = document.createElement('div');
-combatEntry.classList.add('tm-c-log__entry');
-combatEntry.setAttribute('data-id', id);
+  const id = Math.round(Math.random() * (999999999 - 100000000) + 100000000);
+  const combatEntry = document.createElement('div');
+  combatEntry.classList.add('tm-c-log__entry');
+  combatEntry.setAttribute('data-id', id);
 
-if (state === 'CREATURE_DEATH') {
-  combatEntry.classList.add('tm-c-log__death');
-}
+  if (data.state === 'CREATURE_DEATH') {
+    combatEntry.classList.add('tm-c-log__death');
+  }
 
-document.querySelector('.tm-c-log__container').appendChild(combatEntry);
+  document.querySelector('.tm-c-log__container').appendChild(combatEntry);
+  type(`.tm-c-log__entry[data-id="${id}"]`, data.copy, () => {
+    combatQueue = combatQueue.splice(0, 1);
+    combatProcessing = false;
+  });
+};
 
-type(`.tm-c-log__entry[data-id="${id}"]`, copy);
+const log = (copy, state = '') => {
+  combatQueue.push({
+    copy,
+    state
+  });
+};
 
-*/
+export { processCombatQueue, log };
