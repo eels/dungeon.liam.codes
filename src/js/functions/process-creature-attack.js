@@ -13,6 +13,7 @@ const processCreatureAttack = () => {
   const creature = Dungeon.store.state.creatures[0];
   const creatureAttack = creature.store.state.raw.attack;
   const creatureSpecialChance = Math.round(Math.random() * 100);
+  const creatureMana = creature.store.state.mp;
 
   if (creature.store.state.raw.specials !== undefined) {
     const availableSpecials = creature.store.state.raw.specials;
@@ -26,8 +27,13 @@ const processCreatureAttack = () => {
 
     if (useableSpecials.length !== 0) {
       const selectedSpecial = shuffle(useableSpecials)[0];
-      applyCreatureEffect(selectedSpecial);
-      return;
+
+      if (creatureMana - selectedSpecial.cost >= 0) {
+        creature.store.commit({ mp: creatureMana - selectedSpecial.cost });
+        fire('CREATURE_UPDATE');
+        applyCreatureEffect(selectedSpecial);
+        return;
+      }
     }
   }
 

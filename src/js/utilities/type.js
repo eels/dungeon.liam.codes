@@ -1,4 +1,4 @@
-const type = (element, copy, cb = () => {}, speed = 15) => {
+const type = (element, copy, cb = () => {}, speed = 10) => {
   const initialSplit = copy.split(/(<[^><]*>)/gi);
   const typed = [];
   let characters = [];

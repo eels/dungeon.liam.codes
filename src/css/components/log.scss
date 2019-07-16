@@ -2,7 +2,7 @@
   width: 100%;
   height: 100px;
   position: absolute;
-  bottom: 40px;
+  bottom: 15px;
 
   @at-root #{&}__container {
     width: calc(100% - 300px);

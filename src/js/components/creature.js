@@ -1,3 +1,4 @@
+import { capitalize } from 'utilities/capitalize';
 import { Dungeon } from 'instances/dungeon';
 
 function create() {
@@ -5,9 +6,10 @@ function create() {
   const creature = `
     <div class="tm-c-creature">
       <div class="tm-c-creature__tunnel">
-        <div class="tm-c-creature__name">${current.store.state.raw.name}</div>
+        <div class="tm-c-creature__name">${capitalize(current.store.state.raw.name)}</div>
         <div class="tm-c-creature__level">Lv. ${current.store.state.raw.level}</div>
-        ${current.store.state.raw.weakness !== undefined ? `<div class="tm-c-creature__weakness">Weakness</div><div class="tm-c-creature__weakness-icon"><img src="/assets/img/${current.store.state.raw.weakness}.png" /></div>` : ''}
+        ${current.store.state.raw.weakness !== undefined ? `<div class="tm-c-creature__attribute"><div class="tm-c-creature__attribute-label">Weakness</div><div class="tm-c-creature__attribute-icon"><img src="/assets/img/${current.store.state.raw.weakness}.png" /></div></div>` : ''}
+        ${current.store.state.raw.resistance !== undefined ? `<div class="tm-c-creature__attribute"><div class="tm-c-creature__attribute-label">Resistance</div><div class="tm-c-creature__attribute-icon"><img src="/assets/img/${current.store.state.raw.resistance}.png" /></div></div>` : ''}
       </div>
       <div class="tm-c-creature__stats">
         <div class="tm-c-creature__stat" data-stat="health">
@@ -17,6 +19,10 @@ function create() {
         <div class="tm-c-creature__stat" data-stat="mana">
           <div class="tm-c-creature__label">MP</div>
           <div class="tm-c-creature__bar" style="width: ${(current.store.state.mp / current.store.state.maxMp) * 100}%"></div>
+        </div>
+        <div class="tm-c-creature__stat" data-stat="armor">
+          <div class="tm-c-creature__label">AR</div>
+          <div class="tm-c-creature__bar" style="width: ${(current.store.state.ad / current.store.state.maxAd) * 100}%"></div>
         </div>
         <div class="tm-c-creature__stat">
           <div class="tm-c-creature__status-label">Status Effects</div>

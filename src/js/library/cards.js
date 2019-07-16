@@ -38,14 +38,20 @@ export default [
   {
     name: 'h. potion',
     health: 3,
-    effect: 'health potion',
+    effect: 'heal',
     icon: 'potion'
   },
   {
     name: 'm. potion',
     mana: 3,
-    effect: 'mana potion',
+    effect: 'mana',
     icon: 'potion'
+  },
+  {
+    name: 'cure stone',
+    effect: 'cure',
+    keyword: 'cure',
+    icon: 'crystal'
   },
   {
     name: 'whirlwind',
