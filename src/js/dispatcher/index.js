@@ -3,6 +3,7 @@ import CLICK__CARD from 'events/click__card';
 import CLICK__CONTINUE from 'events/click__continue';
 import CLICK__RESTART from 'events/click__restart';
 import CLICK__START from 'events/click__start';
+import CLICK__TAKE from 'events/click__take';
 import CREATURE_UPDATE from 'events/CREATURE_UPDATE';
 import ENTER_SHOP from 'events/ENTER_SHOP';
 import PLAYER_ACTION from 'events/PLAYER_ACTION';
@@ -17,6 +18,7 @@ export default function() {
   CLICK__CONTINUE();
   CLICK__RESTART();
   CLICK__START();
+  CLICK__TAKE();
   CREATURE_UPDATE();
   ENTER_SHOP();
   PLAYER_ACTION();

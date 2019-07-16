@@ -6,8 +6,9 @@
       font-weight: bold;
       padding-left: 5px;
       animation-name: blink;
-      animation-duration: 1s;
+      animation-duration: 0.5s;
       animation-iteration-count: infinite;
+      animation-timing-function: step-end;
     }
   }
 }

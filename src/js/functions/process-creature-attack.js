@@ -1,8 +1,10 @@
+import { shuffle } from 'utilities/array';
 import { capitalize } from 'utilities/capitalize';
 import { fire } from 'utilities/delegation';
 import { Dungeon } from 'instances/dungeon';
 import { Player } from 'instances/player';
 import { log } from 'functions/combat-log';
+import { applyCreatureEffect } from 'functions/creature-effects';
 import { processPlayerDeath } from 'functions/process-player-death';
 
 const processCreatureAttack = () => {
@@ -10,6 +12,25 @@ const processCreatureAttack = () => {
   const playerArmor = Player.store.state.armor;
   const creature = Dungeon.store.state.creatures[0];
   const creatureAttack = creature.store.state.raw.attack;
+  const creatureSpecialChance = Math.round(Math.random() * 100);
+
+  if (creature.store.state.raw.specials !== undefined) {
+    const availableSpecials = creature.store.state.raw.specials;
+    const useableSpecials = [];
+
+    availableSpecials.map(special => {
+      if (creatureSpecialChance >= special.chance) {
+        useableSpecials.push(special);
+      }
+    });
+
+    if (useableSpecials.length !== 0) {
+      const selectedSpecial = shuffle(useableSpecials)[0];
+      applyCreatureEffect(selectedSpecial);
+      return;
+    }
+  }
+
   let hit = playerHealth - (playerArmor - creatureAttack > 0 ? 0 : (playerArmor - creatureAttack) * -1);
 
   if (Player.store.state.ad > 0) {

@@ -12,7 +12,7 @@ function create() {
         Valiantly, you managed to reach lv. ${Dungeon.store.state.level} of the dungeon.
       </div>
       <div class="tm-c-death__gold">
-        Along the way you killed ${Player.store.state.kills} ${Player.store.state.kills === 1 ? 'creature' : 'creatures'} and collected ${Player.store.state.gold} gold.
+        Along the way you killed ${Player.store.state.kills} ${Player.store.state.kills === 1 ? 'creature' : 'creatures'} and collected ${Player.store.state.totalGold} gold.
       </div>
       <div class="tm-c-death__share">
         <div class="tm-c-death__share-icon tm-c-death__share-facebook"></div>

@@ -5,7 +5,7 @@ import { Player } from 'instances/player';
 import { log } from 'functions/combat-log';
 import { processCreatureDeath } from 'functions/process-creature-death';
 
-const applyCardEffect = (data) => {
+const applyCardEffect = data => {
   if (data.effect === 'health potion') {
     const hp = Player.store.state.hp + data.health;
     const maxHp = Player.store.state.maxHp;

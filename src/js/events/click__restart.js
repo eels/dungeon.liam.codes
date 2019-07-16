@@ -9,9 +9,11 @@ export default function() {
   on('click', '.js-restart', () => {
     Player.store.commit({
       actionTaken: false,
-      status: 'active',
+      status: 'normal',
+      statusDuration: 0,
       deck: Player.generateDeck(),
       gold: 0,
+      totalGold: 0,
       kills: 0,
       hp: Player.store.state.maxHp,
       mp: Player.store.state.maxMp,

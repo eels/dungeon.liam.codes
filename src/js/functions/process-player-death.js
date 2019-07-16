@@ -4,7 +4,6 @@ import DeathScreen from 'components/death-screen';
 
 const processPlayerDeath = () => {
   Tick.stop();
-  Player.store.commit({ status: 'paused' });
   Player.store.commit({ actionTaken: true });
   document.querySelector('.tm-c-hand').classList.add('tm-c-hand--disabled');
   document.querySelector('.tm-c-stats').classList.add('tm-c-stats--disabled');

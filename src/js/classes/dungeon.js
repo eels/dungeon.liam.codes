@@ -12,9 +12,33 @@ export default class {
 
   generateCreatures() {
     const level = this.store.state.level;
+    const availableCreatureLevels = [];
+    const levelRange = [];
+
+    Creatures.map(creature => {
+      if (availableCreatureLevels.indexOf(creature.level) === -1) {
+        availableCreatureLevels.push(creature.level);
+      }
+    });
+
+    for (let i = 0; i < availableCreatureLevels.length; i++) {
+      const current = availableCreatureLevels[i];
+      const min = level - 1;
+      const max = level + 1;
+
+      if (current >= min && current <= max) {
+        levelRange.push(current);
+      }
+    }
+
+    if (levelRange.length === 0) {
+      levelRange.push(availableCreatureLevels[availableCreatureLevels.length - 1]);
+    }
+
+    const availableCreatures = Creatures.filter(creature => levelRange.indexOf(creature.level) > -1);
     const curve = Math.floor(level * (1 + (level / 5))) + 2;
     return Array.apply(null, Array(curve)).map(() => {
-      const shuffledCreatures = shuffle(Creatures);
+      const shuffledCreatures = shuffle(availableCreatures);
       const creature = Object.assign({}, shuffledCreatures[0]);
       creature.id = Math.round(Math.random() * (999999999 - 100000000) + 100000000);
       return new Creature(creature);

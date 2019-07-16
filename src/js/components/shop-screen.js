@@ -10,7 +10,7 @@ function create() {
         ${Cards.filter(card => card.price !== undefined).map(card => {
           return `
             <div class="tm-c-shop__card-container">
-              ${Card(card, true)}
+              ${Card(card, true, 'shop')}
               <div class="tm-c-shop__card-price">${card.price} gold</div>
               <div class="tm-c-shop__card-buy js-buy">Buy</div>
             </div>

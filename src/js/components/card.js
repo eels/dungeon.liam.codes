@@ -1,5 +1,5 @@
-function create(data, isPreview) {
-  const attributes = isPreview ? `class="tm-c-shop__card tm-c-card"` : `class="tm-c-hand__card tm-c-card js-card" data-id="${data.id}"`;
+function create(data, isPreview, namespace) {
+  const attributes = isPreview ? `class="tm-c-${namespace}__card tm-c-card"` : `class="tm-c-hand__card tm-c-card js-card" data-id="${data.id}"`;
   const card = `
     <div ${attributes} style="background-image: url('/assets/img/${data.icon}.png')">
       ${data.cost !== undefined ? `<div class="tm-c-card__cost">${data.cost}</div>` : ''}
@@ -15,6 +15,6 @@ function create(data, isPreview) {
   return card;
 }
 
-export default function(card, isPreview = false) {
-  return create(card, isPreview);
+export default function(card, isPreview = false, namespace = '') {
+  return create(card, isPreview, namespace);
 };

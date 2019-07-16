@@ -3,8 +3,6 @@ const type = (element, copy, cb = () => {}, speed = 15) => {
   const typed = [];
   let characters = [];
 
-  console.log(initialSplit);
-
   initialSplit.forEach(chunk => {
     if (chunk[0] !== '<') {
       characters = characters.concat(chunk.split(''));
@@ -12,8 +10,6 @@ const type = (element, copy, cb = () => {}, speed = 15) => {
       characters.push(chunk);
     }
   });
-
-  console.log(characters);
 
   const keypress = () => {
     typed.push(characters[0]);

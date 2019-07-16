@@ -1,4 +1,4 @@
-.#{$prefix}-c-shop {
+.#{$prefix}-c-treasure {
   @at-root #{&}__heading {
     font-size: 28px;
     text-transform: uppercase;
@@ -16,15 +16,10 @@
 
   @at-root #{&}__card {
     pointer-events: none;
-    margin: 0 auto 15px;
+    margin: 0 auto 25px;
   }
 
-  @at-root #{&}__card-price {
-    text-transform: capitalize;
-    padding-bottom: 15px;
-  }
-
-  @at-root #{&}__card-buy {
+  @at-root #{&}__card-take {
     width: 150px;
     padding: 10px;
     border: 5px solid $white;
@@ -41,16 +36,6 @@
   @at-root #{&}__status {
     margin-top: 20px;
     height: 16px;
-  }
-
-  @at-root #{&}__status--error {
-    color: $shop--error;
-  }
-
-  @at-root #{&}__status--name {
-    color: $shop--name;
-    text-transform: uppercase;
-    display: inline;
   }
 
   @at-root #{&}__continue {

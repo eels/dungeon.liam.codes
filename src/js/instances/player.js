@@ -2,10 +2,12 @@ import PlayerClass from 'classes/player';
 
 const PlayerState = {
   actionTaken: false,
-  status: 'ticking',
+  status: 'normal',
+  statusDuration: 0,
   availableCards: [],
   deck: [],
   gold: 0,
+  totalGold: 0,
   kills: 0,
   hp: 50,
   maxHp: 50,

@@ -19,7 +19,18 @@ function create() {
         <div class="tm-c-stats__value">${Player.store.state.armor}</div>
         <div class="tm-c-stats__bar" style="width: ${Player.store.state.maxAd === 0 ? 0 : (Player.store.state.ad / Player.store.state.maxAd) * 100}%"></div>
       </div>
-      <div class="tm-c-stats__information">
+      <div class="tm-c-stats__stat" data-stat="status">
+        <div class="tm-c-stats__status-label">Status Effects</div>
+        <div class="tm-c-stats__status-effect">
+          <div class="tm-c-stats__status-icon">
+            ${Player.store.state.status !== 'normal' && Player.store.state.statusDuration !== 0 ? `<img src="/assets/img/${Player.store.state.status}.png" />` : ''}
+          </div>
+          <div class="tm-c-stats__status-duration">
+            ${Player.store.state.status !== 'normal' && Player.store.state.statusDuration !== 0 ? `x ${Player.store.state.statusDuration} turns` : ''}
+          </div>
+        </div>
+      </div>
+      <div class="tm-c-stats__stat" data-stat="information">
         <div class="tm-c-stats__gold">${Player.store.state.gold} gold</div>
         <div class="tm-c-stats__level">Dungeon lv. ${Dungeon.store.state.level}</div>
       </div>
