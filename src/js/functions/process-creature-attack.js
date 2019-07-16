@@ -20,16 +20,17 @@ const processCreatureAttack = () => {
     const useableSpecials = [];
 
     availableSpecials.map(special => {
-      if (creatureSpecialChance >= special.chance) {
+      if (creatureSpecialChance >= (100 - special.chance)) {
         useableSpecials.push(special);
       }
     });
 
     if (useableSpecials.length !== 0) {
       const selectedSpecial = shuffle(useableSpecials)[0];
+      const selectedSpecialCost = selectedSpecial.cost !== undefined ? selectedSpecial.cost : 0;
 
-      if (creatureMana - selectedSpecial.cost >= 0) {
-        creature.store.commit({ mp: creatureMana - selectedSpecial.cost });
+      if (creatureMana - selectedSpecialCost >= 0) {
+        creature.store.commit({ mp: creatureMana - selectedSpecialCost });
         fire('CREATURE_UPDATE');
         applyCreatureEffect(selectedSpecial);
         return;

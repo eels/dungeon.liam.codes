@@ -40,44 +40,79 @@ const applyCreatureEffect = data => {
 
   if (data.effect === 'heal') {
     creature.store.commit({ hp: creature.store.state.hp + data.health > creature.store.state.maxHp ? creature.store.state.maxHp : creature.store.state.hp + data.health });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} restores ${data.health} <div class="tm-c-log__keyword">hp</div>`);
     fire('CREATURE_UPDATE');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} restores ${data.health} <div class="tm-c-log__keyword">hp</div>`);
+    }
   }
 
   if (data.effect === 'mana') {
     creature.store.commit({ mp: creature.store.state.mp + data.mana > creature.store.state.maxMp ? creature.store.state.maxMp : creature.store.state.mp + data.mana });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} restores ${data.mana} <div class="tm-c-log__keyword">mp</div>`);
     fire('CREATURE_UPDATE');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} restores ${data.mana} <div class="tm-c-log__keyword">mp</div>`);
+    }
   }
 
   if (data.effect === 'protect') {
     creature.store.commit({ armor: data.armor, ad: data.durability, maxAd: data.durability });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} gains ${data.armor} <div class="tm-c-log__keyword">armor</div>`);
     fire('CREATURE_UPDATE');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} gains ${data.armor} <div class="tm-c-log__keyword">armor</div>`);
+    }
   }
 
   if (data.effect === 'burn') {
     Player.store.commit({ status: 'fire', statusDuration: Player.store.state.status === 'burn' ? Player.store.state.statusDuration + (data.duration + 1) : (data.duration + 1) });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} inflicts a <div class="tm-c-log__keyword">burn</div> on you lasting ${data.duration} turns`);
     fire('PLAYER_UPDATE_STATS');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} inflicts a <div class="tm-c-log__keyword">burn</div> on you lasting ${data.duration} turns`);
+    }
   }
 
   if (data.effect === 'poison') {
     Player.store.commit({ status: 'poison', statusDuration: Player.store.state.status === 'poison' ? Player.store.state.statusDuration + (data.duration + 1) : (data.duration + 1) });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} inflicts <div class="tm-c-log__keyword">poison</div> on you lasting ${data.duration} turns`);
     fire('PLAYER_UPDATE_STATS');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} inflicts <div class="tm-c-log__keyword">poison</div> on you lasting ${data.duration} turns`);
+    }
   }
 
   if (data.effect === 'freeze') {
     Player.store.commit({ status: 'ice', statusDuration: Player.store.state.status === 'ice' ? Player.store.state.statusDuration + (data.duration + 1) : (data.duration + 1) });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} <div class="tm-c-log__keyword">freezes</div> your body lasting ${data.duration} turns`);
     fire('PLAYER_UPDATE_STATS');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} <div class="tm-c-log__keyword">freezes</div> your body lasting ${data.duration} turns`);
+    }
   }
 
   if (data.effect === 'paralyse') {
     Player.store.commit({ status: 'electric', statusDuration: Player.store.state.status === 'electric' ? Player.store.state.statusDuration + (data.duration + 1) : (data.duration + 1) });
-    log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} <div class="tm-c-log__keyword">paralyses</div> your body lasting ${data.duration} turns`);
     fire('PLAYER_UPDATE_STATS');
+
+    if (data.message !== undefined) {
+      log(data.message.replace('*name*', capitalize(creature.store.state.raw.name)).replace('*damage*', data.damage));
+    } else {
+      log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} <div class="tm-c-log__keyword">paralyses</div> your body lasting ${data.duration} turns`);
+    }
   }
 };
 
