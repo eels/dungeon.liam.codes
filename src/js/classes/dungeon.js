@@ -24,7 +24,7 @@ export default class {
     for (let i = 0; i < availableCreatureLevels.length; i++) {
       const current = availableCreatureLevels[i];
       const min = level - 1;
-      const max = level + 1;
+      const max = level;
 
       if (current >= min && current <= max) {
         levelRange.push(current);

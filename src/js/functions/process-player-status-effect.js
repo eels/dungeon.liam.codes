@@ -21,7 +21,7 @@ const processPlayerStatusEffect = () => {
     fire('PLAYER_UPDATE_STATS');
   }
 
-  if (['fire', 'posion'].indexOf(status) > -1) {
+  if (['fire', 'poison'].indexOf(status) > -1) {
     const statusDuration = Player.store.state.statusDuration - 1;
     Player.store.commit({ statusDuration: statusDuration });
     fire('PLAYER_UPDATE_STATS');

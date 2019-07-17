@@ -10,7 +10,7 @@ function getInventory() {
   const selectedCards = shuffledPool.slice(0, 3);
 
   const sortedCards = selectedCards.sort((a, b) => {
-    return a.set - b.set;
+    return a.set - b.set || a.price - b.price;
   });
 
   return sortedCards;
