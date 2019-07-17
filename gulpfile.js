@@ -1,3 +1,4 @@
+const ENV = process.env.NODE_ENV;
 const gulp = require('gulp');
 const path = require('path');
 const file = require('file');
@@ -13,6 +14,23 @@ const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 const conditional = require('gulp-if');
 const dateFormat = require('date-fns/format');
+
+// HTML Actions
+// ------------------------------------------------------------
+gulp.task('html:compile', () => {
+  gulp.src('./src/html/*.html')
+    .pipe(replace(/\*\*base\*\*/g, match => {
+      return ENV === 'production' ? 'https://liam.codes/dungeon/' : 'https://deck.dev'));
+    })
+    .pipe(replace(/\*\*cache\*\*/g, match => 'hello'))
+    .pipe(gulp.dest('./public'));
+});
+
+gulp.task('html:watch', () => {
+  watch('./src/html/**/*.html', () => {
+    gulp.start('html:compile');
+  });
+});
 
 // CSS Actions
 // ------------------------------------------------------------
@@ -58,7 +76,7 @@ gulp.task('css:watch', () => {
 // ------------------------------------------------------------
 gulp.task('js:compile', () => {
   gulp.src('./src/js/index.js')
-    .pipe(webpackStream(require(`./webpack.config.${process.env.NODE_ENV}.js`), webpack))
+    .pipe(webpackStream(require(`./webpack.config.${ENV}.js`), webpack))
     .pipe(gulp.dest('./public/assets/js'));
 });
 
@@ -80,16 +98,16 @@ gulp.task('img:compress', () => {
 
 // SEO Actions
 // ------------------------------------------------------------
-gulp.task('seo:humans', function() {
+gulp.task('seo:humans', () => {
   gulp.src('./public/humans.txt')
-    .pipe(replace(/Last update\:.*\n/g, function(match) {
+    .pipe(replace(/Last update\:.*\n/g, match => {
       return 'Last update: ' + dateFormat(new Date(), 'YYYY/MM/DD') + '\n';
     }))
     .pipe(gulp.dest('./public'));
 });
 
 
-gulp.task('watch', ['css:watch', 'js:watch']);
-gulp.task('build', ['css:compile', 'js:compile', 'img:compress', 'seo:humans']);
+gulp.task('watch', ['html:watch', 'css:watch', 'js:watch']);
+gulp.task('build', ['html:compile', 'css:compile', 'js:compile', 'img:compress', 'seo:humans']);
 
-gulp.task('default', ['css:compile', 'js:compile']);
+gulp.task('default', ['html:compile', 'css:compile', 'js:compile']);

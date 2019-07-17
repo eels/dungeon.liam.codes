@@ -1,5 +1,4 @@
 import { shuffle } from 'utilities/array';
-import { fire } from 'utilities/delegation';
 import Store from 'utilities/store';
 import Cards from 'library/cards';
 

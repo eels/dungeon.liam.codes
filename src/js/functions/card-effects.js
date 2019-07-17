@@ -34,6 +34,13 @@ const applyCardEffect = data => {
     const creatureArmor = creature.store.state.armor;
     let damage = data.damage;
 
+    if (creature.store.state.raw.resistance && data.element) {
+      if (creature.store.state.raw.resistance === data.element) {
+        log(`* << Enemy ${capitalize(creature.store.state.raw.name)} resists your attack`);
+        return;
+      }
+    }
+
     if (creature.store.state.raw.weakness && data.element) {
       if (creature.store.state.raw.weakness === data.element) {
         damage = damage * 2;
@@ -55,7 +62,10 @@ const applyCardEffect = data => {
     if (data.element && ['electric', 'fire', 'ice', 'poison'].indexOf(data.element) > -1) {
       const chance = Math.round(Math.random() * 10);
       if (chance > 7 && creature.store.state.status === 'normal') {
-        creature.store.commit({ status: data.element, statusDuration: 2 });
+        applyCardEffect({
+          effect: data.element === 'electric' ? 'paralyse' : data.element === 'fire' ? 'burn' : data.element === 'ice' ? 'freeze' : 'poison',
+          duration: 2
+        });
       }
     }
 

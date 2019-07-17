@@ -46,3 +46,4 @@ node_modules
 # ----------------------------------------
 /public/assets/css/*.css
 /public/assets/js/*.js
+/public/*.html

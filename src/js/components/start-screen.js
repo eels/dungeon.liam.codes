@@ -11,7 +11,7 @@ function create() {
     <div class="tm-c-start">
       <div class="tm-c-start__heading">You approach the dungeon gate</div>
       <div class="tm-c-start__icon">
-        <img src="/assets/img/dungeon-gate.png" />
+        <img src="assets/img/dungeon-gate.png" />
       </div>
       <div class="tm-c-start__name">"${getRandomDungeonName()}"</div>
       <div class="tm-c-start__description">

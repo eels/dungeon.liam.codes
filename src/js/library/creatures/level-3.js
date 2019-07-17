@@ -3,7 +3,7 @@ export default [
     name: 'giant spider',
     level: 3,
     health: 10,
-    mana: 9,
+    mana: 0,
     armor: 0,
     armorDurability: 0,
     attack: 6,
@@ -20,7 +20,6 @@ export default [
       {
         effect: 'damage',
         damage: 7,
-        cost: 3,
         chance: 20,
         message: '* >> Enemy *name* bites you dealing *damage* damage'
       }
@@ -47,8 +46,22 @@ export default [
     armorDurability: 2,
     attack: 6,
     gold: 4,
-    resistance: 'electric',
+    resistance: 'poison',
     specials: [
+      {
+        effect: 'damage',
+        damage: 8,
+        cost: 1,
+        element: 'nature',
+        chance: 30,
+        message: '* >> Enemy *name* throws stone at you for *damage* damage'
+      },
+      {
+        effect: 'ice',
+        duration: 4,
+        chance: 40,
+        message: '* >> Enemy *name* <div class="tm-c-log__keyword">freezes</div> you motionless'
+      },
       {
         effect: 'protect',
         armor: 2,
@@ -62,10 +75,31 @@ export default [
     name: 'mimic',
     level: 3,
     health: 15,
-    mana: 5,
+    mana: 6,
     armor: 0,
     armorDurability: 0,
     attack: 1,
-    gold: 15
+    gold: 15,
+    specials: [
+      {
+        effect: 'damage',
+        damage: 2,
+        chance: 45,
+        message: '* >> Enemy *name* bites you for *damage* damage'
+      },
+      {
+        effect: 'damage',
+        damage: 2,
+        cost: 2,
+        chance: 30,
+        message: '* >> Enemy *name* transforms into a hammer and hits you for *damage* damage'
+      },
+      {
+        effect: 'protect',
+        armor: 5,
+        durability: 3,
+        chance: 10
+      }
+    ]
   }
 ];

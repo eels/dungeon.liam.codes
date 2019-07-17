@@ -10,13 +10,13 @@ function create() {
     <div class="tm-c-death">
       <div class="tm-c-death__heading">You died</div>
       <div class="tm-c-death__icon">
-        <img src="/assets/img/tombstone.png" />
+        <img src="assets/img/tombstone.png" />
       </div>
       <div class="tm-c-death__level">
         Valiantly, you managed to reach lv. ${Dungeon.store.state.level} of the dungeon.
       </div>
       <div class="tm-c-death__gold">
-        Along the way you killed ${Player.store.state.kills} ${Player.store.state.kills === 1 ? 'creature' : 'creatures'} and collected ${Player.store.state.totalGold} gold.
+        Along the way you killed ${Player.store.state.kills} ${Player.store.state.kills === 1 ? 'creature' : 'creatures'} and collected ${Player.store.state.totalGold} total gold.
       </div>
       <div class="tm-c-death__share">
         <a href="${facebook}" target="_blank" class="tm-c-death__share-icon tm-c-death__share-facebook"></a>

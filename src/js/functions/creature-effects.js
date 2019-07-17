@@ -12,6 +12,7 @@ const applyCreatureEffect = data => {
     const playerHealth = Player.store.state.hp;
     const playerArmor = Player.store.state.armor;
     const creatureAttack = data.damage;
+
     let hit = playerHealth - (playerArmor - creatureAttack > 0 ? 0 : (playerArmor - creatureAttack) * -1);
 
     if (Player.store.state.ad > 0) {
@@ -21,6 +22,16 @@ const applyCreatureEffect = data => {
       if (playerDurability <= 0) {
         Player.store.commit({ armor: 0, maxAd: 0 });
         hit = hit - (playerDurability * -1);
+      }
+    }
+
+    if (data.element && ['electric', 'fire', 'ice', 'poison'].indexOf(data.element) > -1) {
+      const chance = Math.round(Math.random() * 10);
+      if (chance > 7 && Player.store.state.status === 'normal') {
+        applyCreatureEffect({
+          effect: data.element === 'electric' ? 'paralyse' : data.element === 'fire' ? 'burn' : data.element === 'ice' ? 'freeze' : 'poison',
+          duration: 2
+        });
       }
     }
 

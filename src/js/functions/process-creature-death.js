@@ -9,6 +9,7 @@ const processCreatureDeath = () => {
   Player.store.commit({ kills: Player.store.state.kills + 1 });
   Dungeon.advance();
   log(`* << Enemy ${capitalize(creature.store.state.raw.name)} succumbs to its wounds and perishes`, 'CREATURE_DEATH');
+  log(`* >> You recieve ${creature.store.state.raw.gold} <div class="tm-c-log__keyword">gold</div>`);
 };
 
 export { processCreatureDeath };

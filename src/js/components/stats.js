@@ -23,7 +23,7 @@ function create() {
         <div class="tm-c-stats__status-label">Status Effects</div>
         <div class="tm-c-stats__status-effect">
           <div class="tm-c-stats__status-icon">
-            ${Player.store.state.status !== 'normal' && Player.store.state.statusDuration !== 0 ? `<img src="/assets/img/${Player.store.state.status}.png" />` : ''}
+            ${Player.store.state.status !== 'normal' && Player.store.state.statusDuration !== 0 ? `<img src="assets/img/${Player.store.state.status}.png" />` : ''}
           </div>
           <div class="tm-c-stats__status-duration">
             ${Player.store.state.status !== 'normal' && Player.store.state.statusDuration !== 0 ? `x ${Player.store.state.statusDuration} turns` : ''}
