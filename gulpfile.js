@@ -21,7 +21,7 @@ gulp.task('html:compile', () => {
   gulp.src('./src/html/*.html')
     .pipe(replace(/\*\*base\*\*/g, match => {
       return ENV === 'production' ? 'https://liam.codes/dungeon/' : 'https://deck.dev';
-    })
+    }))
     .pipe(replace(/\*\*cache\*\*/g, match => 'hello'))
     .pipe(gulp.dest('./public'));
 });
