@@ -94,14 +94,21 @@
   }
 
   @at-root #{&}__gold {
-    font-size: 18px;
+    font-size: 15px;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  @at-root #{&}__defeated {
+    font-size: 15px;
     padding-bottom: 5px;
     text-transform: capitalize;
     text-align: center;
   }
 
   @at-root #{&}__level {
-    font-size: 16px;
+    font-size: 15px;
     text-transform: capitalize;
     text-align: center;
   }

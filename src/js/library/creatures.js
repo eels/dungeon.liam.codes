@@ -1,8 +1,8 @@
-import Level1 from 'library/creatures/level-1';
-import Level2 from 'library/creatures/level-2';
-import Level3 from 'library/creatures/level-3';
-import Level4 from 'library/creatures/level-4';
-import Level5 from 'library/creatures/level-5';
+import Level1 from 'library/creatures/level-01';
+import Level2 from 'library/creatures/level-02';
+import Level3 from 'library/creatures/level-03';
+import Level4 from 'library/creatures/level-04';
+import Level5 from 'library/creatures/level-05';
 
 export default [].concat(
   Level1,

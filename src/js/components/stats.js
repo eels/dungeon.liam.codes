@@ -32,6 +32,7 @@ function create() {
       </div>
       <div class="tm-c-stats__stat" data-stat="information">
         <div class="tm-c-stats__gold">${Player.store.state.gold} gold</div>
+        <div class="tm-c-stats__defeated">${Player.store.state.kills} defeated</div>
         <div class="tm-c-stats__level">Dungeon lv. ${Dungeon.store.state.level}</div>
       </div>
     </div>

@@ -2,6 +2,7 @@ const ENV = process.env.NODE_ENV;
 const gulp = require('gulp');
 const path = require('path');
 const file = require('file');
+const crypto = require('crypto');
 const watch = require('gulp-watch');
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
@@ -20,9 +21,9 @@ const dateFormat = require('date-fns/format');
 gulp.task('html:compile', () => {
   gulp.src('./src/html/*.html')
     .pipe(replace(/\*\*base\*\*/g, match => {
-      return ENV === 'production' ? 'https://liam.codes/dungeon/' : 'https://deck.dev';
+      return ENV === 'production' ? 'https://liam.codes/dungeon/' : 'https://deck.dev/';
     }))
-    .pipe(replace(/\*\*cache\*\*/g, match => 'hello'))
+    .pipe(replace(/\*\*cache\*\*/g, match => crypto.randomBytes(10).toString('hex')))
     .pipe(gulp.dest('./public'));
 });
 

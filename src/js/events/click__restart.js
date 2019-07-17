@@ -3,6 +3,7 @@ import { nodize } from 'utilities/nodize';
 import { Dungeon } from 'instances/dungeon';
 import { Player } from 'instances/player';
 import { Tick } from 'instances/tick';
+import Cards from 'library/cards';
 import Timer from 'components/timer';
 
 export default function() {
@@ -11,7 +12,6 @@ export default function() {
       actionTaken: false,
       status: 'normal',
       statusDuration: 0,
-      deck: Player.generateDeck(),
       gold: 0,
       totalGold: 0,
       kills: 0,
@@ -21,6 +21,9 @@ export default function() {
       ad: 0,
       maxAd: 0
     });
+
+    Player.store.commit({ availableCards: Cards.filter(card => card.set === 'base') });
+    Player.store.commit({ deck: Player.generateDeck() });
 
     Dungeon.store.commit({
       level: 1,

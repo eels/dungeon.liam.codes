@@ -5,7 +5,7 @@ import Cards from 'library/cards';
 export default class {
   constructor(state) {
     this.store = new Store(state);
-    this.store.commit({ availableCards: Cards.filter(card => card.price === undefined) });
+    this.store.commit({ availableCards: Cards.filter(card => card.set === 'base') });
     this.store.commit({ deck: this.generateDeck() });
   }
 

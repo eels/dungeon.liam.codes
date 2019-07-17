@@ -1,17 +1,20 @@
 export default [
   {
+    set: 'base',
     name: 'sword',
     damage: 2,
     effect: 'damage',
     icon: 'sword'
   },
   {
+    set: 'base',
     name: 'axe',
     damage: 3,
     effect: 'damage',
     icon: 'axe'
   },
   {
+    set: 'base',
     name: 'flame sword',
     damage: 5,
     effect: 'damage',
@@ -19,6 +22,7 @@ export default [
     icon: 'sword'
   },
   {
+    set: 'base',
     name: 'fireball',
     damage: 2,
     cost: 3,
@@ -27,6 +31,7 @@ export default [
     icon: 'magic'
   },
   {
+    set: 'base',
     name: 'tremor',
     damage: 3,
     cost: 4,
@@ -35,6 +40,7 @@ export default [
     icon: 'magic'
   },
   {
+    set: 'base',
     name: 'splash',
     damage: 3,
     cost: 4,
@@ -43,6 +49,7 @@ export default [
     icon: 'magic'
   },
   {
+    set: 'base',
     name: 'spark',
     damage: 2,
     cost: 2,
@@ -51,6 +58,7 @@ export default [
     icon: 'magic'
   },
   {
+    set: 'base',
     name: 'blizzard',
     cost: 5,
     effect: 'freeze',
@@ -60,63 +68,40 @@ export default [
     icon: 'magic'
   },
   {
+    set: 'base',
     name: 'h. potion',
     health: 3,
     effect: 'heal',
     icon: 'potion'
   },
   {
+    set: 'base',
     name: 'm. potion',
     mana: 3,
     effect: 'mana',
     icon: 'potion'
   },
   {
+    set: 'base',
     name: 'cure stone',
     effect: 'cure',
     keyword: 'cure',
     icon: 'crystal'
   },
   {
+    set: 'base',
     name: 'whirlwind',
     effect: 're-draw',
     keyword: 're-draw',
     icon: 'shuffle'
   },
   {
+    set: 'base',
     name: 'breastplate',
     armor: 5,
     durability: 10,
     effect: 'armor',
     keyword: 'armor',
     icon: 'breastplate'
-  },
-  {
-    name: 'sword+',
-    price: 5,
-    damage: 8,
-    effect: 'damage',
-    icon: 'sword'
-  },
-  {
-    name: 'sword++',
-    price: 10,
-    damage: 9,
-    effect: 'damage',
-    icon: 'sword'
-  },
-  {
-    name: 'sword+++',
-    price: 15,
-    damage: 10,
-    effect: 'damage',
-    icon: 'sword'
-  },
-  {
-    name: 'sword++++',
-    price: 20,
-    damage: 15,
-    effect: 'damage',
-    icon: 'sword'
   }
 ];
