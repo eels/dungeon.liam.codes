@@ -30,7 +30,7 @@ const processCreatureStatusEffect = () => {
     fire('CREATURE_UPDATE');
 
     if (statusDuration >= 0) {
-      const percentageDamage = Math.floor(creature.store.state.maxHp * (20 / 100));
+      const percentageDamage = Math.ceil(creature.store.state.maxHp * (20 / 100));
       const statusDamage = creature.store.state.hp - percentageDamage;
 
       log(`* << Enemy ${capitalize(creature.store.state.raw.name)} takes ${percentageDamage} damage from its <div class="tm-c-log__keyword">${status === 'fire' ? 'burn' : 'poison'}</div>`);

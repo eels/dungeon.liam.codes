@@ -27,7 +27,7 @@ const processPlayerStatusEffect = () => {
     fire('PLAYER_UPDATE_STATS');
 
     if (statusDuration >= 0) {
-      const percentageDamage = Math.floor(Player.store.state.maxHp * (5 / 100));
+      const percentageDamage = Math.ceil(Player.store.state.maxHp * (5 / 100));
       const statusDamage = Player.store.state.hp - percentageDamage;
 
       log(`* >> You take ${percentageDamage} damage from your <div class="tm-c-log__keyword">${status === 'fire' ? 'burn' : 'poison'}</div>`);
