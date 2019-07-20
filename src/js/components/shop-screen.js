@@ -7,7 +7,7 @@ import Cards from 'library/cards';
 function getInventory() {
   const cardPool = Cards.filter(card => card.set <= Dungeon.store.state.level);
   const shuffledPool = shuffle(cardPool);
-  const selectedCards = shuffledPool.slice(0, 4);
+  const selectedCards = shuffledPool.slice(0, 3);
 
   const sortedCards = selectedCards.sort((a, b) => {
     return a.price - b.price;
@@ -30,6 +30,16 @@ function create() {
             </div>
           `;
         }).join('')}
+        <div class="tm-c-shop__card-container tm-c-shop__card-container-bordered">
+          ${Card({
+            name: 'divine grace',
+            size: '14px',
+            keyword: '+25 HP',
+            icon: 'divine'
+          }, true, 'shop')}
+          <div class="tm-c-shop__card-price">20 gold</div>
+          <div class="tm-c-shop__card-buy js-heal">Heal</div>
+        </div>
       </div>
       <div class="tm-c-shop__status">"Choose wisely, this may be the last decision you ever make..."</div>
       <div class="tm-c-shop__continue js-continue">Continue further into the dungeon</div>

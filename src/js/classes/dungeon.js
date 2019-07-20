@@ -36,7 +36,7 @@ export default class {
     }
 
     const availableCreatures = Creatures.filter(creature => levelRange.indexOf(creature.level) > -1);
-    const curve = Math.floor(level * (1 + (level / 5))) + 2;
+    const curve = Math.floor(level * (1 + (level / 20))) + 2;
     return Array.apply(null, Array(curve)).map(() => {
       const shuffledCreatures = shuffle(availableCreatures);
       const creature = Object.assign({}, shuffledCreatures[0]);

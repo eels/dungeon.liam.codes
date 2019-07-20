@@ -40,11 +40,25 @@
     height: 26px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10px;
+    background-size: 14px;
+  }
+
+  @at-root #{&}__armor {
+    border-radius: 100px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: $cost;
+    color: $white;
+    padding: 5px 9px;
   }
 
   @at-root #{&}__name {
-
+    height: 16px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   @at-root #{&}__effect {

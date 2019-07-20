@@ -2,49 +2,49 @@ export default [
   {
     name: 'banshee',
     level: 5,
-    health: 16,
+    health: 7,
     mana: 0,
     armor: 0,
     armorDurability: 0,
-    attack: 13,
-    gold: 15
+    attack: 7,
+    gold: 9
   },
   {
     name: 'demogorgon',
     level: 5,
-    health: 16,
+    health: 8,
     mana: 0,
     armor: 0,
     armorDurability: 0,
-    attack: 15,
-    gold: 17,
+    attack: 7,
+    gold: 10,
     resistance: 'poison'
   },
   {
     name: 'troll',
     level: 5,
-    health: 18,
+    health: 10,
     mana: 0,
     armor: 0,
     armorDurability: 0,
-    attack: 15,
-    gold: 18,
+    attack: 8,
+    gold: 11,
     resistance: 'nature'
   },
   {
     name: 'wyvern',
     level: 5,
-    health: 19,
+    health: 11,
     mana: 0,
     armor: 0,
     armorDurability: 0,
-    attack: 17,
-    gold: 20,
+    attack: 10,
+    gold: 11,
     resistance: 'fire',
     specials: [
       {
         effect: 'damage',
-        damage: 20,
+        damage: 10,
         element: 'fire',
         chance: 20,
         message: '* >> Enemy *name* breathes fire scorching you for *damage* damage'

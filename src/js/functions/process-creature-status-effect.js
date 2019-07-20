@@ -24,7 +24,7 @@ const processCreatureStatusEffect = () => {
     return;
   }
 
-  if (['fire', 'poision'].indexOf(status) > -1) {
+  if (['fire', 'poison'].indexOf(status) > -1) {
     const statusDuration = creature.store.state.statusDuration - 1;
     creature.store.commit({ statusDuration: statusDuration });
     fire('CREATURE_UPDATE');

@@ -2,24 +2,24 @@ export default [
   {
     name: 'giant spider',
     level: 3,
-    health: 10,
+    health: 6,
     mana: 0,
     armor: 0,
     armorDurability: 0,
-    attack: 6,
-    gold: 7,
+    attack: 4,
+    gold: 5,
     weakness: 'fire',
     resistance: 'poison',
     specials: [
       {
         effect: 'poison',
-        duration: 4,
+        duration: 3,
         chance: 40,
         message: '* >> Enemy *name* shoots a <div class="tm-c-log__keyword">poison</div> web at you'
       },
       {
         effect: 'damage',
-        damage: 7,
+        damage: 5,
         chance: 20,
         message: '* >> Enemy *name* bites you dealing *damage* damage'
       }
@@ -28,29 +28,29 @@ export default [
   {
     name: 'harpy',
     level: 3,
-    health: 8,
+    health: 6,
     mana: 5,
     armor: 0,
     armorDurability: 0,
-    attack: 6,
-    gold: 10,
+    attack: 5,
+    gold: 5,
     weakness: 'fire',
     resistance: 'poison'
   },
   {
     name: 'gargoyle',
     level: 3,
-    health: 10,
+    health: 4,
     mana: 6,
     armor: 2,
     armorDurability: 2,
-    attack: 6,
+    attack: 4,
     gold: 4,
     resistance: 'poison',
     specials: [
       {
         effect: 'damage',
-        damage: 8,
+        damage: 5,
         cost: 1,
         element: 'nature',
         chance: 30,
@@ -58,14 +58,14 @@ export default [
       },
       {
         effect: 'ice',
-        duration: 4,
+        duration: 3,
         chance: 40,
         message: '* >> Enemy *name* <div class="tm-c-log__keyword">freezes</div> you motionless'
       },
       {
         effect: 'protect',
         armor: 2,
-        durability: 2,
+        durability: 1,
         cost: 1,
         chance: 45
       }
@@ -74,12 +74,12 @@ export default [
   {
     name: 'mimic',
     level: 3,
-    health: 15,
+    health: 6,
     mana: 6,
     armor: 0,
     armorDurability: 0,
     attack: 1,
-    gold: 15,
+    gold: 7,
     specials: [
       {
         effect: 'damage',
@@ -92,13 +92,13 @@ export default [
         damage: 2,
         cost: 2,
         chance: 30,
-        message: '* >> Enemy *name* transforms into a hammer and hits you for *damage* damage'
+        message: '* >> Enemy *name* transforms and hits you for *damage* damage'
       },
       {
         effect: 'protect',
-        armor: 5,
+        armor: 4,
         durability: 3,
-        chance: 10
+        chance: 15
       }
     ]
   }

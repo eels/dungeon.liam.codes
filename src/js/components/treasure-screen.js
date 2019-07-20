@@ -25,10 +25,21 @@ function create() {
           return `
             <div class="tm-c-treasure__card-container">
               ${Card(card, true, 'treasure')}
+              <div class="tm-c-treasure__card-price"></div>
               <div class="tm-c-treasure__card-take js-take">Take</div>
             </div>
           `;
         }).join('')}
+        <div class="tm-c-treasure__card-container tm-c-treasure__card-container-bordered">
+          ${Card({
+            name: 'divine grace',
+            size: '14px',
+            keyword: '+25 HP',
+            icon: 'divine'
+          }, true, 'treasure')}
+          <div class="tm-c-treasure__card-price">20 gold</div>
+          <div class="tm-c-treasure__card-take js-heal">Heal</div>
+        </div>
       </div>
       <div class="tm-c-treasure__status">"Choose wisely... you may only take one"</div>
       <div class="tm-c-treasure__continue js-continue">Continue further into the dungeon</div>

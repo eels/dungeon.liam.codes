@@ -1,4 +1,13 @@
 export default [
+
+  // weapons
+  {
+    set: 'base',
+    name: 'dagger',
+    damage: 1,
+    effect: 'damage',
+    icon: 'dagger'
+  },
   {
     set: 'base',
     name: 'sword',
@@ -8,85 +17,81 @@ export default [
   },
   {
     set: 'base',
-    name: 'axe',
+    name: 'short bow',
     damage: 3,
     effect: 'damage',
-    icon: 'axe'
+    icon: 'bow'
   },
-  {
-    set: 'base',
-    name: 'flame sword',
-    damage: 5,
-    effect: 'damage',
-    element: 'fire',
-    icon: 'sword'
-  },
+
+  // magic
   {
     set: 'base',
     name: 'fireball',
-    damage: 2,
-    cost: 3,
+    damage: 1,
+    cost: 2,
     effect: 'damage',
     element: 'fire',
     icon: 'magic'
   },
   {
     set: 'base',
-    name: 'tremor',
-    damage: 3,
-    cost: 4,
-    effect: 'damage',
-    element: 'nature',
-    icon: 'magic'
-  },
-  {
-    set: 'base',
-    name: 'splash',
-    damage: 3,
-    cost: 4,
+    name: 'drown',
+    damage: 2,
+    cost: 3,
     effect: 'damage',
     element: 'water',
     icon: 'magic'
   },
   {
     set: 'base',
-    name: 'spark',
+    name: 'tangle',
     damage: 2,
-    cost: 2,
+    cost: 3,
     effect: 'damage',
-    element: 'electric',
+    element: 'nature',
     icon: 'magic'
+  },
+
+  // armor
+  {
+    set: 'base',
+    name: 'gloves',
+    armor: 1,
+    durability: 2,
+    effect: 'armor',
+    icon: 'gloves'
   },
   {
     set: 'base',
-    name: 'blizzard',
-    cost: 5,
-    effect: 'freeze',
-    duration: 2,
-    element: 'ice',
-    keyword: 'freeze',
-    icon: 'magic'
+    name: 'helm',
+    armor: 2,
+    durability: 3,
+    effect: 'armor',
+    icon: 'helm'
   },
   {
     set: 'base',
-    name: 'h. potion',
+    name: 'chest',
+    armor: 3,
+    durability: 4,
+    effect: 'armor',
+    icon: 'breastplate'
+  },
+
+  // items
+  {
+    set: 'base',
+    name: 'hp potion',
     health: 3,
     effect: 'heal',
     icon: 'potion'
   },
   {
     set: 'base',
-    name: 'm. potion',
+    name: 'mp potion',
     mana: 3,
     effect: 'mana',
     icon: 'potion'
-  },
-  {
-    set: 'base',
-    name: 'cure stone',
-    effect: 'cure',
-    keyword: 'cure',
-    icon: 'crystal'
   },
   {
     set: 'base',
@@ -94,14 +99,6 @@ export default [
     effect: 're-draw',
     keyword: 're-draw',
     icon: 'shuffle'
-  },
-  {
-    set: 'base',
-    name: 'breastplate',
-    armor: 5,
-    durability: 10,
-    effect: 'armor',
-    keyword: 'armor',
-    icon: 'breastplate'
   }
+
 ];

@@ -1,6 +1,7 @@
 import CLICK__BUY from 'events/click__buy';
 import CLICK__CARD from 'events/click__card';
 import CLICK__CONTINUE from 'events/click__continue';
+import CLICK__HEAL from 'events/click__heal';
 import CLICK__RESTART from 'events/click__restart';
 import CLICK__START from 'events/click__start';
 import CLICK__TAKE from 'events/click__take';
@@ -16,6 +17,7 @@ export default function() {
   CLICK__BUY();
   CLICK__CARD();
   CLICK__CONTINUE();
+  CLICK__HEAL();
   CLICK__RESTART();
   CLICK__START();
   CLICK__TAKE();

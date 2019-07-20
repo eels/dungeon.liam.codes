@@ -14,6 +14,11 @@
     justify-content: space-evenly;
   }
 
+  @at-root #{&}__card-container-bordered {
+    border-left: 5px solid $white;
+    padding-left: 33px;
+  }
+
   @at-root #{&}__card {
     pointer-events: none;
     margin: 0 auto 15px;
