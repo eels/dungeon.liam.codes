@@ -46,19 +46,19 @@
 
   @at-root #{&}__share-facebook {
     background-color: $facebook;
-    background-image: url('../img/facebook.png');
+    background-image: url('../resources/img/facebook.png');
     background-size: 10px;
   }
 
   @at-root #{&}__share-twitter {
     background-color: $twitter;
-    background-image: url('../img/twitter.png');
+    background-image: url('../resources/img/twitter.png');
     background-size: 15px;
   }
 
   @at-root #{&}__share-email {
     background-color: $email;
-    background-image: url('../img/email.png');
+    background-image: url('../resources/img/email.png');
     background-size: 15px;
   }
 
