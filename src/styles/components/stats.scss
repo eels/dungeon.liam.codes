@@ -1,0 +1,115 @@
+.#{$prefix}-c-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0;
+  white-space: nowrap;
+
+  @at-root #{&}--disabled {
+    opacity: 0.1;
+  }
+
+  @at-root #{&}__stat {
+    display: inline-block;
+    width: 100%;
+    height: 81px;
+    padding: 5px 10px 10px;
+    border: 5px solid $white;
+    vertical-align: top;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &[data-stat='information'] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  @at-root #{&}__label {
+    display: inline-block;
+    font-size: 36px;
+    vertical-align: middle;
+  }
+
+  @at-root #{&}__value {
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    float: right;
+    font-size: 22px;
+    vertical-align: middle;
+  }
+
+  @at-root #{&}__bar {
+    height: 15px;
+    margin-top: 5px;
+    background-color: $white;
+
+    [data-stat='health'] & {
+      background-color: $health;
+    }
+
+    [data-stat='mana'] & {
+      background-color: $mana;
+    }
+
+    [data-stat='armor'] & {
+      background-color: $armor;
+    }
+  }
+
+  @at-root #{&}__status-label {
+    padding-top: 2px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  @at-root #{&}__status-effect {
+    text-align: center;
+  }
+
+  @at-root #{&}__status-icon {
+    position: relative;
+    top: 8px;
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+
+    img {
+      width: auto;
+      height: 20px;
+    }
+  }
+
+  @at-root #{&}__status-duration {
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    padding-left: 12px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  @at-root #{&}__gold {
+    padding-bottom: 5px;
+    font-size: 15px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  @at-root #{&}__defeated {
+    padding-bottom: 5px;
+    font-size: 15px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  @at-root #{&}__level {
+    font-size: 15px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}

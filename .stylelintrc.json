@@ -8,6 +8,7 @@
   "rules": {
     "alpha-value-notation": "number",
     "at-rule-no-vendor-prefix": true,
+    "declaration-block-no-redundant-longhand-properties": null,
     "declaration-colon-newline-after": null,
     "color-function-notation": "legacy",
     "color-named": "never",

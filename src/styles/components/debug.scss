@@ -1,0 +1,18 @@
+.#{$prefix}-c-debug {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 33.3px;
+
+  &__card-container {
+    margin-bottom: 30px;
+
+    &:not(:nth-child(7n)) {
+      margin-right: 33.3px;
+    }
+  }
+
+  [class*='card'] {
+    pointer-events: none;
+  }
+}

@@ -39,4 +39,5 @@ package-lock.json
 # Compiled resources
 # ----------------------------------------
 
+/.parcel-cache
 /dist

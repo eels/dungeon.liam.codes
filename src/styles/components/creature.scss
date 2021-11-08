@@ -1,0 +1,133 @@
+.#{$prefix}-c-creature {
+  width: 775px;
+  margin: 20px auto;
+  font-size: 0;
+  white-space: nowrap;
+
+  @at-root #{&}__tunnel {
+    display: inline-block;
+    width: calc(100% - 200px);
+    height: 234px;
+    background-image: url('../img/dungeon-tunnel.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    font-size: 18px;
+    vertical-align: top;
+  }
+
+  @at-root #{&}__name {
+    padding-bottom: 10px;
+    font-size: 22px;
+  }
+
+  @at-root #{&}__level {
+    padding-bottom: 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  @at-root #{&}__attribute {
+    display: inline-block;
+    vertical-align: top;
+
+    &:not(:last-child) {
+      padding-right: 14px;
+      border-right: 3px solid $white;
+      margin-right: 5px;
+    }
+  }
+
+  @at-root #{&}__attribute-label {
+    padding-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  @at-root #{&}__attribute-icon {
+    width: 16px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @at-root #{&}__stats {
+    display: inline-block;
+    width: 200px;
+    font-size: 18px;
+    vertical-align: top;
+  }
+
+  @at-root #{&}__stat {
+    position: relative;
+    padding: 0 5px;
+    border: 5px solid $white;
+    font-size: 0;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  @at-root #{&}__label {
+    z-index: 1;
+    display: inline-block;
+    padding-right: 5px;
+    font-size: 32px;
+    vertical-align: middle;
+  }
+
+  @at-root #{&}__bar {
+    display: inline-block;
+    max-width: 143px;
+    height: 18px;
+    background-color: $white;
+    vertical-align: middle;
+
+    [data-stat='health'] & {
+      background-color: $health;
+    }
+
+    [data-stat='mana'] & {
+      background-color: $mana;
+    }
+
+    [data-stat='armor'] & {
+      background-color: $armor;
+    }
+  }
+
+  @at-root #{&}__status-label {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  @at-root #{&}__status-effect {
+    text-align: center;
+  }
+
+  @at-root #{&}__status-icon {
+    display: inline-block;
+    height: 20px;
+    margin-bottom: 9px;
+    vertical-align: middle;
+
+    img {
+      width: auto;
+      height: 20px;
+    }
+  }
+
+  @at-root #{&}__status-duration {
+    position: relative;
+    top: -5px;
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+}
