@@ -6,6 +6,15 @@
   "homepage": "https://dungeon.liam.codes",
   "repository": "https://github.com/eels/dungeon.liam.codes",
   "bugs": "https://github.com/eels/dungeon.liam.codes/issues",
+  "scripts": {
+    "format": "prettier './src/**/*.{js,scss}' --check",
+    "format:fix": "yarn format --write",
+    "lint": "yarn lint:css && yarn lint:js",
+    "lint:css": "stylelint './src/**/*.scss' --cache",
+    "lint:css:fix": "yarn lint:css --fix",
+    "lint:js": "eslint './src/**/*.js' --cache",
+    "lint:js:fix": "yarn lint:js --fix"
+  },
   "browserslist": [
     "defaults"
   ],

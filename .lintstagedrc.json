@@ -1,0 +1,5 @@
+{
+  "src/**/*.js": ["prettier --check", "eslint --cache"],
+
+  "src/**/*.scss": ["prettier --check", "stylelint --cache"]
+}
