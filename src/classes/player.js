@@ -2,7 +2,7 @@ import { shuffle } from 'utilities/array';
 import Store from 'utilities/store';
 import Cards from 'library/cards';
 
-export default class {
+export default class Player {
   constructor(state) {
     this.store = new Store(state);
     this.store.commit({ availableCards: Cards.filter((card) => card.set === 'base') });

@@ -4,7 +4,7 @@ import Store from 'utilities/store';
 import Creature from 'classes/creature';
 import Creatures from 'library/creatures';
 
-export default class {
+export default class Dungeon {
   constructor(state) {
     this.store = new Store(state);
     this.store.commit({ creatures: this.generateCreatures() });

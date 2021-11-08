@@ -1,7 +1,7 @@
 import { fire } from 'utilities/delegation';
 import Store from 'utilities/store';
 
-export default class {
+export default class Tick {
   constructor() {
     this.store = new Store({
       tick: null,

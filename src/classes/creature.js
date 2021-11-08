@@ -1,6 +1,6 @@
 import Store from 'utilities/store';
 
-export default class {
+export default class Creature {
   constructor(creature) {
     this.store = new Store({
       raw: creature,
