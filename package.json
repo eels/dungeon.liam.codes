@@ -28,6 +28,7 @@
     "functions": "./src/functions",
     "instances": "./src/instances",
     "library": "./src/library",
+    "resources": "./src/resources",
     "utilities": "./src/utilities"
   },
   "dependencies": {
