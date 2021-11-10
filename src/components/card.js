@@ -1,21 +1,25 @@
-function create(data, isPreview, namespace) {
-  const attributes = isPreview ? `class="tm-c-${namespace}__card tm-c-card"` : `class="tm-c-hand__card tm-c-card js-card" data-id="${data.id}"`;
-  const card = `
-    <div ${attributes} style="background-image: url('assets/img/${data.icon}.png')">
-      ${data.cost !== undefined ? `<div class="tm-c-card__cost">${data.cost}</div>` : ''}
-      ${data.element !== undefined ? `<div class="tm-c-card__element" style="background-image: url('assets/img/${data.element}.png')"></div>` : ''}
-      <div class="tm-c-card__name" ${data.size ? `style="font-size: ${data.size}"` : ''}>${data.name}</div>
-      ${data.damage !== undefined ? `<div class="tm-c-card__effect">${data.damage} ATK</div>` : ''}
-      ${data.health !== undefined ? `<div class="tm-c-card__effect">+${data.health} HP</div>` : ''}
-      ${data.mana !== undefined ? `<div class="tm-c-card__effect">+${data.mana} MP</div>` : ''}
-      ${data.armor !== undefined ? `<div class="tm-c-card__effect">+${data.armor} ARM</div>` : ''}
-      ${data.keyword !== undefined ? `<div class="tm-c-card__effect">${data.keyword}</div>` : ''}
+import image from 'utilities/image';
+import uuid from 'utilities/uuid';
+
+export default function Card(data, isPreview = false, namespace = 'hand') {
+  const cardClasses = `tm-c-${namespace}__card tm-c-card ${!isPreview ? 'js-card' : ''}`;
+  const cardBackgroundIcon = `background-image: url(${image(data.icon)})`;
+  const cardElementIcon = `background-image: url(${image(data.element)})`;
+
+  return `
+    <div class="${cardClasses}" style="${cardBackgroundIcon}" data-id="${data.id ?? uuid()}">
+      ${data.cost ? `<div class="tm-c-card__cost">${data.cost}</div>` : ''}
+      ${data.element ? `<div class="tm-c-card__element" style="${cardElementIcon}"></div>` : ''}
+      <div class="tm-c-card__name" ${data.size ? `style="font-size: ${data.size}"` : ''}>
+        ${data.name}
+      </div>
+      <div class="tm-c-card__effect">
+        ${data.damage ? `${data.damage} ATK` : ''}
+        ${data.health ? `+${data.health} HP` : ''}
+        ${data.mana ? `+${data.mana} MP` : ''}
+        ${data.armor ? `+${data.armor} ARM` : ''}
+        ${data.keyword ? `${data.keyword}` : ''}
+      </div>
     </div>
   `;
-
-  return card;
 }
-
-export default function(card, isPreview = false, namespace = '') {
-  return create(card, isPreview, namespace);
-};

@@ -1,11 +1,9 @@
-import { fire } from 'utilities/delegation';
-import { nodize } from 'utilities/nodize';
-import Timer from 'components/timer';
+import Timer from 'components/Timer';
+import nodize from 'utilities/nodize';
 
-const resetTimer = () => {
+export default function resetTimer() {
   const timer = document.querySelector('.tm-c-timer');
+
   timer.parentNode.insertBefore(nodize(Timer()), timer);
   timer.parentNode.removeChild(timer);
-};
-
-export { resetTimer };
+}

@@ -1,15 +1,23 @@
-import { capitalize } from 'utilities/capitalize';
-import { Dungeon } from 'instances/dungeon';
-import { Player } from 'instances/player';
-import { log } from 'functions/combat-log';
+import Dungeon from 'instances/Dungeon';
+import Player from 'instances/Player';
+import capitalize from 'utilities/capitalize';
+import dispatch from 'events/delegate/dispatch';
+import log from 'functions/combat-log';
+import { CREATURE_UPDATE } from 'events/events';
 
-const processCreatureDeath = () => {
-  const creature = Dungeon.store.state.creatures[0];
-  Player.store.commit({ gold: Player.store.state.gold + creature.store.state.raw.gold, totalGold: Player.store.state.totalGold + creature.store.state.raw.gold });
-  Player.store.commit({ kills: Player.store.state.kills + 1 });
+export default function processCreatureDeath() {
+  const creature = Dungeon.creatures[0].raw;
+
+  Player.setState({ gold: Player.gold + creature.gold }).commit();
+  Player.setState({ totalGold: Player.totalGold + creature.gold }).commit();
+  Player.setState({ kills: Player.kills + 1 }).commit();
+
   Dungeon.advance();
-  log(`* >> Enemy ${capitalize(creature.store.state.raw.name)} succumbs to its wounds and perishes`, 'CREATURE_DEATH');
-  log(`* << You recieve ${creature.store.state.raw.gold} <div class="tm-c-log__keyword">gold</div>`);
-};
+  dispatch(CREATURE_UPDATE);
 
-export { processCreatureDeath };
+  log(
+    `* >> Enemy ${capitalize(creature.name)} succumbs to its wounds and perishes`,
+    'CREATURE_DEATH',
+  );
+  log(`* << You recieve ${creature.gold} <div class="tm-c-log__keyword">gold</div>`);
+}

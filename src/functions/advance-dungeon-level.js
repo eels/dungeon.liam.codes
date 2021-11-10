@@ -1,31 +1,33 @@
-import { fire } from 'utilities/delegation';
-import { nodize } from 'utilities/nodize';
-import { Dungeon } from 'instances/dungeon';
-import { Player } from 'instances/player';
-import { Tick } from 'instances/tick';
-import { log } from 'functions/combat-log';
-import Timer from 'components/timer';
+import Dungeon from 'instances/Dungeon';
+import Player from 'instances/Player';
+import Tick from 'instances/Tick';
+import Timer from 'components/Timer';
+import dispatch from 'events/delegate/dispatch';
+import log from 'functions/combat-log';
+import nodize from 'utilities/nodize';
+import { CREATURE_UPDATE, PLAYER_UPDATE_HAND, PLAYER_UPDATE_STATS } from 'events/events';
 
-const advanceDungeonLevel = () => {
-  Dungeon.store.commit({ level: Dungeon.store.state.level + 1 });
-  Dungeon.store.commit({ creatures: Dungeon.generateCreatures() });
-  Player.store.commit({ actionTaken: false, status: 'active', deck: [] });
-  Player.store.commit({ deck: Player.generateDeck() });
+export default function advanceDungeonLevel() {
+  Dungeon.setState({ level: Dungeon.level + 1 }).commit();
+  Dungeon.setState({ creatures: Dungeon.generateCreatures() }).commit();
+
+  Player.setState({ actionTaken: false, deck: [], status: 'active' }).commit();
+  Player.setState({ deck: Player.generateDeck() }).commit();
+
   document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
   document.querySelector('.tm-c-stats').classList.remove('tm-c-stats--disabled');
   document.querySelector('.tm-c-board__message').classList.remove('tm-c-board__message--active');
 
-  log(`* << You advance to lv. ${Dungeon.store.state.level}`, 'DUNGEON_ADVANCE');
+  log(`* << You advance to lv. ${Dungeon.level}`, 'DUNGEON_ADVANCE');
 
   Tick.start();
 
   const timer = document.querySelector('.tm-c-timer');
+
   timer.parentNode.insertBefore(nodize(Timer()), timer);
   timer.parentNode.removeChild(timer);
 
-  fire('PLAYER_UPDATE_STATS');
-  fire('PLAYER_UPDATE_HAND', { 'discard': document.querySelector('.js-discard').children });
-  fire('CREATURE_UPDATE');
-};
-
-export { advanceDungeonLevel };
+  dispatch(CREATURE_UPDATE);
+  dispatch(PLAYER_UPDATE_HAND, { shouldMaintainDiscardState: true });
+  dispatch(PLAYER_UPDATE_STATS);
+}

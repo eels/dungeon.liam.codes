@@ -1,17 +1,10 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "standard",
-    "semistandard"
-  ],
+  "extends": ["eslint:recommended", "plugin:import/recommended", "standard", "semistandard"],
 
   "env": {
     "browser": true,
     "es6": true
   },
-
 
   "plugins": [
     "import",
@@ -21,9 +14,30 @@
     "sort-keys-fix"
   ],
 
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["components", "./src/components"],
+        ["data", "./src/data"],
+        ["events", "./src/events"],
+        ["functions", "./src/functions"],
+        ["instances", "./src/instances"],
+        ["lib", "./src/lib"],
+        ["resources", "./src/resources"],
+        ["utilities", "./src/utilities"]
+      ]
+    }
+  },
+
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
     "import/first": "error",
+    "import/namespace": [
+      "error",
+      {
+        "allowComputed": true
+      }
+    ],
     "import/newline-after-import": [
       "error",
       {

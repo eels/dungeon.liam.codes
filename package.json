@@ -21,13 +21,12 @@
     "defaults"
   ],
   "alias": {
-    "classes": "./src/classes",
     "components": "./src/components",
-    "dispatcher": "./src/dispatcher",
+    "data": "./src/data",
     "events": "./src/events",
     "functions": "./src/functions",
     "instances": "./src/instances",
-    "library": "./src/library",
+    "lib": "./src/lib",
     "resources": "./src/resources",
     "utilities": "./src/utilities"
   },
@@ -41,6 +40,7 @@
     "eslint": "^8.2.0",
     "eslint-config-semistandard": "^16.0.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",

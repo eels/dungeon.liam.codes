@@ -1,14 +1,9 @@
 .#{$prefix}-c-footer {
-  display: none;
   padding-top: 5px;
   padding-bottom: 30px;
   font-size: 14px;
   text-align: right;
   user-select: none;
-
-  &[class*='active'] {
-    display: block;
-  }
 
   a {
     padding-bottom: 3px;

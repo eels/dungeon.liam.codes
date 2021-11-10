@@ -1,10 +1,10 @@
 .#{$prefix}-c-death {
-  @at-root #{&}__heading {
+  &__heading {
     font-size: 32px;
     text-transform: uppercase;
   }
 
-  @at-root #{&}__icon {
+  &__icon {
     width: 100px;
     height: 95px;
     margin: 30px auto;
@@ -14,55 +14,16 @@
     }
   }
 
-  @at-root #{&}__level {
+  &__level {
     padding-bottom: 5px;
     font-size: 18px;
   }
 
-  @at-root #{&}__gold {
+  &__gold {
     font-size: 18px;
   }
 
-  @at-root #{&}__share {
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-size: 0;
-    white-space: nowrap;
-  }
-
-  @at-root #{&}__share-icon {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: $white;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @at-root #{&}__share-facebook {
-    background-color: $facebook;
-    background-image: url('../resources/img/facebook.png');
-    background-size: 10px;
-  }
-
-  @at-root #{&}__share-twitter {
-    background-color: $twitter;
-    background-image: url('../resources/img/twitter.png');
-    background-size: 15px;
-  }
-
-  @at-root #{&}__share-email {
-    background-color: $email;
-    background-image: url('../resources/img/email.png');
-    background-size: 15px;
-  }
-
-  @at-root #{&}__restart {
+  &__restart {
     display: inline-block;
     width: 300px;
     padding: 10px;

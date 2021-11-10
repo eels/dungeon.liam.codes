@@ -1,65 +1,31 @@
-import { shuffle } from 'utilities/array';
-import { capitalize } from 'utilities/capitalize';
-import { fire } from 'utilities/delegation';
-import { Dungeon } from 'instances/dungeon';
-import { Player } from 'instances/player';
-import { log } from 'functions/combat-log';
-import { applyCreatureEffect } from 'functions/creature-effects';
-import { processPlayerDeath } from 'functions/process-player-death';
+import Dungeon from 'instances/Dungeon';
+import Player from 'instances/Player';
+import capitalize from 'utilities/capitalize';
+import dispatch from 'events/delegate/dispatch';
+import log from 'functions/combat-log';
+import processCreatureSpecialAttack from 'functions/process-creature-special-attack';
+import processPlayerArmorUpdate from 'functions/process-player-armor-update';
+import { PLAYER_UPDATE_STATS } from 'events/events';
 
-const processCreatureAttack = () => {
-  const playerHealth = Player.store.state.hp;
-  const playerArmor = Player.store.state.armor;
-  const creature = Dungeon.store.state.creatures[0];
-  const creatureAttack = creature.store.state.raw.attack;
-  const creatureSpecialChance = Math.round(Math.random() * 100);
-  const creatureMana = creature.store.state.mp;
+export default function processCreatureAttack() {
+  const creature = Dungeon.creatures[0];
+  const creatureAttack = creature.raw.attack;
+  const hasCreatureUsedSpecialAttack = processCreatureSpecialAttack();
 
-  if (creature.store.state.raw.specials !== undefined) {
-    const availableSpecials = creature.store.state.raw.specials;
-    const useableSpecials = [];
-
-    availableSpecials.map((special) => {
-      if (creatureSpecialChance >= 100 - special.chance) {
-        useableSpecials.push(special);
-      }
-    });
-
-    if (useableSpecials.length !== 0) {
-      const selectedSpecial = shuffle(useableSpecials)[0];
-      const selectedSpecialCost = selectedSpecial.cost !== undefined ? selectedSpecial.cost : 0;
-
-      if (creatureMana - selectedSpecialCost >= 0) {
-        creature.store.commit({ mp: creatureMana - selectedSpecialCost });
-        fire('CREATURE_UPDATE');
-        applyCreatureEffect(selectedSpecial);
-        return;
-      }
-    }
+  if (hasCreatureUsedSpecialAttack) {
+    return;
   }
 
-  let hit =
-    playerHealth - (playerArmor - creatureAttack > 0 ? 0 : (playerArmor - creatureAttack) * -1);
+  const damageCalculation = Player.armor - creatureAttack;
+  const isHit = damageCalculation < 0;
+  const damage = Math.abs(damageCalculation);
 
-  if (Player.store.state.ad > 0) {
-    const playerDurability = Player.store.state.ad - creatureAttack;
-    Player.store.commit({ ad: playerDurability > 0 ? playerDurability : 0 });
+  processPlayerArmorUpdate(damage);
 
-    if (playerDurability <= 0) {
-      Player.store.commit({ armor: 0, maxAd: 0 });
-      hit = hit - playerDurability * -1;
-    }
+  if (isHit) {
+    Player.setState({ hp: Math.max(Player.hp - damage, 0) }).commit();
   }
 
-  Player.store.commit({ hp: hit > 0 ? hit : 0 });
-  fire('PLAYER_UPDATE_STATS');
-  log(
-    `* >> Enemy ${capitalize(creature.store.state.raw.name)} hits you for ${creatureAttack} damage`,
-  );
-
-  if (hit <= 0) {
-    processPlayerDeath();
-  }
-};
-
-export { processCreatureAttack };
+  dispatch(PLAYER_UPDATE_STATS);
+  log(`* >> Enemy ${capitalize(creature.raw.name)} hits you for ${damage} damage`);
+}

@@ -1,11 +1,3 @@
-function create(value) {
-  const title = `
-    <div class="tm-c-title">${value}</div>
-  `;
-
-  return title;
-}
-
-export default function(title) {
-  return create(title);
+export default function Title(title) {
+  return `<div class="tm-c-title">${title}</div>`;
 }

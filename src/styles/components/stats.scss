@@ -4,11 +4,11 @@
   font-size: 0;
   white-space: nowrap;
 
-  @at-root #{&}--disabled {
+  &--disabled {
     opacity: 0.1;
   }
 
-  @at-root #{&}__stat {
+  &__stat {
     display: inline-block;
     width: 100%;
     height: 81px;
@@ -27,22 +27,21 @@
     }
   }
 
-  @at-root #{&}__label {
+  &__label {
     display: inline-block;
     font-size: 36px;
     vertical-align: middle;
   }
 
-  @at-root #{&}__value {
+  &__value {
     position: relative;
     top: 7px;
-    display: inline-block;
     float: right;
     font-size: 22px;
     vertical-align: middle;
   }
 
-  @at-root #{&}__bar {
+  &__bar {
     height: 15px;
     margin-top: 5px;
     background-color: $white;
@@ -60,18 +59,18 @@
     }
   }
 
-  @at-root #{&}__status-label {
+  &__status-label {
     padding-top: 2px;
     padding-bottom: 5px;
     font-size: 14px;
     text-transform: uppercase;
   }
 
-  @at-root #{&}__status-effect {
+  &__status-effect {
     text-align: center;
   }
 
-  @at-root #{&}__status-icon {
+  &__status-icon {
     position: relative;
     top: 8px;
     display: inline-block;
@@ -84,7 +83,7 @@
     }
   }
 
-  @at-root #{&}__status-duration {
+  &__status-duration {
     position: relative;
     top: 7px;
     display: inline-block;
@@ -93,23 +92,20 @@
     vertical-align: middle;
   }
 
-  @at-root #{&}__gold {
+  &__gold {
     padding-bottom: 5px;
     font-size: 15px;
-    text-align: center;
     text-transform: capitalize;
   }
 
-  @at-root #{&}__defeated {
+  &__defeated {
     padding-bottom: 5px;
     font-size: 15px;
-    text-align: center;
     text-transform: capitalize;
   }
 
-  @at-root #{&}__level {
+  &__level {
     font-size: 15px;
-    text-align: center;
     text-transform: capitalize;
   }
 }

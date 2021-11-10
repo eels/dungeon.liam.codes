@@ -1,7 +1,9 @@
-const capitalize = string => {
-  return string.split(' ').map(chunk => {
-    return chunk.length === 2 ? chunk : chunk.charAt(0).toUpperCase() + chunk.slice(1);
-  }).join(' ');
-}
+export default function capitalize(string) {
+  const words = string.split(' ');
 
-export { capitalize };
+  const array = words.map((word) => {
+    return word.length === 2 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+  });
+
+  return array.join(' ');
+}

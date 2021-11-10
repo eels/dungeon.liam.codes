@@ -6,7 +6,7 @@
   padding: 30px;
   background-color: rgba($black, 0.9);
 
-  @at-root #{&}__container {
+  &__container {
     padding: 10px;
     border: 5px solid $white;
     background-color: $black;

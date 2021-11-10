@@ -4,15 +4,15 @@
   border: 5px solid $white;
   margin-bottom: 10px;
 
-  @at-root #{&}__creature {
+  &__creature {
     position: relative;
   }
 
-  @at-root #{&}__hand {
+  &__hand {
     border-top: 5px solid $white;
   }
 
-  @at-root #{&}__message {
+  &__message {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     height: 489px;
   }
 
-  @at-root #{&}__message--active {
+  &__message--active {
     display: block;
   }
 }

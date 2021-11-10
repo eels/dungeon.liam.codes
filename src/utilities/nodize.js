@@ -1,5 +1,3 @@
-const nodize = string => {
+export default function nodize(string) {
   return document.createRange().createContextualFragment(string);
 }
-
-export { nodize };

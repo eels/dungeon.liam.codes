@@ -1,19 +1,14 @@
-import { Player } from 'instances/player';
-import Card from 'components/card';
+import Card from 'components/Card';
+import Player from 'instances/Player';
 
-function create() {
-  const hand = `
+export default function Hand() {
+  const PlayableHand = Player.deck.slice(0, 5);
+  const CardHandArray = PlayableHand.map((card) => Card(card));
+
+  return `
     <div class="tm-c-hand">
-      ${Player.store.state.deck.slice(0, 5).map(card => {
-        return Card(card);
-      }).join('')}
+      ${CardHandArray.join('')}
       <div class="tm-c-hand__discard js-discard"></div>
     </div>
   `;
-
-  return hand;
 }
-
-export default function() {
-  return create();
-};

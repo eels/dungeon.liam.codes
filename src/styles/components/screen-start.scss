@@ -1,10 +1,10 @@
 .#{$prefix}-c-start {
-  @at-root #{&}__heading {
+  &__heading {
     font-size: 32px;
     text-transform: uppercase;
   }
 
-  @at-root #{&}__icon {
+  &__icon {
     width: 100px;
     height: 95px;
     margin: 30px auto;
@@ -14,12 +14,12 @@
     }
   }
 
-  @at-root #{&}__name {
+  &__name {
     padding-bottom: 20px;
     font-size: 20px;
   }
 
-  @at-root #{&}__description {
+  &__description {
     width: 100%;
     max-width: 625px;
     margin: 0 auto;
@@ -34,7 +34,7 @@
     }
   }
 
-  @at-root #{&}__start {
+  &__start {
     display: inline-block;
     width: 300px;
     padding: 10px;

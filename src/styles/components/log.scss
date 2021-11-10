@@ -4,7 +4,7 @@
   width: 100%;
   height: 100px;
 
-  @at-root #{&}__container {
+  &__container {
     display: flex;
     overflow: hidden;
     width: calc(100% - 300px);
@@ -15,7 +15,7 @@
     line-height: 1.3;
   }
 
-  @at-root #{&}__entry {
+  &__entry {
     &:not(:last-child) {
       padding-bottom: 5px;
     }
@@ -36,15 +36,15 @@
     }
   }
 
-  @at-root #{&}__death {
+  &__death {
     color: $log--death;
   }
 
-  @at-root #{&}__advance {
+  &__advance {
     color: $log--advance;
   }
 
-  @at-root #{&}__keyword {
+  &__keyword {
     display: inline;
     color: $log--keyword;
     text-transform: uppercase;

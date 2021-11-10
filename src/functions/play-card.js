@@ -1,57 +1,58 @@
-import { capitalize } from 'utilities/capitalize';
-import { fire } from 'utilities/delegation';
-import { Dungeon } from 'instances/dungeon';
-import { Player } from 'instances/player';
-import { applyCardEffect } from 'functions/card-effects';
-import { log } from 'functions/combat-log';
-import { addToDiscard } from 'functions/discard';
+import Dungeon from 'instances/Dungeon';
+import Player from 'instances/Player';
+import addToDiscard from 'functions/add-to-discard';
+import applyCardEffects from 'functions/apply-card-effects';
+import capitalize from 'utilities/capitalize';
+import dispatch from 'events/delegate/dispatch';
+import log from 'functions/combat-log';
+import { PLAYER_UPDATE_HAND, PLAYER_UPDATE_STATS } from 'events/events';
 
-const playCard = (id) => {
-  const creature = Dungeon.store.state.creatures[0];
-  const deck = Player.store.state.deck.slice(0);
-  let found = false;
-  let errors = false;
-  let played;
+export default function playCard(id) {
+  const creature = Dungeon.creatures[0];
+  const playableDeck = [...Player.deck];
+  const playableDeckEntries = Object.entries(playableDeck);
 
-  deck.forEach((card, i) => {
-    if (card.id !== parseInt(id) || found) {
-      return;
+  let playedCard = false;
+
+  for (const [index, card] of playableDeckEntries) {
+    if (card.id !== id) {
+      continue;
     }
 
-    found = true;
-    played = card;
+    playedCard = card;
+    playableDeck.splice(parseInt(index), 1);
+    playableDeck.push(card);
+  }
 
-    if (played.cost) {
-      if (Player.store.state.mp - played.cost < 0) {
-        errors = true;
-        return;
-      } else {
-        Player.store.commit({ mp: Player.store.state.mp - played.cost });
-        fire('PLAYER_UPDATE_STATS');
-      }
-    }
-
-    deck.splice(i, 1)
-    deck.push(card);
-  });
-
-  if (errors) {
+  if (!playedCard) {
     return;
   }
 
-  addToDiscard();
-  Player.store.commit({ deck: deck });
+  if (playedCard.cost) {
+    if (Player.mp - playedCard.cost < 0) {
+      return;
+    }
 
-  if (played.element !== undefined) {
-    if (creature.store.state.raw.resistance === played.element) {
-      log(`* << Enemy ${capitalize(creature.store.state.raw.name)} resisted your <div class="tm-c-log__keyword">${played.element}</div> attack`);
-      fire('PLAYER_UPDATE_HAND', { 'discard': document.querySelector('.js-discard').children });
+    Player.setState({ mp: Player.mp - playedCard.cost }).commit();
+    dispatch(PLAYER_UPDATE_STATS);
+  }
+
+  addToDiscard();
+  Player.setState({ deck: playableDeck }).commit();
+
+  if (playedCard.element !== undefined) {
+    if (creature.raw.resistance === playedCard.element) {
+      log(
+        `* << Enemy ${capitalize(creature.raw.name)} resisted your <div class="tm-c-log__keyword">${
+          playedCard.element
+        }</div> attack`,
+      );
+      dispatch(PLAYER_UPDATE_HAND, { shouldMaintainDiscardState: true });
+
       return;
     }
   }
 
-  applyCardEffect(played);
-  fire('PLAYER_UPDATE_HAND', { 'discard': document.querySelector('.js-discard').children });
-};
-
-export { playCard };
+  applyCardEffects(playedCard);
+  dispatch(PLAYER_UPDATE_HAND, { shouldMaintainDiscardState: true });
+}

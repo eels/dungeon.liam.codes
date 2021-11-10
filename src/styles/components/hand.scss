@@ -7,11 +7,11 @@
   margin: 0 auto;
   margin-top: 20px;
 
-  @at-root #{&}--disabled {
+  &--disabled {
     opacity: 0.35;
   }
 
-  @at-root #{&}__discard {
+  &__discard {
     position: relative;
     width: 100px;
     height: 130px;

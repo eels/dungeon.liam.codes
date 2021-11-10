@@ -1,8 +1,10 @@
-import DungeonClass from 'classes/dungeon';
+import DungeonEntity from 'lib/entities/DungeonEntity';
 
-const DungeonState = {
+export const initialDungeonState = {
+  creatures: [],
   level: 1,
-  creatures: []
 };
 
-export const Dungeon = new DungeonClass(DungeonState);
+const Dungeon = new DungeonEntity(initialDungeonState);
+
+export default Dungeon;

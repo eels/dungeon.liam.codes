@@ -1,21 +1,23 @@
-import PlayerClass from 'classes/player';
+import PlayerEntity from 'lib/entities/PlayerEntity';
 
-const PlayerState = {
+export const initialPlayerState = {
   actionTaken: false,
-  status: 'normal',
-  statusDuration: 0,
+  ad: 0,
+  armor: 0,
   availableCards: [],
   deck: [],
   gold: 0,
-  totalGold: 0,
-  kills: 0,
   hp: 50,
-  maxHp: 50,
-  mp: 50,
-  maxMp: 50,
-  armor: 0,
-  ad: 0,
+  kills: 0,
   maxAd: 0,
+  maxHp: 50,
+  maxMp: 50,
+  mp: 50,
+  status: 'normal',
+  statusDuration: 0,
+  totalGold: 0,
 };
 
-export const Player = new PlayerClass(PlayerState);
+const Player = new PlayerEntity(initialPlayerState);
+
+export default Player;
