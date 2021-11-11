@@ -28,7 +28,7 @@ bind('click', '.js-buy', function (event) {
   Player.setState({ gold: Player.gold - cardPrice }).commit();
   Player.setState({ availableCards: playerAvailableCards }).commit();
 
-  messagesContainer.innerHTML = hydrate(message.CHECKPOINT_PURCHASE, [selectedCard.name]);
+  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_PURCHASE, [selectedCard.name]);
 
   dispatch(PLAYER_UPDATE_STATS);
 });

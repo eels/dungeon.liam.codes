@@ -1,6 +1,5 @@
 import Dungeon from 'instances/Dungeon';
 import Player from 'instances/Player';
-import capitalize from 'utilities/capitalize';
 import dispatch from 'events/delegate/dispatch';
 import extendStatusEffect from 'functions/extend-status-effect';
 import getElementEffect from 'functions/get-element-effect';
@@ -43,7 +42,6 @@ export default function applyCardEffects(data) {
 
   if (data.effect === 'damage') {
     const creature = Dungeon.creatures[0];
-    const name = capitalize(creature.raw.name);
     const isCrit = creature.raw.weakness && data.element && creature.raw.weakness === data.element;
     const damageCalculation = creature.armor - data.damage * (isCrit ? 2 : 1);
     const isHit = damageCalculation < 0;
@@ -63,7 +61,7 @@ export default function applyCardEffects(data) {
       creature.setState({ hp: Math.max(creature.hp - damage, 0) }).commit();
     }
 
-    log(messages.PLAYER_CARD_EFFECT_DAMAGE, [name, damage]);
+    log(messages.PLAYER_CARD_EFFECT_DAMAGE, [creature.name, damage]);
     dispatch(CREATURE_UPDATE);
     dispatch(PLAYER_UPDATE_STATS);
 
@@ -78,45 +76,41 @@ export default function applyCardEffects(data) {
 
   if (data.effect === 'burn') {
     const creature = Dungeon.creatures[0];
-    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'burn', data.duration);
 
     creature.setState({ status: 'fire', statusDuration: duration }).commit();
 
-    log(messages.PLAYER_CARD_EFFECT_APPLY_BURN, [name, data.duration]);
+    log(messages.PLAYER_CARD_EFFECT_APPLY_BURN, [creature.name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'freeze') {
     const creature = Dungeon.creatures[0];
-    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'freeze', data.duration);
 
     creature.setState({ status: 'ice', statusDuration: duration }).commit();
 
-    log(messages.PLAYER_CARD_EFFECT_APPLY_FREEZE, [name, data.duration]);
+    log(messages.PLAYER_CARD_EFFECT_APPLY_FREEZE, [creature.name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'paralyse') {
     const creature = Dungeon.creatures[0];
-    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'paralyse', data.duration);
 
     creature.setState({ status: 'electric', statusDuration: duration }).commit();
 
-    log(messages.PLAYER_CARD_EFFECT_APPLY_PARALYSIS, [name, data.duration]);
+    log(messages.PLAYER_CARD_EFFECT_APPLY_PARALYSIS, [creature.name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'poison') {
     const creature = Dungeon.creatures[0];
-    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'poison', data.duration);
 
     creature.setState({ status: 'poison', statusDuration: duration }).commit();
 
-    log(messages.PLAYER_CARD_EFFECT_APPLY_POISON, [name, data.duration]);
+    log(messages.PLAYER_CARD_EFFECT_APPLY_POISON, [creature.name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 }

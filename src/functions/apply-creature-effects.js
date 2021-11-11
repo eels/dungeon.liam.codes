@@ -1,6 +1,5 @@
 import Dungeon from 'instances/Dungeon';
 import Player from 'instances/Player';
-import capitalize from 'utilities/capitalize';
 import dispatch from 'events/delegate/dispatch';
 import extendStatusEffect from 'functions/extend-status-effect';
 import getElementEffect from 'functions/get-element-effect';
@@ -11,7 +10,6 @@ import { CREATURE_UPDATE, PLAYER_UPDATE_STATS } from 'events/events';
 
 export default function applyCreatureEffects(data) {
   const creature = Dungeon.creatures[0];
-  const name = capitalize(creature.raw.name);
 
   if (data.effect === 'damage') {
     const damageCalculation = Player.armor - data.damage;
@@ -32,28 +30,28 @@ export default function applyCreatureEffects(data) {
       Player.setState({ hp: Math.max(Player.hp - damage, 0) }).commit();
     }
 
-    log(messages.CREATURE_EFFECT_DAMAGE, [name, damage]);
+    log(messages.CREATURE_EFFECT_DAMAGE, [creature.name, damage]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'heal') {
     creature.setState({ hp: Math.min(creature.hp + data.health, Player.maxHp) }).commit();
 
-    log(messages.CREATURE_EFFECT_GAIN_HP, [name, data.health]);
+    log(messages.CREATURE_EFFECT_GAIN_HP, [creature.name, data.health]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'mana') {
     creature.setState({ mp: Math.min(creature.mp + data.mana, Player.maxMp) }).commit();
 
-    log(messages.CREATURE_EFFECT_GAIN_MP, [name, data.mana]);
+    log(messages.CREATURE_EFFECT_GAIN_MP, [creature.name, data.mana]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'protect') {
     creature.setState({ ad: data.durability, armor: data.armor, maxAd: data.durability }).commit();
 
-    log(messages.CREATURE_EFFECT_GAIN_ARMOR, [name, data.armor]);
+    log(messages.CREATURE_EFFECT_GAIN_ARMOR, [creature.name, data.armor]);
     dispatch(CREATURE_UPDATE);
   }
 
@@ -62,7 +60,7 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'fire', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_BURN, [name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_BURN, [creature.name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
@@ -71,7 +69,7 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'ice', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_FREEZE, [name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_FREEZE, [creature.name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
@@ -80,7 +78,7 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'electric', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_PARALYSIS, [name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_PARALYSIS, [creature.name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
@@ -89,7 +87,7 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'poison', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_POISON, [name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_POISON, [creature.name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 }

@@ -1,7 +1,7 @@
 export default {
   special_heal: {
-    icon: 'divine',
     health: 25,
+    icon: 'divine',
     name: 'divine grace',
     price: 20,
     set: 'special',

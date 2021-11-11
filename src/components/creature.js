@@ -1,5 +1,4 @@
 import Dungeon from 'instances/Dungeon';
-import capitalize from 'utilities/capitalize';
 import image from 'utilities/image';
 
 export default function Creature() {
@@ -12,7 +11,7 @@ export default function Creature() {
   return `
     <div class="tm-c-creature">
       <div class="tm-c-creature__tunnel">
-        <div class="tm-c-creature__name">${capitalize(creature.raw.name)}</div>
+        <div class="tm-c-creature__name">${creature.name}</div>
         <div class="tm-c-creature__level">Lv. ${creature.raw.level}</div>
         <div class="tm-c-creature__attribute">
           <div class="tm-c-creature__attribute-label">Weakness</div>
