@@ -1,5 +1,5 @@
-import DungeonGate from 'resources/img/dungeon-gate.png';
 import dungeons from 'data/dungeons';
+import image from 'utilities/image';
 import shuffle from 'utilities/shuffle';
 
 export default function StartScreen() {
@@ -7,7 +7,7 @@ export default function StartScreen() {
     <div class="tm-c-start">
       <div class="tm-c-start__heading">You approach the dungeon gate</div>
       <div class="tm-c-start__icon">
-        <img src="${DungeonGate}" />
+        <img src="${image('dungeon-gate')}" />
       </div>
       <div class="tm-c-start__name">"${shuffle(dungeons)[0]}"</div>
       <div class="tm-c-start__description">
