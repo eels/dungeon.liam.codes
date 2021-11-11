@@ -31,7 +31,7 @@ export default function Stats() {
         <div class="tm-c-stats__bar" style="width: ${playerADBarWidth}%"></div>
       </div>
       <div class="tm-c-stats__stat" data-stat="status">
-        <div class="tm-c-stats__status-label">Status Effects</div>
+        <div class="tm-c-stats__status-label">Status Effect</div>
         <div class="tm-c-stats__status-effect">
           <div class="tm-c-stats__status-icon">
             ${hasStatusEffect ? `<img src="${image(Player.status)}" />` : ''}

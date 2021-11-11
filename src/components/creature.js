@@ -40,7 +40,7 @@ export default function Creature() {
           <div class="tm-c-creature__bar" style="width: ${creatureADBarWidth}%"></div>
         </div>
         <div class="tm-c-creature__stat">
-          <div class="tm-c-creature__status-label">Status Effects</div>
+          <div class="tm-c-creature__status-label">Status Effect</div>
           <div class="tm-c-creature__status-effect">
             <div class="tm-c-creature__status-icon">
               ${hasStatusEffect ? `<img src="${image(creature.status)}" />` : ''}
