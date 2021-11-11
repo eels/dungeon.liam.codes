@@ -4,7 +4,7 @@ import creatures from 'data/creatures';
 import dispatch from 'events/delegate/dispatch';
 import shuffle from 'utilities/shuffle';
 import uuid from 'utilities/uuid';
-import { ENTER_SHOP } from 'events/events';
+import { ENTER_SHOP, PLAYER_UPDATE_STATS } from 'events/events';
 
 export default class DungeonEntity extends StatefulEntity {
   constructor(dungeon) {
@@ -19,6 +19,7 @@ export default class DungeonEntity extends StatefulEntity {
     dungeonCreatures.splice(0, 1);
 
     if (dungeonCreatures.length === 0) {
+      dispatch(PLAYER_UPDATE_STATS);
       dispatch(ENTER_SHOP);
     }
 
