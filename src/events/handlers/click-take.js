@@ -6,7 +6,7 @@ import findCardByColumn from 'functions/find-card-by-column';
 
 bind('click', '.js-take', function (event) {
   const cardElement = event.target.closest('.tm-c-treasure__card-container').children;
-  const cardName = cardElement[0].querySelector('.tm-c-card__name').innerHTML;
+  const cardName = cardElement[0].querySelector('.tm-c-card__name').innerHTML.trim();
   const playerAvailableCards = [...Player.availableCards];
 
   const [card] = findCardByColumn(cards, 'name', cardName);
