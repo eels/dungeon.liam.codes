@@ -27,6 +27,8 @@ bind('click', '.js-restart', function () {
   dispatch(CREATURE_UPDATE);
   dispatch(PLAYER_UPDATE_HAND);
   dispatch(PLAYER_UPDATE_STATS);
+
+  console.log(Player.hp, initialPlayerState);
 });
 
 export default true;

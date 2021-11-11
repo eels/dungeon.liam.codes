@@ -5,6 +5,6 @@ export const initialDungeonState = {
   level: 1,
 };
 
-const Dungeon = new DungeonEntity(initialDungeonState);
+const Dungeon = new DungeonEntity({ ...initialDungeonState });
 
 export default Dungeon;

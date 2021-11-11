@@ -18,6 +18,6 @@ export const initialPlayerState = {
   totalGold: 0,
 };
 
-const Player = new PlayerEntity(initialPlayerState);
+const Player = new PlayerEntity({ ...initialPlayerState });
 
 export default Player;

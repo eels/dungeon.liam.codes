@@ -6,6 +6,6 @@ export const initialTickState = {
   target: 3000,
 };
 
-const Tick = new TickEntity(initialTickState);
+const Tick = new TickEntity({ ...initialTickState });
 
 export default Tick;
