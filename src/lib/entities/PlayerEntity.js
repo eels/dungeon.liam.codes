@@ -12,10 +12,10 @@ export default class PlayerEntity extends StatefulEntity {
 
   setInitialDeckState() {
     this.setState({ availableCards: cards.filter((card) => card.set === 'base') }).commit();
-    this.setState({ deck: this.generateDeck() }).commit();
+    this.setState({ deck: this.generatePlayableDeck() }).commit();
   }
 
-  generateDeck() {
+  generatePlayableDeck() {
     return Array.from(Array(40).keys()).map(() => {
       return Object.assign({ id: uuid() }, shuffle(this.availableCards)[0]);
     });

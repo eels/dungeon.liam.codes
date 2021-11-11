@@ -10,7 +10,7 @@ export default class DungeonEntity extends StatefulEntity {
   constructor(dungeon) {
     super(dungeon);
 
-    this.setState({ creatures: this.generateCreatures() }).commit();
+    this.setState({ creatures: this.generateDungeonCreatures() }).commit();
   }
 
   advance() {
@@ -25,27 +25,10 @@ export default class DungeonEntity extends StatefulEntity {
     this.setState({ creatures: dungeonCreatures }).commit();
   }
 
-  generateCreatures() {
-    const level = this.level;
-    const availableCreatureLevels = [];
-    const range = [];
-
-    for (const creature of creatures) {
-      if (!availableCreatureLevels.includes(creature.level)) {
-        availableCreatureLevels.push(creature.level);
-      }
-    }
-
-    for (const creatureLevel of availableCreatureLevels) {
-      if (creatureLevel >= level - 1 && creatureLevel <= level) {
-        range.push(creatureLevel);
-      }
-    }
-
-    if (range.length === 0) {
-      range.push(availableCreatureLevels[availableCreatureLevels.length - 1]);
-    }
-
+  generateDungeonCreatures() {
+    const ceiling = creatures.reduce((highest, creature) => Math.max(highest, creature.level), 0);
+    const level = this.level < ceiling ? this.level : ceiling;
+    const range = [level - 1, level];
     const availableCreatures = creatures.filter((creature) => range.includes(creature.level));
     const curve = Math.floor(level * (1 + level / 20)) + 2;
 

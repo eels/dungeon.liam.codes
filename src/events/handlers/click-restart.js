@@ -12,7 +12,7 @@ bind('click', '.js-restart', function () {
   Player.setInitialDeckState();
 
   Dungeon.setState(initialDungeonState).commit();
-  Dungeon.setState({ creatures: Dungeon.generateCreatures() }).commit();
+  Dungeon.setState({ creatures: Dungeon.generateDungeonCreatures() }).commit();
 
   Tick.start();
 

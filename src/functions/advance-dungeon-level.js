@@ -10,10 +10,10 @@ import { CREATURE_UPDATE, PLAYER_UPDATE_HAND, PLAYER_UPDATE_STATS } from 'events
 
 export default function advanceDungeonLevel() {
   Dungeon.setState({ level: Dungeon.level + 1 }).commit();
-  Dungeon.setState({ creatures: Dungeon.generateCreatures() }).commit();
+  Dungeon.setState({ creatures: Dungeon.generateDungeonCreatures() }).commit();
 
   Player.setState({ actionTaken: false, deck: [], status: 'active' }).commit();
-  Player.setState({ deck: Player.generateDeck() }).commit();
+  Player.setState({ deck: Player.generatePlayableDeck() }).commit();
 
   document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
   document.querySelector('.tm-c-stats').classList.remove('tm-c-stats--disabled');
