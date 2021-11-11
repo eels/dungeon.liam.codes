@@ -9,7 +9,7 @@ import messages from 'data/messages';
 import processCreatureArmorUpdate from 'functions/process-creature-armor-update';
 import processCreatureDeath from 'functions/process-creature-death';
 import shuffle from 'utilities/shuffle';
-import { CREATURE_UPDATE, PLAYER_UPDATE_STATS } from 'events/events';
+import { CREATURE_UPDATE, PLAYER_UPDATE_HAND, PLAYER_UPDATE_STATS } from 'events/events';
 
 export default function applyCardEffects(data) {
   if (data.effect === 'armor') {
@@ -71,6 +71,9 @@ export default function applyCardEffects(data) {
 
   if (data.effect === 're-draw') {
     Player.setState({ deck: shuffle(Player.deck) }).commit();
+
+    log(messages.PLAYER_CARD_EFFECT_REDRAW, []);
+    dispatch(PLAYER_UPDATE_HAND, { shouldMaintainDiscardState: true });
   }
 
   if (data.effect === 'burn') {

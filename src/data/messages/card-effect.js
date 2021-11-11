@@ -23,6 +23,11 @@ export const PLAYER_CARD_EFFECT_CREATURE_RESIST = {
   direction: 'inbound',
 };
 
+export const PLAYER_CARD_EFFECT_REDRAW = {
+  copy: 'You re-draw your current hand',
+  direction: 'inbound',
+};
+
 export const PLAYER_CARD_EFFECT_DAMAGE = {
   copy: 'Your attack on enemy %1 lands for %2 damage',
   direction: 'inbound',
