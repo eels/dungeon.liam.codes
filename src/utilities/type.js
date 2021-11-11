@@ -4,7 +4,7 @@ export default function type(element, copy, callback = () => {}, speed = 10) {
   const typed = [];
 
   for (const chunk of initialChunks) {
-    if (chunk[0] !== '<') {
+    if (chunk.substring(0, 1) !== '<' || chunk.substring(0, 2) === '<<') {
       characters.push(...chunk.split(''));
     } else {
       characters.push(chunk);
