@@ -50,10 +50,7 @@ export default class DungeonEntity extends StatefulEntity {
     const curve = Math.floor(level * (1 + level / 20)) + 2;
 
     return Array.from(Array(curve).keys()).map(() => {
-      const shuffledCreatures = shuffle(availableCreatures);
-      const creature = Object.assign({ id: uuid() }, shuffledCreatures[0]);
-
-      return new CreatureEntity(creature);
+      return new CreatureEntity(Object.assign({ id: uuid() }, shuffle(availableCreatures)[0]));
     });
   }
 }

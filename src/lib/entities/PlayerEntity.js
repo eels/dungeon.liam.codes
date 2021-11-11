@@ -17,10 +17,7 @@ export default class PlayerEntity extends StatefulEntity {
 
   generateDeck() {
     return Array.from(Array(40).keys()).map(() => {
-      const shuffledCards = shuffle(this.availableCards);
-      const card = Object.assign({ id: uuid() }, shuffledCards[0]);
-
-      return card;
+      return Object.assign({ id: uuid() }, shuffle(this.availableCards)[0]);
     });
   }
 }
