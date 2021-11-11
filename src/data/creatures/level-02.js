@@ -23,7 +23,7 @@ export default [
     resistance: 'water',
     specials: [
       {
-        chance: 45,
+        chance: 0.45,
         cost: 2,
         damage: 3,
         effect: 'damage',
@@ -43,13 +43,13 @@ export default [
     name: 'orc warrior',
     specials: [
       {
-        chance: 40,
+        chance: 0.4,
         damage: 3,
         effect: 'damage',
         message: '* >> Enemy *name* charges at you dealing *damage* damage',
       },
       {
-        chance: 15,
+        chance: 0.15,
         damage: 4,
         effect: 'damage',
         message: '* >> Enemy *name* goes beserk hitting you for *damage* damage',
@@ -67,13 +67,13 @@ export default [
     name: 'worg',
     specials: [
       {
-        chance: 20,
+        chance: 0.2,
         damage: 4,
         effect: 'damage',
         message: '* >> Enemy *name* bites you dealing *damage* damage',
       },
       {
-        chance: 20,
+        chance: 0.2,
         damage: 4,
         effect: 'damage',
         message: '* >> Enemy *name* claws you dealing *damage* damage',
@@ -91,7 +91,7 @@ export default [
     name: 'bugbear',
     specials: [
       {
-        chance: 45,
+        chance: 0.45,
         damage: 5,
         effect: 'damage',
         message: '* >> Enemy *name* launches a surprise attack dealing *damage* damage',
@@ -109,21 +109,21 @@ export default [
     name: 'nilbog',
     specials: [
       {
-        chance: 30,
+        chance: 0.3,
         damage: 4,
         effect: 'damage',
         element: 'fire',
         message: '* >> Enemy *name* projects a fireball dealing *damage* damage',
       },
       {
-        chance: 30,
+        chance: 0.3,
         damage: 4,
         effect: 'damage',
         element: 'electric',
         message: '* >> Enemy *name* shocks you for *damage* damage',
       },
       {
-        chance: 30,
+        chance: 0.3,
         duration: 2,
         effect: 'poison',
         message:

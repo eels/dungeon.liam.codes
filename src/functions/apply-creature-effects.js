@@ -1,5 +1,6 @@
 import Dungeon from 'instances/Dungeon';
 import Player from 'instances/Player';
+import chance from 'utilities/chance';
 import dispatch from 'events/delegate/dispatch';
 import extendStatusEffect from 'functions/extend-status-effect';
 import getElementEffect from 'functions/get-element-effect';
@@ -19,9 +20,7 @@ export default function applyCreatureEffects(data) {
     processPlayerArmorUpdate(damage);
 
     if (data.element && ['electric', 'fire', 'ice', 'poison'].includes(data.element)) {
-      const chance = Math.round(Math.random() * 10);
-
-      if (chance > 7 && Player.status === 'normal') {
+      if (chance(0.3) && Player.status === 'normal') {
         applyCreatureEffects({ duration: 2, effect: getElementEffect(data.element) });
       }
     }

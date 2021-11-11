@@ -22,13 +22,13 @@ export default [
     specials: [
       {
         armor: 4,
-        chance: 35,
+        chance: 0.35,
         cost: 2,
         durability: 2,
         effect: 'protect',
       },
       {
-        chance: 30,
+        chance: 0.3,
         duration: 4,
         effect: 'ice',
         message: '* >> Enemy *name* <div class="tm-c-log__keyword">freezes</div> you motionless',

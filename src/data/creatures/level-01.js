@@ -10,7 +10,7 @@ export default [
     name: 'swarm of rats',
     specials: [
       {
-        chance: 45,
+        chance: 0.45,
         cost: 1,
         damage: 2,
         effect: 'damage',
@@ -52,13 +52,13 @@ export default [
     resistance: 'poison',
     specials: [
       {
-        chance: 40,
+        chance: 0.4,
         damage: 2,
         effect: 'damage',
         message: '* >> Enemy *name* flings a bone at you dealing *damage* damage',
       },
       {
-        chance: 20,
+        chance: 0.2,
         cost: 2,
         damage: 3,
         effect: 'damage',

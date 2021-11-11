@@ -11,14 +11,14 @@ export default [
     resistance: 'poison',
     specials: [
       {
-        chance: 40,
+        chance: 0.4,
         duration: 3,
         effect: 'poison',
         message:
           '* >> Enemy *name* shoots a <div class="tm-c-log__keyword">poison</div> web at you',
       },
       {
-        chance: 20,
+        chance: 0.2,
         damage: 5,
         effect: 'damage',
         message: '* >> Enemy *name* bites you dealing *damage* damage',
@@ -50,7 +50,7 @@ export default [
     resistance: 'poison',
     specials: [
       {
-        chance: 30,
+        chance: 0.3,
         cost: 1,
         damage: 5,
         effect: 'damage',
@@ -58,14 +58,14 @@ export default [
         message: '* >> Enemy *name* throws stone at you for *damage* damage',
       },
       {
-        chance: 40,
+        chance: 0.4,
         duration: 3,
         effect: 'ice',
         message: '* >> Enemy *name* <div class="tm-c-log__keyword">freezes</div> you motionless',
       },
       {
         armor: 2,
-        chance: 45,
+        chance: 0.45,
         cost: 1,
         durability: 1,
         effect: 'protect',
@@ -83,13 +83,13 @@ export default [
     name: 'mimic',
     specials: [
       {
-        chance: 45,
+        chance: 0.45,
         damage: 2,
         effect: 'damage',
         message: '* >> Enemy *name* bites you for *damage* damage',
       },
       {
-        chance: 30,
+        chance: 0.3,
         cost: 2,
         damage: 2,
         effect: 'damage',
@@ -97,7 +97,7 @@ export default [
       },
       {
         armor: 4,
-        chance: 15,
+        chance: 0.15,
         durability: 3,
         effect: 'protect',
       },

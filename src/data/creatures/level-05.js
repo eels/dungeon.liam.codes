@@ -43,7 +43,7 @@ export default [
     resistance: 'fire',
     specials: [
       {
-        chance: 20,
+        chance: 0.2,
         damage: 10,
         effect: 'damage',
         element: 'fire',
