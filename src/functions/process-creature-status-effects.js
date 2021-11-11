@@ -2,18 +2,21 @@ import Dungeon from 'instances/Dungeon';
 import capitalize from 'utilities/capitalize';
 import dispatch from 'events/delegate/dispatch';
 import log from 'functions/combat-log';
+import messages from 'data/messages';
 import { CREATURE_UPDATE } from 'events/events';
 
 export default function processCreatureStatusEffects() {
   const creature = Dungeon.creatures[0];
+  const name = capitalize(creature.raw.name);
   const status = creature.status;
-  const hasIceElectricEffect = ['ice', 'electric'].includes(status);
-  const hasFirePoisonEffect = ['fire', 'poison'].includes(status);
 
-  if (hasIceElectricEffect) {
+  if (status === 'electric' || status === 'ice') {
     creature.setState({ statusDuration: creature.statusDuration - 1 }).commit();
 
     if (creature.statusDuration !== 0) {
+      const effect = status === 'electric' ? 'paralysed' : 'frozen';
+
+      log(messages.CREATURE_STATUS_EFFECT_DISABLED, [name, effect]);
       creature.setState({ actionTaken: true }).commit();
     }
 
@@ -22,21 +25,15 @@ export default function processCreatureStatusEffects() {
     }
   }
 
-  if (hasFirePoisonEffect) {
+  if (status === 'fire' || status === 'poison') {
     creature.setState({ statusDuration: creature.statusDuration - 1 }).commit();
 
     if (creature.statusDuration !== 0) {
       const damage = Math.ceil(creature.hp * (20 / 100));
-
-      log(
-        `* << Enemy ${capitalize(
-          creature.raw.name,
-        )} takes ${damage} damage from its <div class="tm-c-log__keyword">${
-          status === 'fire' ? 'burn' : 'poison'
-        }</div>`,
-      );
+      const effect = status === 'fire' ? 'burn' : 'poison';
 
       creature.setState({ hp: Math.max(creature.hp - damage, 0) }).commit();
+      log(messages.CREATURE_STATUS_EFFECT_DAMAGE, [name, damage, effect]);
     }
 
     if (creature.statusDuration === 0) {

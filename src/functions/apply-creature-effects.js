@@ -5,6 +5,7 @@ import dispatch from 'events/delegate/dispatch';
 import extendStatusEffect from 'functions/extend-status-effect';
 import getElementEffect from 'functions/get-element-effect';
 import log from 'functions/combat-log';
+import messages from 'data/messages';
 import processPlayerArmorUpdate from 'functions/process-player-armor-update';
 import { CREATURE_UPDATE, PLAYER_UPDATE_STATS } from 'events/events';
 
@@ -31,28 +32,28 @@ export default function applyCreatureEffects(data) {
       Player.setState({ hp: Math.max(Player.hp - damage, 0) }).commit();
     }
 
-    log(`* >> Enemy ${name} hits you for ${damage} damage`);
+    log(messages.CREATURE_EFFECT_DAMAGE, [name, damage]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'heal') {
     creature.setState({ hp: Math.min(creature.hp + data.health, Player.maxHp) }).commit();
 
-    log(`* >> Enemy ${name} restores ${data.health} <div class="tm-c-log__keyword">hp</div>`);
+    log(messages.CREATURE_EFFECT_GAIN_HP, [name, data.health]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'mana') {
     creature.setState({ mp: Math.min(creature.mp + data.mana, Player.maxMp) }).commit();
 
-    log(`* >> Enemy ${name} restores ${data.health} <div class="tm-c-log__keyword">mp</div>`);
+    log(messages.CREATURE_EFFECT_GAIN_MP, [name, data.mana]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'protect') {
     creature.setState({ ad: data.durability, armor: data.armor, maxAd: data.durability }).commit();
 
-    log(`* >> Enemy ${name} gains ${data.armor} <div class="tm-c-log__keyword">armor</div>`);
+    log(messages.CREATURE_EFFECT_GAIN_ARMOR, [name, data.armor]);
     dispatch(CREATURE_UPDATE);
   }
 
@@ -61,20 +62,7 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'fire', statusDuration: duration }).commit();
 
-    log(
-      `* >> Enemy ${name} inflicts a <div class="tm-c-log__keyword">burn</div> on you lasting ${data.duration} turns`,
-    );
-    dispatch(PLAYER_UPDATE_STATS);
-  }
-
-  if (data.effect === 'poison') {
-    const duration = extendStatusEffect(Player, 'poison', data.duration);
-
-    Player.setState({ status: 'poison', statusDuration: duration }).commit();
-
-    log(
-      `* >> Enemy ${name} inflicts <div class="tm-c-log__keyword">poison</div> on you lasting ${data.duration} turns`,
-    );
+    log(messages.CREATURE_EFFECT_APPLY_BURN, [name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
@@ -83,9 +71,7 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'ice', statusDuration: duration }).commit();
 
-    log(
-      `* >> Enemy ${name} <div class="tm-c-log__keyword">freezes</div> your body lasting ${data.duration} turns`,
-    );
+    log(messages.CREATURE_EFFECT_APPLY_FREEZE, [name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
@@ -94,9 +80,16 @@ export default function applyCreatureEffects(data) {
 
     Player.setState({ status: 'electric', statusDuration: duration }).commit();
 
-    log(
-      `* >> Enemy ${name} <div class="tm-c-log__keyword">paralyses</div> your body lasting ${data.duration} turns`,
-    );
+    log(messages.CREATURE_EFFECT_APPLY_PARALYSIS, [name, data.duration]);
+    dispatch(PLAYER_UPDATE_STATS);
+  }
+
+  if (data.effect === 'poison') {
+    const duration = extendStatusEffect(Player, 'poison', data.duration);
+
+    Player.setState({ status: 'poison', statusDuration: duration }).commit();
+
+    log(messages.CREATURE_EFFECT_APPLY_POISON, [name, data.duration]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 }

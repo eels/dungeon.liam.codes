@@ -5,6 +5,7 @@ import dispatch from 'events/delegate/dispatch';
 import extendStatusEffect from 'functions/extend-status-effect';
 import getElementEffect from 'functions/get-element-effect';
 import log from 'functions/combat-log';
+import messages from 'data/messages';
 import processCreatureArmorUpdate from 'functions/process-creature-armor-update';
 import processCreatureDeath from 'functions/process-creature-death';
 import shuffle from 'utilities/shuffle';
@@ -12,50 +13,41 @@ import { CREATURE_UPDATE, PLAYER_UPDATE_STATS } from 'events/events';
 
 export default function applyCardEffects(data) {
   if (data.effect === 'armor') {
-    Player.setState({ ad: data.durability, armor: data.armor, maxAd: data.durability }).commit();
-    log(
-      `* << You gain ${data.armor} <div class="tm-c-log__keyword">armor</div> from your equipment`,
-    );
+    Player.setState({ armor: data.armor }).commit();
+    Player.setState({ ad: data.durability, maxAd: data.durability }).commit();
+
+    log(messages.PLAYER_CARD_EFFECT_GAIN_ARMOR, [data.armor]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'cure') {
     Player.setState({ status: 'normal', statusDuration: 0 }).commit();
 
-    log('* << You cure yourself of all <div class="tm-c-log__keyword">status effects</div>');
+    log(messages.PLAYER_CARD_EFFECT_CURE, []);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'heal') {
-    const hp = Player.hp + data.health;
+    Player.setState({ hp: Math.min(Player.hp + data.health, Player.maxHp) }).commit();
 
-    Player.setState({ hp: Math.min(hp, Player.maxHp) }).commit();
-
-    log(`* << You restore ${data.health} <div class="tm-c-log__keyword">HP</div>`);
+    log(messages.PLAYER_CARD_EFFECT_GAIN_HP, [data.health]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'mana') {
-    const mp = Player.mp + data.mana;
+    Player.setState({ mp: Math.min(Player.mp + data.mana, Player.maxMp) }).commit();
 
-    Player.setState({ mp: Math.min(mp, Player.maxMp) }).commit();
-
-    log(`* << You restore ${data.mana} <div class="tm-c-log__keyword">MP</div>`);
+    log(messages.PLAYER_CARD_EFFECT_GAIN_MP, [data.mana]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'damage') {
     const creature = Dungeon.creatures[0];
+    const name = capitalize(creature.raw.name);
     const isCrit = creature.raw.weakness && data.element && creature.raw.weakness === data.element;
     const damageCalculation = creature.armor - data.damage * (isCrit ? 2 : 1);
     const isHit = damageCalculation < 0;
     const damage = Math.abs(damageCalculation);
-
-    if (creature.raw.resistance && data.element) {
-      if (creature.raw.resistance === data.element) {
-        return log(`* << Enemy ${capitalize(creature.raw.name)} resists your attack`);
-      }
-    }
 
     processCreatureArmorUpdate(damage);
 
@@ -71,7 +63,7 @@ export default function applyCardEffects(data) {
       creature.setState({ hp: Math.max(creature.hp - damage, 0) }).commit();
     }
 
-    log(`* << Your attack on enemy ${capitalize(creature.raw.name)} lands for ${damage} damage`);
+    log(messages.PLAYER_CARD_EFFECT_DAMAGE, [name, damage]);
     dispatch(CREATURE_UPDATE);
     dispatch(PLAYER_UPDATE_STATS);
 
@@ -86,57 +78,45 @@ export default function applyCardEffects(data) {
 
   if (data.effect === 'burn') {
     const creature = Dungeon.creatures[0];
+    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'burn', data.duration);
 
     creature.setState({ status: 'fire', statusDuration: duration }).commit();
 
-    log(
-      `* << You <div class="tm-c-log__keyword">burn</div> enemy ${capitalize(
-        creature.raw.name,
-      )} for ${data.duration} turns`,
-    );
-    dispatch(CREATURE_UPDATE);
-  }
-
-  if (data.effect === 'poison') {
-    const creature = Dungeon.creatures[0];
-    const duration = extendStatusEffect(creature, 'poison', data.duration);
-
-    creature.setState({ status: 'poison', statusDuration: duration }).commit();
-
-    log(
-      `* << You <div class="tm-c-log__keyword">poison</div> enemy ${capitalize(
-        creature.raw.name,
-      )} for ${data.duration} turns`,
-    );
+    log(messages.PLAYER_CARD_EFFECT_APPLY_BURN, [name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'freeze') {
     const creature = Dungeon.creatures[0];
+    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'freeze', data.duration);
 
     creature.setState({ status: 'ice', statusDuration: duration }).commit();
 
-    log(
-      `* << You <div class="tm-c-log__keyword">freeze</div> enemy ${capitalize(
-        creature.raw.name,
-      )} for ${data.duration} turns`,
-    );
+    log(messages.PLAYER_CARD_EFFECT_APPLY_FREEZE, [name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'paralyse') {
     const creature = Dungeon.creatures[0];
+    const name = capitalize(creature.raw.name);
     const duration = extendStatusEffect(creature, 'paralyse', data.duration);
 
     creature.setState({ status: 'electric', statusDuration: duration }).commit();
 
-    log(
-      `* << You <div class="tm-c-log__keyword">paralyse</div> enemy ${capitalize(
-        creature.raw.name,
-      )} for ${data.duration} turns`,
-    );
+    log(messages.PLAYER_CARD_EFFECT_APPLY_PARALYSIS, [name, data.duration]);
+    dispatch(CREATURE_UPDATE);
+  }
+
+  if (data.effect === 'poison') {
+    const creature = Dungeon.creatures[0];
+    const name = capitalize(creature.raw.name);
+    const duration = extendStatusEffect(creature, 'poison', data.duration);
+
+    creature.setState({ status: 'poison', statusDuration: duration }).commit();
+
+    log(messages.PLAYER_CARD_EFFECT_APPLY_POISON, [name, data.duration]);
     dispatch(CREATURE_UPDATE);
   }
 }

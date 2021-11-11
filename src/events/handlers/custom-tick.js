@@ -12,6 +12,9 @@ import { TICK } from 'events/events';
 bind(TICK, 'body', function () {
   const creature = Dungeon.creatures[0];
 
+  Player.setState({ actionTaken: false }).commit();
+  document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
+
   processCreatureStatusEffects();
 
   if (creature.hp === 0) {
@@ -26,9 +29,6 @@ bind(TICK, 'body', function () {
   }
 
   resetTimer();
-
-  Player.setState({ actionTaken: false }).commit();
-  document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
 });
 
 export default true;

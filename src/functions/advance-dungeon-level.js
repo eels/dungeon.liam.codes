@@ -4,6 +4,7 @@ import Tick from 'instances/Tick';
 import Timer from 'components/Timer';
 import dispatch from 'events/delegate/dispatch';
 import log from 'functions/combat-log';
+import messages from 'data/messages';
 import nodize from 'utilities/nodize';
 import { CREATURE_UPDATE, PLAYER_UPDATE_HAND, PLAYER_UPDATE_STATS } from 'events/events';
 
@@ -18,7 +19,7 @@ export default function advanceDungeonLevel() {
   document.querySelector('.tm-c-stats').classList.remove('tm-c-stats--disabled');
   document.querySelector('.tm-c-board__message').classList.remove('tm-c-board__message--active');
 
-  log(`* << You advance to lv. ${Dungeon.level}`, 'DUNGEON_ADVANCE');
+  log(messages.PLAYER_ADVANCE_DUNGEON, [Dungeon.level], 'DUNGEON_ADVANCE');
 
   Tick.start();
 
