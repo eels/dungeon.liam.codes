@@ -14,7 +14,7 @@ bind('click', '.js-heal', function () {
 
   messagesContainer.classList.remove(errorClass);
 
-  if (Math.max(Player.gold - checkpointHeal.price, 0) === 0) {
+  if (Player.gold - checkpointHeal.price < 0) {
     messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_HEAL_ERROR.copy, []);
     messagesContainer.classList.add(errorClass);
 

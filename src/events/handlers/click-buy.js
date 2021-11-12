@@ -21,7 +21,7 @@ bind('click', '.js-buy', function (event) {
 
   messagesContainer.classList.remove('tm-c-shop__status--error');
 
-  if (Math.max(Player.gold - card.price, 0) === 0) {
+  if (Player.gold - card.price < 0) {
     messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_PURCHASE_ERROR.copy, []);
     messagesContainer.classList.add('tm-c-shop__status--error');
 
