@@ -8,6 +8,7 @@
   "bugs": "https://github.com/eels/dungeon.liam.codes/issues",
   "scripts": {
     "build": "parcel build ./src/index.html",
+    "clean": "rimraf ./dist",
     "dev": "parcel serve ./src/index.html",
     "format": "prettier './src/**/*.{js,scss}' --check",
     "format:fix": "yarn format --write",
@@ -28,6 +29,7 @@
     "instances": "./src/instances",
     "lib": "./src/lib",
     "resources": "./src/resources",
+    "static": "./src/static",
     "utilities": "./src/utilities"
   },
   "dependencies": {
@@ -53,6 +55,7 @@
     "lint-staged": "^11.2.6",
     "parcel": "^2.0.1",
     "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
     "sass": "^1.43.4",
     "stylelint": "^14.0.1",
     "stylelint-config-idiomatic-order": "^8.1.0",

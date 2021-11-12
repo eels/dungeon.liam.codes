@@ -24,6 +24,7 @@
         ["instances", "./src/instances"],
         ["lib", "./src/lib"],
         ["resources", "./src/resources"],
+        ["static", "./src/static"],
         ["utilities", "./src/utilities"]
       ]
     }
