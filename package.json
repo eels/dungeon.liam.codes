@@ -16,7 +16,8 @@
     "lint:css": "stylelint './src/**/*.scss' --cache",
     "lint:css:fix": "yarn lint:css --fix",
     "lint:js": "eslint './src/**/*.js' --cache",
-    "lint:js:fix": "yarn lint:js --fix"
+    "lint:js:fix": "yarn lint:js --fix",
+    "prepare": "husky install"
   },
   "browserslist": [
     "defaults"
