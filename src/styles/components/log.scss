@@ -28,7 +28,7 @@
           animation-iteration-count: infinite;
           animation-name: blink;
           animation-timing-function: step-end;
-          color: $white;
+          color: $palette--white;
           content: '_';
           font-weight: bold;
         }
@@ -37,16 +37,16 @@
   }
 
   &__death {
-    color: $log--death;
+    color: $palette--bittersweet;
   }
 
   &__advance {
-    color: $log--advance;
+    color: $palette--bittersweet;
   }
 
   &__keyword {
     display: inline;
-    color: $log--keyword;
+    color: $palette--bittersweet;
     text-transform: uppercase;
   }
 }

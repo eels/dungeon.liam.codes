@@ -5,12 +5,12 @@
   height: 130px;
   flex-direction: column;
   padding: 5px;
-  background-color: $white;
+  background-color: $palette--white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50px;
   border-radius: 6px;
-  color: $black;
+  color: $palette--black;
   cursor: pointer;
   text-align: center;
   text-transform: uppercase;
@@ -29,12 +29,12 @@
     height: 26px;
     align-items: center;
     justify-content: center;
-    border: 3px solid $white;
-    background-color: $mana;
+    border: 3px solid $palette--white;
+    background-color: $palette--malibu;
     border-radius: 100px;
-    color: $white;
+    color: $palette--white;
     font-size: 17px;
-    text-shadow: -1px 1px 0 rgba($black, 0.1);
+    text-shadow: -1px 1px 0 rgba($palette--black, 0.1);
   }
 
   &__element {
@@ -43,7 +43,7 @@
     left: -10px;
     width: 26px;
     height: 26px;
-    background-color: $element;
+    background-color: $palette--bittersweet;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 14px;
@@ -55,9 +55,9 @@
     bottom: -10px;
     left: -10px;
     padding: 5px 9px;
-    background-color: $cost;
+    background-color: $palette--bittersweet;
     border-radius: 100px;
-    color: $white;
+    color: $palette--white;
   }
 
   &__name {
@@ -66,12 +66,12 @@
     height: 16px;
     align-items: center;
     justify-content: center;
-    text-shadow: -1px 1px 0 rgba($black, 0.1);
+    text-shadow: -1px 1px 0 rgba($palette--black, 0.1);
   }
 
   &__effect {
     margin-top: auto;
-    color: $keyword;
-    text-shadow: -1px 1px 0 rgba($black, 0.1);
+    color: $palette--bittersweet;
+    text-shadow: -1px 1px 0 rgba($palette--black, 0.1);
   }
 }

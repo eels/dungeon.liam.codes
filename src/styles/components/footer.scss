@@ -8,11 +8,11 @@
   a {
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
-    color: $white;
+    color: $palette--white;
     outline: none;
 
     &:hover {
-      border-bottom: 2px solid $white;
+      border-bottom: 2px solid $palette--white;
     }
   }
 }

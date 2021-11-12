@@ -27,15 +27,15 @@
     display: inline-block;
     width: 300px;
     padding: 10px;
-    border: 5px solid $white;
+    border: 5px solid $palette--white;
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
     text-transform: uppercase;
 
     &:hover {
-      background-color: $white;
-      color: $black;
+      background-color: $palette--white;
+      color: $palette--black;
     }
   }
 }

@@ -15,7 +15,7 @@
     position: relative;
     width: 100px;
     height: 130px;
-    border: 5px solid $white;
+    border: 5px solid $palette--white;
     background-image: url('../resources/img/discard.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -26,8 +26,8 @@
       position: absolute;
       top: -5px;
       left: -5px;
-      border: 5px solid $white;
-      background-color: $black;
+      border: 5px solid $palette--white;
+      background-color: $palette--black;
       background-image: url('../resources/img/card-back.png');
       background-position: center;
       background-repeat: no-repeat;

@@ -34,7 +34,7 @@
 
     &:not(:last-child) {
       padding-right: 14px;
-      border-right: 3px solid $white;
+      border-right: 3px solid $palette--white;
       margin-right: 5px;
     }
   }
@@ -63,7 +63,7 @@
   &__stat {
     position: relative;
     padding: 0 5px;
-    border: 5px solid $white;
+    border: 5px solid $palette--white;
     font-size: 0;
     white-space: nowrap;
 
@@ -84,19 +84,19 @@
     display: inline-block;
     max-width: 143px;
     height: 18px;
-    background-color: $white;
+    background-color: $palette--white;
     vertical-align: middle;
 
     [data-stat='health'] & {
-      background-color: $health;
+      background-color: $palette--bittersweet;
     }
 
     [data-stat='mana'] & {
-      background-color: $mana;
+      background-color: $palette--malibu;
     }
 
     [data-stat='armor'] & {
-      background-color: $armor;
+      background-color: $palette--mantis;
     }
   }
 

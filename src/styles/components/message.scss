@@ -4,12 +4,12 @@
   flex-direction: column;
   justify-content: center;
   padding: 30px;
-  background-color: rgba($black, 0.9);
+  background-color: rgba($palette--black, 0.9);
 
   &__container {
     padding: 10px;
-    border: 5px solid $white;
-    background-color: $black;
+    border: 5px solid $palette--white;
+    background-color: $palette--black;
     text-align: center;
   }
 }

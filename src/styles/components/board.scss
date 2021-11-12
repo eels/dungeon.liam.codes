@@ -1,7 +1,7 @@
 .#{$prefix}-c-board {
   position: relative;
   padding: 10px;
-  border: 5px solid $white;
+  border: 5px solid $palette--white;
   margin-bottom: 10px;
 
   &__creature {
@@ -9,7 +9,7 @@
   }
 
   &__hand {
-    border-top: 5px solid $white;
+    border-top: 5px solid $palette--white;
   }
 
   &__message {
