@@ -14,20 +14,20 @@ export default function Stats() {
       <div class="tm-c-stats__stat" data-stat="health">
         <div class="tm-c-stats__label">HP</div>
         <div class="tm-c-stats__value">
-          ${padding(Player.hp, 2)} / ${Player.maxHp}
+          ${padding(Player.hp, 2)} / ${padding(Player.maxHp, 2)}
         </div>
         <div class="tm-c-stats__bar" style="width: ${playerHPBarWidth}%"></div>
       </div>
       <div class="tm-c-stats__stat" data-stat="mana">
         <div class="tm-c-stats__label">MP</div>
         <div class="tm-c-stats__value">
-          ${padding(Player.mp, 2)} / ${Player.maxMp}
+          ${padding(Player.mp, 2)} / ${padding(Player.maxMp, 2)}
         </div>
         <div class="tm-c-stats__bar" style="width: ${playerMPBarWidth}%"></div>
       </div>
       <div class="tm-c-stats__stat" data-stat="armor">
         <div class="tm-c-stats__label">ARM</div>
-        <div class="tm-c-stats__value">${Player.armor}</div>
+        <div class="tm-c-stats__value">${padding(Player.armor, 2)}</div>
         <div class="tm-c-stats__bar" style="width: ${playerADBarWidth}%"></div>
       </div>
       <div class="tm-c-stats__stat" data-stat="status">
