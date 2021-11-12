@@ -1,5 +1,6 @@
 import Player from 'instances/Player';
 import bind from 'events/delegate/bind';
+import capitalize from 'utilities/capitalize';
 import cards from 'data/cards';
 import dispatch from 'events/delegate/dispatch';
 import findCardByColumn from 'functions/find-card-by-column';
@@ -33,7 +34,7 @@ bind('click', '.js-buy', function (event) {
   Player.setState({ gold: Player.gold - card.price }).commit();
   Player.setState({ availableCards: playerAvailableCards }).commit();
 
-  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_PURCHASE.copy, [card.name]);
+  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_PURCHASE.copy, [capitalize(card.name)]);
 
   dispatch(PLAYER_UPDATE_STATS);
 });
