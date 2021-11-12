@@ -1,6 +1,6 @@
 import StatefulEntity from 'lib/state/StatefulEntity';
 import dispatch from 'events/delegate/dispatch';
-import processCombatQueue, { combatQueue } from 'functions/process-combat-queue';
+import processCombatQueue from 'functions/process-combat-queue';
 import { TICK, TICK_SEGMENT } from 'events/events';
 
 export default class TickEntity extends StatefulEntity {
@@ -10,7 +10,6 @@ export default class TickEntity extends StatefulEntity {
 
   pause() {
     clearInterval(this.interval);
-    clearInterval(combatQueue);
   }
 
   reset() {
