@@ -31,7 +31,7 @@ export default function processCombatQueue() {
 
     document.querySelector('.tm-c-log__container').appendChild(combatEntry);
 
-    const prefix = data.message.direction === 'inbound' ? '>> *' : '<< *';
+    const prefix = data.message.direction === 'inbound' ? '<< *' : '>> *';
     const hydratedMessage = hydrate(`${prefix} ${data.message.copy}`, data.variables);
 
     type(`.tm-c-log__entry[data-id="${id}"]`, hydratedMessage, () => {

@@ -5,5 +5,5 @@ export const CREATURE_DEATH_CALL = {
 
 export const CREATURE_DEATH_REWARD = {
   copy: 'You pick up %1 gold from your enemy',
-  direction: 'inbound',
+  direction: 'outbound',
 };
