@@ -1,5 +1,5 @@
-import Dungeon from 'instances/Dungeon';
 import Creature from 'components/Creature';
+import Dungeon from 'instances/Dungeon';
 import bind from 'events/delegate/bind';
 import { CREATURE_UPDATE } from 'events/events';
 
