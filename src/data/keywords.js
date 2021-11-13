@@ -4,6 +4,7 @@ export default [
   'burn',
   'burns',
   'electric',
+  'hand',
   'ice',
   'fire',
   'freeze',
