@@ -9,18 +9,17 @@ import { PLAYER_UPDATE_STATS } from 'events/events';
 
 export default function processCreatureAttack() {
   const creature = Dungeon.creatures[0];
-  const creatureAttack = creature.raw.attack;
   const hasCreatureUsedSpecialAttack = processCreatureSpecialAttack();
 
   if (hasCreatureUsedSpecialAttack) {
     return;
   }
 
-  const damageCalculation = Player.armor - creatureAttack;
+  const damageCalculation = Player.armor - creature.raw.attack;
   const isHit = damageCalculation < 0;
   const damage = Math.abs(damageCalculation);
 
-  processPlayerArmorUpdate(creatureAttack);
+  processPlayerArmorUpdate(creature.raw.attack);
 
   if (isHit) {
     Player.setState({ hp: Math.max(Player.hp - damage, 0) }).commit();

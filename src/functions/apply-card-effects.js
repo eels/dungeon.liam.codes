@@ -14,7 +14,7 @@ import { CREATURE_UPDATE, PLAYER_UPDATE_HAND, PLAYER_UPDATE_STATS } from 'events
 export default function applyCardEffects(data) {
   if (data.effect === 'armor') {
     Player.setState({ armor: data.armor }).commit();
-    Player.setState({ ad: data.durability, maxAd: data.durability }).commit();
+    Player.setState({ ad: data.armor, maxAd: data.armor }).commit();
 
     log(messages.PLAYER_CARD_EFFECT_GAIN_ARMOR, [data.armor]);
     dispatch(PLAYER_UPDATE_STATS);

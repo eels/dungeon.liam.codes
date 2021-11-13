@@ -1,7 +1,6 @@
 export default [
   {
     armor: 0,
-    armorDurability: 0,
     attack: 4,
     gold: 5,
     health: 6,
@@ -28,7 +27,6 @@ export default [
   },
   {
     armor: 0,
-    armorDurability: 0,
     attack: 5,
     gold: 5,
     health: 6,
@@ -40,7 +38,6 @@ export default [
   },
   {
     armor: 2,
-    armorDurability: 2,
     attack: 4,
     gold: 4,
     health: 4,
@@ -67,14 +64,12 @@ export default [
         armor: 2,
         chance: 0.45,
         cost: 1,
-        durability: 1,
         effect: 'protect',
       },
     ],
   },
   {
     armor: 0,
-    armorDurability: 0,
     attack: 1,
     gold: 7,
     health: 6,
@@ -98,7 +93,6 @@ export default [
       {
         armor: 4,
         chance: 0.15,
-        durability: 3,
         effect: 'protect',
       },
     ],

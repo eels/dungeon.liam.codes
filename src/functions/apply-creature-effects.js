@@ -13,11 +13,11 @@ export default function applyCreatureEffects(data) {
   const creature = Dungeon.creatures[0];
 
   if (data.effect === 'damage') {
-    const damageCalculation = Player.armor - data.damage;
+    const damageCalculation = Player.armor - data.damage * creature.statModifier;
     const isHit = damageCalculation < 0;
     const damage = Math.abs(damageCalculation);
 
-    processPlayerArmorUpdate(data.damage);
+    processPlayerArmorUpdate(data.damage * creature.statModifier);
 
     if (data.element && ['electric', 'fire', 'ice', 'poison'].includes(data.element)) {
       if (chance(0.3) && Player.status === 'normal') {
@@ -34,59 +34,69 @@ export default function applyCreatureEffects(data) {
   }
 
   if (data.effect === 'heal') {
-    creature.setState({ hp: Math.min(creature.hp + data.health, Player.maxHp) }).commit();
+    const effect = data.health * creature.statModifier;
 
-    log(messages.CREATURE_EFFECT_GAIN_HP, [creature.name, data.health]);
+    creature.setState({ hp: Math.min(creature.hp + effect, Player.maxHp) }).commit();
+
+    log(messages.CREATURE_EFFECT_GAIN_HP, [creature.name, effect]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'mana') {
-    creature.setState({ mp: Math.min(creature.mp + data.mana, Player.maxMp) }).commit();
+    const effect = data.mana * creature.statModifier;
 
-    log(messages.CREATURE_EFFECT_GAIN_MP, [creature.name, data.mana]);
+    creature.setState({ mp: Math.min(creature.mp + effect, Player.maxMp) }).commit();
+
+    log(messages.CREATURE_EFFECT_GAIN_MP, [creature.name, effect]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'protect') {
-    creature.setState({ ad: data.durability, armor: data.armor, maxAd: data.durability }).commit();
+    const effect = data.armor * creature.statModifier;
 
-    log(messages.CREATURE_EFFECT_GAIN_ARMOR, [creature.name, data.armor]);
+    creature.setState({ ad: effect, armor: effect, maxAd: effect }).commit();
+
+    log(messages.CREATURE_EFFECT_GAIN_ARMOR, [creature.name, effect]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'burn') {
-    const duration = extendStatusEffect(Player, 'burn', data.duration);
+    const effect = data.duration * creature.statModifier;
+    const duration = extendStatusEffect(Player, 'burn', effect);
 
     Player.setState({ status: 'fire', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_BURN, [creature.name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_BURN, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'freeze') {
-    const duration = extendStatusEffect(Player, 'freeze', data.duration);
+    const effect = data.duration * creature.statModifier;
+    const duration = extendStatusEffect(Player, 'freeze', effect);
 
     Player.setState({ status: 'ice', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_FREEZE, [creature.name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_FREEZE, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'paralyse') {
-    const duration = extendStatusEffect(Player, 'freeze', data.duration);
+    const effect = data.duration * creature.statModifier;
+    const duration = extendStatusEffect(Player, 'freeze', effect);
 
     Player.setState({ status: 'electric', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_PARALYSIS, [creature.name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_PARALYSIS, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'poison') {
-    const duration = extendStatusEffect(Player, 'poison', data.duration);
+    const effect = data.duration * creature.statModifier;
+    const duration = extendStatusEffect(Player, 'poison', effect);
 
     Player.setState({ status: 'poison', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_POISON, [creature.name, data.duration]);
+    log(messages.CREATURE_EFFECT_APPLY_POISON, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 }

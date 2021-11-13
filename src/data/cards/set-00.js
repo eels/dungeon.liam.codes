@@ -54,7 +54,6 @@ export default [
   // armor
   {
     armor: 1,
-    durability: 2,
     effect: 'armor',
     icon: 'gloves',
     name: 'gloves',
@@ -62,7 +61,6 @@ export default [
   },
   {
     armor: 2,
-    durability: 3,
     effect: 'armor',
     icon: 'helm',
     name: 'helm',
@@ -70,7 +68,6 @@ export default [
   },
   {
     armor: 3,
-    durability: 4,
     effect: 'armor',
     icon: 'breastplate',
     name: 'chest',

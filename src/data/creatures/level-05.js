@@ -1,7 +1,6 @@
 export default [
   {
     armor: 0,
-    armorDurability: 0,
     attack: 7,
     gold: 9,
     health: 7,
@@ -11,7 +10,6 @@ export default [
   },
   {
     armor: 0,
-    armorDurability: 0,
     attack: 7,
     gold: 10,
     health: 8,
@@ -22,7 +20,6 @@ export default [
   },
   {
     armor: 0,
-    armorDurability: 0,
     attack: 8,
     gold: 11,
     health: 10,
@@ -33,7 +30,6 @@ export default [
   },
   {
     armor: 0,
-    armorDurability: 0,
     attack: 10,
     gold: 11,
     health: 11,

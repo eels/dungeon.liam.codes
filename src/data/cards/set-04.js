@@ -80,7 +80,6 @@ export default [
   // armor
   {
     armor: 10,
-    durability: 7,
     effect: 'armor',
     icon: 'gloves',
     name: 'mithral gloves',
@@ -90,7 +89,6 @@ export default [
   },
   {
     armor: 11,
-    durability: 8,
     effect: 'armor',
     icon: 'helm',
     name: 'mithral helm',
@@ -100,7 +98,6 @@ export default [
   },
   {
     armor: 12,
-    durability: 9,
     effect: 'armor',
     icon: 'breastplate',
     name: 'mithral chest',
