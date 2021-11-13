@@ -1,4 +1,6 @@
 .#{$prefix}-c-death {
+  min-width: 90%;
+
   &__heading {
     font-size: 32px;
     text-transform: uppercase;
@@ -29,7 +31,6 @@
     padding: 10px;
     border: 5px solid $palette--white;
     margin-top: 20px;
-    margin-bottom: 20px;
     cursor: pointer;
     text-transform: uppercase;
 

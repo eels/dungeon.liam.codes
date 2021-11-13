@@ -26,16 +26,12 @@
 @import './elements/anchor';
 @import './elements/body';
 
-// Objects
-// ----------------------------------------
-
-@import './objects/grid';
-
 // Components
 // ----------------------------------------
 
 @import './components/board';
 @import './components/card';
+@import './components/container';
 @import './components/creature';
 @import './components/dungeon';
 @import './components/footer';
