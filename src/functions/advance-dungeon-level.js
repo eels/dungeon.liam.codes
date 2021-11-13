@@ -16,7 +16,6 @@ export default function advanceDungeonLevel() {
   Player.setState({ deck: Player.generatePlayableDeck() }).commit();
 
   document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
-  document.querySelector('.tm-c-stats').classList.remove('tm-c-stats--disabled');
   document.querySelector('.tm-c-board__message').classList.remove('tm-c-board__message--active');
 
   log(messages.PLAYER_ADVANCE_DUNGEON, [Dungeon.level], 'DUNGEON_ADVANCE');

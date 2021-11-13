@@ -12,7 +12,6 @@ field.appendChild(nodize(Board()));
 field.appendChild(nodize(Stats()));
 
 document.querySelector('.tm-c-footer').classList.add('tm-c-footer--active');
-document.querySelector('.tm-c-stats').classList.add('tm-c-stats--disabled');
 document.querySelector('.tm-c-board__message').classList.add('tm-c-board__message--active');
 document.querySelector('.tm-c-message__container').innerHTML = StartScreen();
 
