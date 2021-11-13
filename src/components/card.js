@@ -1,8 +1,12 @@
+import Player from 'instances/Player';
 import image from 'utilities/image';
 import uuid from 'utilities/uuid';
 
 export default function Card(data, isPreview = false, namespace = 'hand') {
-  const cardClasses = `tm-c-${namespace}__card tm-c-card ${!isPreview ? 'js-card' : ''}`;
+  const cardBaseClasses = `tm-c-${namespace}__card tm-c-card`;
+  const cardDisabledClasses = !isPreview && Player.mp < data.cost ? 'tm-c-card--disabled' : '';
+  const cardActionClasses = !isPreview ? 'js-card' : '';
+  const cardClasses = [cardBaseClasses, cardDisabledClasses, cardActionClasses].join(' ');
   const cardBackgroundIcon = `background-image: url(${image(data.icon)})`;
   const cardElementIcon = `background-image: url(${image(data.element)})`;
 

@@ -20,6 +20,11 @@
     transform: translateY(-10px);
   }
 
+  &--disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
   &__cost {
     position: absolute;
     top: -10px;
