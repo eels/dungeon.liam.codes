@@ -7,7 +7,7 @@ export default function DeathScreen() {
     <div class="tm-c-death">
       <div class="tm-c-death__heading">You died</div>
       <div class="tm-c-death__icon">
-        <img src="${image('tombstone')}" />
+        <img src="${image('crowned-skull')}" />
       </div>
       <div class="tm-c-death__level">
         Valiantly, you managed to reach lv. ${Dungeon.level} of the dungeon.
