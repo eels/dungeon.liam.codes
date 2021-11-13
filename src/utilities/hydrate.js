@@ -1,7 +1,13 @@
-export default function hydrate(string, variables) {
-  return string.replace(/%\d+/g, (placeholder) => {
-    const placeholderIndex = parseInt(placeholder.replace('%', ''));
+export default function hydrate(string, variables = [], keywords = []) {
+  const words = string.split(' ');
+  const hydrated = [];
 
-    return variables[placeholderIndex - 1];
-  });
+  for (let word of words) {
+    word = word.replace(/%\d+/g, (num) => variables[parseInt(num.replace('%', '')) - 1]);
+    word = keywords.includes(word) ? `<span>${word}</span>` : word;
+
+    hydrated.push(word);
+  }
+
+  return hydrated.join(' ');
 }

@@ -15,7 +15,7 @@ bind('click', '.js-heal', function () {
   messagesContainer.classList.remove(errorClass);
 
   if (Player.gold - checkpointHeal.price < 0) {
-    messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_HEAL_ERROR.copy, []);
+    messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_HEAL_ERROR.copy);
     messagesContainer.classList.add(errorClass);
 
     return;
@@ -24,7 +24,7 @@ bind('click', '.js-heal', function () {
   Player.setState({ gold: Player.gold - checkpointHeal.price }).commit();
   Player.setState({ hp: Math.min(Player.hp + checkpointHeal.health, Player.maxHp) }).commit();
 
-  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_HEAL.copy, []);
+  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_HEAL.copy);
 
   dispatch(PLAYER_UPDATE_STATS);
 });

@@ -34,7 +34,9 @@ bind('click', '.js-buy', function (event) {
   Player.setState({ gold: Player.gold - card.price }).commit();
   Player.setState({ availableCards: playerAvailableCards }).commit();
 
-  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_PURCHASE.copy, [capitalize(card.name)]);
+  const variables = [`<span>${capitalize(card.name)}</span>`];
+
+  messagesContainer.innerHTML = hydrate(messages.CHECKPOINT_PURCHASE.copy, variables);
 
   dispatch(PLAYER_UPDATE_STATS);
 });

@@ -4,7 +4,7 @@ export const PLAYER_CARD_EFFECT_GAIN_ARMOR = {
 };
 
 export const PLAYER_CARD_EFFECT_CURE = {
-  copy: 'You cure yourself of all negative status effects',
+  copy: 'You cure yourself of all negative ailments',
   direction: 'outbound',
 };
 

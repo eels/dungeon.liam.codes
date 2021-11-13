@@ -4,12 +4,12 @@ export const CREATURE_EFFECT_GAIN_ARMOR = {
 };
 
 export const CREATURE_EFFECT_GAIN_HP = {
-  copy: 'Enemy %1 restores %2 hp',
+  copy: 'Enemy %1 restores %2 HP',
   direction: 'outbound',
 };
 
 export const CREATURE_EFFECT_GAIN_MP = {
-  copy: 'Enemy %1 restores %2 mp',
+  copy: 'Enemy %1 restores %2 MP',
   direction: 'outbound',
 };
 

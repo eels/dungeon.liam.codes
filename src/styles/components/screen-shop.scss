@@ -46,16 +46,15 @@
   &__status {
     height: 16px;
     margin-top: 20px;
+
+    span {
+      color: $palette--bittersweet;
+      text-transform: uppercase;
+    }
   }
 
   &__status--error {
     color: $palette--bittersweet;
-  }
-
-  &__status--name {
-    display: inline;
-    color: $palette--bittersweet;
-    text-transform: uppercase;
   }
 
   &__continue {

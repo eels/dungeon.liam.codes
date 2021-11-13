@@ -16,6 +16,11 @@
   }
 
   &__entry {
+    span {
+      color: $palette--bittersweet;
+      text-transform: uppercase;
+    }
+
     &:not(:last-child) {
       padding-bottom: 5px;
     }
@@ -42,11 +47,5 @@
 
   &__advance {
     color: $palette--bittersweet;
-  }
-
-  &__keyword {
-    display: inline;
-    color: $palette--bittersweet;
-    text-transform: uppercase;
   }
 }

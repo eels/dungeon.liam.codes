@@ -1,4 +1,5 @@
 import hydrate from 'utilities/hydrate';
+import keywords from 'data/keywords';
 import type from 'utilities/type';
 import uuid from 'utilities/uuid';
 
@@ -32,7 +33,7 @@ export default function processCombatQueue() {
     document.querySelector('.tm-c-log__container').appendChild(combatEntry);
 
     const prefix = data.message.direction === 'inbound' ? '<< *' : '>> *';
-    const hydratedMessage = hydrate(`${prefix} ${data.message.copy}`, data.variables);
+    const hydratedMessage = hydrate(`${prefix} ${data.message.copy}`, data.variables, keywords);
 
     type(`.tm-c-log__entry[data-id="${id}"]`, hydratedMessage, () => {
       isCombatQueueProcessing = false;
