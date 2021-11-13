@@ -13,7 +13,10 @@ export default [
         cost: 1,
         damage: 2,
         effect: 'damage',
-        message: '* >> Enemy *name* engulfs your body dealing *damage* damage',
+        message: {
+          copy: 'Enemy %1 engulfs your body dealing %2 damage',
+          direction: 'outbound',
+        },
       },
     ],
     weakness: 'fire',
@@ -51,15 +54,20 @@ export default [
         chance: 0.4,
         damage: 2,
         effect: 'damage',
-        message: '* >> Enemy *name* flings a bone at you dealing *damage* damage',
+        message: {
+          copy: 'Enemy %1 flings a bone at you dealing %2 damage',
+          direction: 'outbound',
+        },
       },
       {
         chance: 0.2,
         cost: 2,
         damage: 3,
-        effect: 'damage',
-        message:
-          '* >> Enemy *name* releases a sense of death giving you <div class="tm-c-log__keyword">poison</div>',
+        effect: 'poison',
+        message: {
+          copy: 'Enemy %1 releases a scent of death giving you poison',
+          direction: 'outbound',
+        },
       },
     ],
   },

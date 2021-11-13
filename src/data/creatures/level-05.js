@@ -43,7 +43,10 @@ export default [
         damage: 10,
         effect: 'damage',
         element: 'fire',
-        message: '* >> Enemy *name* breathes fire scorching you for *damage* damage',
+        message: {
+          copy: 'Enemy %1 breathes fire scorching you for %2 damage',
+          direction: 'outbound',
+        },
       },
     ],
   },

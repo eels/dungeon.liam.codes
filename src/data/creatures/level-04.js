@@ -23,12 +23,19 @@ export default [
         chance: 0.35,
         cost: 2,
         effect: 'protect',
+        message: {
+          copy: 'Enemy %1 protects itself',
+          direction: 'outbound',
+        },
       },
       {
         chance: 0.3,
         duration: 4,
         effect: 'ice',
-        message: '* >> Enemy *name* <div class="tm-c-log__keyword">freezes</div> you motionless',
+        message: {
+          copy: 'Enemy %1 freezes you motionless',
+          direction: 'outbound',
+        },
       },
     ],
   },

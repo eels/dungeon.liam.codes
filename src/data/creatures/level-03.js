@@ -13,14 +13,19 @@ export default [
         chance: 0.4,
         duration: 3,
         effect: 'poison',
-        message:
-          '* >> Enemy *name* shoots a <div class="tm-c-log__keyword">poison</div> web at you',
+        message: {
+          copy: 'Enemy %1 shoots a poison web at you',
+          direction: 'outbound',
+        },
       },
       {
         chance: 0.2,
         damage: 5,
         effect: 'damage',
-        message: '* >> Enemy *name* bites you dealing *damage* damage',
+        message: {
+          copy: 'Enemy %1 bites you dealing %2 damage',
+          direction: 'outbound',
+        },
       },
     ],
     weakness: 'fire',
@@ -52,19 +57,29 @@ export default [
         damage: 5,
         effect: 'damage',
         element: 'nature',
-        message: '* >> Enemy *name* throws stone at you for *damage* damage',
+        message: {
+          copy: 'Enemy %1 throws stone at you for %2 damage',
+          direction: 'outbound',
+        },
       },
       {
         chance: 0.4,
         duration: 3,
         effect: 'ice',
-        message: '* >> Enemy *name* <div class="tm-c-log__keyword">freezes</div> you motionless',
+        message: {
+          copy: 'Enemy %1 freezes you motionless',
+          direction: 'outbound',
+        },
       },
       {
         armor: 2,
         chance: 0.45,
         cost: 1,
         effect: 'protect',
+        message: {
+          copy: 'Enemy %1 protects itself',
+          direction: 'outbound',
+        },
       },
     ],
   },
@@ -81,19 +96,29 @@ export default [
         chance: 0.45,
         damage: 2,
         effect: 'damage',
-        message: '* >> Enemy *name* bites you for *damage* damage',
+        message: {
+          copy: 'Enemy %1 bites you for %2 damage',
+          direction: 'outbound',
+        },
       },
       {
         chance: 0.3,
         cost: 2,
         damage: 2,
         effect: 'damage',
-        message: '* >> Enemy *name* transforms and hits you for *damage* damage',
+        message: {
+          copy: 'Enemy %1 transforms and hits you for %2 damage',
+          direction: 'outbound',
+        },
       },
       {
         armor: 4,
         chance: 0.15,
         effect: 'protect',
+        message: {
+          copy: 'Enemy %1 protects itself',
+          direction: 'outbound',
+        },
       },
     ],
   },

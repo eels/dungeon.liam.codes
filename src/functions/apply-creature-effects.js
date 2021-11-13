@@ -16,6 +16,7 @@ export default function applyCreatureEffects(data) {
     const damageCalculation = Player.armor - data.damage * creature.statModifier;
     const isHit = damageCalculation < 0;
     const damage = Math.abs(damageCalculation);
+    const message = data.message ?? messages.CREATURE_EFFECT_DAMAGE;
 
     processPlayerArmorUpdate(data.damage * creature.statModifier);
 
@@ -29,74 +30,81 @@ export default function applyCreatureEffects(data) {
       Player.setState({ hp: Math.max(Player.hp - damage, 0) }).commit();
     }
 
-    log(messages.CREATURE_EFFECT_DAMAGE, [creature.name, damage]);
+    log(message, [creature.name, damage]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'heal') {
     const effect = data.health * creature.statModifier;
+    const message = data.message ?? messages.CREATURE_EFFECT_GAIN_HP;
 
     creature.setState({ hp: Math.min(creature.hp + effect, Player.maxHp) }).commit();
 
-    log(messages.CREATURE_EFFECT_GAIN_HP, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'mana') {
     const effect = data.mana * creature.statModifier;
+    const message = data.message ?? messages.CREATURE_EFFECT_GAIN_MP;
 
     creature.setState({ mp: Math.min(creature.mp + effect, Player.maxMp) }).commit();
 
-    log(messages.CREATURE_EFFECT_GAIN_MP, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'protect') {
     const effect = data.armor * creature.statModifier;
+    const message = data.message ?? messages.CREATURE_EFFECT_GAIN_ARMOR;
 
     creature.setState({ ad: effect, armor: effect, maxAd: effect }).commit();
 
-    log(messages.CREATURE_EFFECT_GAIN_ARMOR, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(CREATURE_UPDATE);
   }
 
   if (data.effect === 'burn') {
     const effect = data.duration * creature.statModifier;
     const duration = extendStatusEffect(Player, 'burn', effect);
+    const message = data.message ?? messages.CREATURE_EFFECT_APPLY_BURN;
 
     Player.setState({ status: 'fire', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_BURN, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'freeze') {
     const effect = data.duration * creature.statModifier;
     const duration = extendStatusEffect(Player, 'freeze', effect);
+    const message = data.message ?? messages.CREATURE_EFFECT_APPLY_FREEZE;
 
     Player.setState({ status: 'ice', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_FREEZE, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'paralyse') {
     const effect = data.duration * creature.statModifier;
     const duration = extendStatusEffect(Player, 'freeze', effect);
+    const message = data.message ?? messages.CREATURE_EFFECT_APPLY_PARALYSIS;
 
     Player.setState({ status: 'electric', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_PARALYSIS, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 
   if (data.effect === 'poison') {
     const effect = data.duration * creature.statModifier;
     const duration = extendStatusEffect(Player, 'poison', effect);
+    const message = data.message ?? messages.CREATURE_EFFECT_APPLY_POISON;
 
     Player.setState({ status: 'poison', statusDuration: duration }).commit();
 
-    log(messages.CREATURE_EFFECT_APPLY_POISON, [creature.name, effect]);
+    log(message, [creature.name, effect]);
     dispatch(PLAYER_UPDATE_STATS);
   }
 }
