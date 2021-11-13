@@ -47,7 +47,7 @@ export default class DungeonEntity extends StatefulEntity {
   }
 
   generateDungeonCreatures() {
-    if (this.level % 2 === 0 && chance(1)) {
+    if (this.level % 2 === 0 && chance(0.4)) {
       return this.generateDungeonBoss();
     }
 
