@@ -21,6 +21,16 @@
     background-repeat: no-repeat;
     background-size: 30px;
     border-radius: 6px;
+
+    &::before {
+      position: relative;
+      bottom: 35px;
+      display: block;
+      color: rgba($palette--white, 0.3);
+      content: 'Discard';
+      text-align: center;
+      text-transform: uppercase;
+    }
   }
 
   &__discard-wrapper {
