@@ -20,7 +20,7 @@ export default function addToDiscard() {
   const lastChildTransform = lastChildCard && lastChildCard.style.transform;
   const lastAngle = lastChildCard && parseFloat(lastChildTransform.match(/[-\d.]+/));
   const axis = lastAngle < 0 ? 1 : -1;
-  const degree = (Math.round(Math.random() * 6) + 6) * axis;
+  const degree = Math.floor(Math.random() * (15 - 2 + 1) + 2) * axis;
 
   cardRoot.style.transform = `rotate(${degree}deg)`;
 
@@ -30,5 +30,5 @@ export default function addToDiscard() {
     const newChild = document.querySelector('.js-discard').lastChild;
 
     newChild.classList.remove('tm-c-hand__discard-wrapper--enter');
-  }, 500);
+  }, 300);
 }

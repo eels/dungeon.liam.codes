@@ -34,8 +34,10 @@
   }
 
   &__discard-wrapper {
+    will-change: transition;
+
     &--enter {
-      animation-duration: 0.25s;
+      animation-duration: 0.3s;
       animation-iteration-count: 1;
       animation-name: discard-enter;
       animation-timing-function: linear;
