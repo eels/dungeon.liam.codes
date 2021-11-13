@@ -16,5 +16,6 @@ export default function processCreatureDeath() {
 
   log(messages.CREATURE_DEATH_CALL, [creature.name], 'CREATURE_DEATH');
   log(messages.CREATURE_DEATH_REWARD, [creature.raw.gold]);
+  log(messages.PLAYER_ADVANCE_ENCOUNTER, [Dungeon.creatures[0].name]);
   dispatch(CREATURE_UPDATE);
 }

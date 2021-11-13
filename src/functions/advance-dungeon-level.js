@@ -19,6 +19,7 @@ export default function advanceDungeonLevel() {
   document.querySelector('.tm-c-board__message').classList.remove('tm-c-board__message--active');
 
   log(messages.PLAYER_ADVANCE_DUNGEON, [Dungeon.level], 'DUNGEON_ADVANCE');
+  log(messages.PLAYER_ADVANCE_ENCOUNTER, [Dungeon.creatures[0].name]);
 
   Tick.start();
 
