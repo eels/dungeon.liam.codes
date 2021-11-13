@@ -18,6 +18,11 @@ export const CREATURE_EFFECT_DAMAGE = {
   direction: 'outbound',
 };
 
+export const CREATURE_EFFECT_BREAK_CREATURE_ARMOR = {
+  copy: 'Enemy %1 breaks your armor',
+  direction: 'outbound',
+};
+
 export const CREATURE_EFFECT_APPLY_BURN = {
   copy: 'Enemy %1 inflicts a burn on you lasting %2 turns',
   direction: 'outbound',

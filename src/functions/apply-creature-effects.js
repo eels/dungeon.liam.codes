@@ -17,7 +17,7 @@ export default function applyCreatureEffects(data) {
     const isHit = damageCalculation < 0;
     const damage = Math.abs(damageCalculation);
 
-    processPlayerArmorUpdate(damage);
+    processPlayerArmorUpdate(data.damage);
 
     if (data.element && ['electric', 'fire', 'ice', 'poison'].includes(data.element)) {
       if (chance(0.3) && Player.status === 'normal') {

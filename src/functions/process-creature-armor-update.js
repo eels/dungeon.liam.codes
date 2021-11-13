@@ -1,5 +1,7 @@
 import Dungeon from 'instances/Dungeon';
 import dispatch from 'events/delegate/dispatch';
+import log from 'functions/combat-log';
+import messages from 'data/messages';
 import { CREATURE_UPDATE } from 'events/events';
 
 export default function processCreatureArmorUpdate(damage) {
@@ -13,6 +15,7 @@ export default function processCreatureArmorUpdate(damage) {
 
   if (creature.ad === 0) {
     creature.setState({ armor: 0, maxAd: 0 }).commit();
+    log(messages.PLAYER_CARD_EFFECT_BREAK_CREATURE_ARMOR, [creature.name]);
   }
 
   dispatch(CREATURE_UPDATE);

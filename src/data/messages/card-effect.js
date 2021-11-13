@@ -33,6 +33,11 @@ export const PLAYER_CARD_EFFECT_DAMAGE = {
   direction: 'outbound',
 };
 
+export const PLAYER_CARD_EFFECT_BREAK_CREATURE_ARMOR = {
+  copy: 'You break the armor of enemy %1',
+  direction: 'outbound',
+};
+
 export const PLAYER_CARD_EFFECT_APPLY_BURN = {
   copy: 'You burn enemy %1 for %2 turns',
   direction: 'outbound',

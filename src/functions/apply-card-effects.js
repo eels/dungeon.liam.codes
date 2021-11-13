@@ -48,7 +48,7 @@ export default function applyCardEffects(data) {
     const isHit = damageCalculation < 0;
     const damage = Math.abs(damageCalculation);
 
-    processCreatureArmorUpdate(damage);
+    processCreatureArmorUpdate(data.damage * (isCrit ? 2 : 1));
 
     if (data.element && ['electric', 'fire', 'ice', 'poison'].includes(data.element)) {
       if (chance(0.3) && creature.status === 'normal') {

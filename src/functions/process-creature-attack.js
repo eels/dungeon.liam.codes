@@ -20,7 +20,7 @@ export default function processCreatureAttack() {
   const isHit = damageCalculation < 0;
   const damage = Math.abs(damageCalculation);
 
-  processPlayerArmorUpdate(damage);
+  processPlayerArmorUpdate(creatureAttack);
 
   if (isHit) {
     Player.setState({ hp: Math.max(Player.hp - damage, 0) }).commit();
