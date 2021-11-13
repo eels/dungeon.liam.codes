@@ -3,12 +3,12 @@
   height: 100%;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  padding: 20px 30px;
   background-color: rgba($palette--black, 0.9);
 
   &__container {
     display: flex;
-    min-height: 95%;
+    min-height: 100%;
     align-items: center;
     justify-content: center;
     padding: 10px;

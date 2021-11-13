@@ -10,6 +10,12 @@ bind(ENTER_SHOP, 'body', function () {
 
   Player.setState({ actionTaken: true }).commit();
 
+  const healthRestored = Math.ceil(Player.hp * (5 / 100));
+  const manaRestored = Math.ceil(Player.mp * (5 / 100));
+
+  Player.setState({ hp: Math.min(Player.hp + healthRestored, Player.maxHp) }).commit();
+  Player.setState({ mp: Math.min(Player.mp + manaRestored, Player.maxMp) }).commit();
+
   document.querySelector('.tm-c-timer').style.width = '100%';
   document.querySelector('.tm-c-hand').classList.add('tm-c-hand--disabled');
   document.querySelector('.tm-c-board__message').classList.add('tm-c-board__message--active');

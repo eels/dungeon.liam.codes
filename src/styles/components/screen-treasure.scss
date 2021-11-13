@@ -4,6 +4,7 @@
   &__heading {
     padding-bottom: 5px;
     border-bottom: 5px solid $palette--white;
+    margin: 0 30px;
     font-size: 28px;
     text-align: left;
     text-transform: uppercase;
@@ -46,9 +47,14 @@
     }
   }
 
-  &__status {
+  &__heal-notice {
     height: 16px;
     margin-top: 20px;
+  }
+
+  &__status {
+    height: 16px;
+    margin-top: 10px;
   }
 
   &__continue {

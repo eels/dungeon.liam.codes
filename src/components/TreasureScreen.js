@@ -27,6 +27,7 @@ export default function TreasureScreen() {
           <div class="tm-c-treasure__card-take js-special">Heal</div>
         </div>
       </div>
+      <div class="tm-c-treasure__heal-notice">You feel your health and mana replenish a little</div>
       <div class="tm-c-treasure__status">"Choose wisely... you may only take one"</div>
       <div class="tm-c-treasure__continue js-continue">Continue further into the dungeon</div>
     </div>

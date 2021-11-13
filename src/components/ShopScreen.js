@@ -27,6 +27,7 @@ export default function ShopScreen() {
           <div class="tm-c-shop__card-buy js-special">Receive</div>
         </div>
       </div>
+      <div class="tm-c-shop__heal-notice">You feel your health and mana replenish a little</div>
       <div class="tm-c-shop__status">"Choose wisely, this may be your last decision..."</div>
       <div class="tm-c-shop__continue js-continue">Continue further into the dungeon</div>
     </div>
