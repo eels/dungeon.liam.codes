@@ -12,7 +12,7 @@ export default function advanceDungeonLevel() {
   Dungeon.setState({ level: Dungeon.level + 1 }).commit();
   Dungeon.setState({ creatures: Dungeon.generateDungeonCreatures() }).commit();
 
-  Player.setState({ actionTaken: false, deck: [], status: 'active' }).commit();
+  Player.setState({ actionTaken: false, status: 'active' }).commit();
   Player.setState({ deck: Player.generatePlayableDeck() }).commit();
 
   document.querySelector('.tm-c-hand').classList.remove('tm-c-hand--disabled');
