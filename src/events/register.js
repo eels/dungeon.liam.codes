@@ -1,8 +1,8 @@
 export { default as clickBuy } from 'events/handlers/click-buy';
 export { default as clickCard } from 'events/handlers/click-card';
 export { default as clickContinue } from 'events/handlers/click-continue';
-export { default as clickHeal } from 'events/handlers/click-heal';
 export { default as clickRestart } from 'events/handlers/click-restart';
+export { default as clickSpecial } from 'events/handlers/click-special';
 export { default as clickStart } from 'events/handlers/click-start';
 export { default as clickTake } from 'events/handlers/click-take';
 export { default as customCreatureUpdate } from 'events/handlers/custom-creature-update';

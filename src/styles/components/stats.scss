@@ -35,6 +35,11 @@
     float: right;
     font-size: 22px;
     vertical-align: middle;
+
+    &--small {
+      top: 10px;
+      font-size: 18px;
+    }
   }
 
   &__bar {

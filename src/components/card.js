@@ -14,11 +14,13 @@ export default function Card(data, isPreview = false, namespace = 'hand') {
         ${data.name}
       </div>
       <div class="tm-c-card__effect">
+        ${data.armor ? `+${data.armor} ARM` : ''}
         ${data.damage ? `${data.damage} ATK` : ''}
         ${data.health ? `+${data.health} HP` : ''}
-        ${data.mana ? `+${data.mana} MP` : ''}
-        ${data.armor ? `+${data.armor} ARM` : ''}
         ${data.keyword ? `${data.keyword}` : ''}
+        ${data.mana ? `+${data.mana} MP` : ''}
+        ${data.maxHealth ? `+${data.maxHealth} MAX HP` : ''}
+        ${data.maxMana ? `+${data.maxMana} MAX MP` : ''}
       </div>
     </div>
   `;

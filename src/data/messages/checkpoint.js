@@ -1,9 +1,4 @@
-export const CHECKPOINT_HEAL = {
-  copy: '"A bright light surrounds you as your health is restored"',
-  direction: 'outbound',
-};
-
-export const CHECKPOINT_HEAL_ERROR = {
+export const CHECKPOINT_SPECIAL_ERROR = {
   copy: '"You do not possess enough gold for that blessing"',
   direction: 'outbound',
 };
