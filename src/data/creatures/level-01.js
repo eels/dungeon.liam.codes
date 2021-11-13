@@ -61,8 +61,8 @@ export default [
       },
       {
         chance: 0.2,
-        cost: 2,
-        damage: 3,
+        cost: 1,
+        duration: 2,
         effect: 'poison',
         message: {
           copy: 'Enemy %1 releases a scent of death giving you poison',

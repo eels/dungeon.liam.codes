@@ -27,7 +27,7 @@ export default function processCreatureStatusEffects() {
     creature.setState({ statusDuration: creature.statusDuration - 1 }).commit();
 
     if (creature.statusDuration !== 0) {
-      const damage = Math.ceil(creature.hp * (20 / 100));
+      const damage = Math.ceil(creature.hp * (5 / 100));
       const effect = status === 'fire' ? 'burn' : 'poison';
 
       creature.setState({ hp: Math.max(creature.hp - damage, 0) }).commit();

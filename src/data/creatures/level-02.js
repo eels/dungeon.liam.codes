@@ -122,6 +122,7 @@ export default [
     specials: [
       {
         chance: 0.3,
+        cost: 2,
         damage: 4,
         effect: 'damage',
         element: 'fire',
@@ -142,6 +143,7 @@ export default [
       },
       {
         chance: 0.3,
+        cost: 1,
         duration: 2,
         effect: 'poison',
         message: {

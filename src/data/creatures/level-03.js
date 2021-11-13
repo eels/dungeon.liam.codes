@@ -53,7 +53,7 @@ export default [
     specials: [
       {
         chance: 0.3,
-        cost: 1,
+        cost: 2,
         damage: 5,
         effect: 'damage',
         element: 'nature',
@@ -64,6 +64,7 @@ export default [
       },
       {
         chance: 0.4,
+        cost: 3,
         duration: 3,
         effect: 'ice',
         message: {
@@ -74,7 +75,7 @@ export default [
       {
         armor: 2,
         chance: 0.45,
-        cost: 1,
+        cost: 2,
         effect: 'protect',
         message: {
           copy: 'Enemy %1 protects itself',
