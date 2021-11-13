@@ -55,7 +55,7 @@ export default class DungeonEntity extends StatefulEntity {
     const level = this.level < ceiling ? this.level : ceiling;
     const range = [level - 1, level];
     const availableCreatures = creatures.filter((creature) => range.includes(creature.level));
-    const curve = Math.floor(level * (1 + level / 20)) + 2;
+    const curve = level + 2;
 
     return Array.from(Array(curve).keys()).map(() => {
       return new CreatureEntity(Object.assign({ id: uuid() }, shuffle(availableCreatures)[0]));
