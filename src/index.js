@@ -5,6 +5,14 @@ import Title from 'components/Title';
 import nodize from 'utilities/nodize';
 import register from 'events/register';
 
+if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(new URL('./service-worker.js', import.meta.url), {
+      type: 'module',
+    });
+  });
+}
+
 const field = document.getElementById('dungeon');
 
 field.appendChild(nodize(Title('Dungeon Delver')));
