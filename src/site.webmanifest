@@ -1,0 +1,23 @@
+{
+  "name": "Dungeon Delver | Card-Based Dungeon Crawler",
+  "short_name": "Dungeon Delver",
+  "description": "Card-based dungeon crawler with monsters, swords and stuff",
+  "lang": "en-GB",
+  "start_url": "/",
+  "theme_color": "#1f1f1f",
+  "background_color": "#1f1f1f",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "./static/android-chrome-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "./static/android-chrome-512x512.png",
+      "type": "image/png"
+    }
+  ]
+}

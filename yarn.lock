@@ -779,6 +779,14 @@
     globals "^13.2.0"
     nullthrows "^1.1.1"
 
+"@parcel/packager-raw-url@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@parcel/packager-raw-url/-/packager-raw-url-2.0.1.tgz#646466eb3b216e1421323987c5e9ed635963795e"
+  integrity sha512-m8ixkDjJ0RqY2U3Q+ASnphTG1n46jZ/CnRkvT8Kj5MyxtpDX69ri3/C1/b56r6daeemj0laM5lqkr9MrKsdacw==
+  dependencies:
+    "@parcel/plugin" "^2.0.1"
+    "@parcel/utils" "^2.0.1"
+
 "@parcel/packager-raw@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@parcel/packager-raw/-/packager-raw-2.0.1.tgz#08516692e6050debc540fab4b36b078edb8ce492"
@@ -1031,6 +1039,16 @@
     posthtml-parser "^0.10.1"
     posthtml-render "^3.0.0"
     semver "^5.4.1"
+
+"@parcel/transformer-webmanifest@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.0.1.tgz#17ff113c58638191f267671dd8c82f3d4a0c1fe0"
+  integrity sha512-yv8x8LvIX/MbZ/xXoqqQktYBvVCffKXK6Ak4Ig4DyRBmmcrYJxwWuyQpkpzXhuIFW0jPq8rz4hgoQHnV0teWwg==
+  dependencies:
+    "@parcel/diagnostic" "^2.0.1"
+    "@parcel/plugin" "^2.0.1"
+    "@parcel/utils" "^2.0.1"
+    json-source-map "^0.6.1"
 
 "@parcel/types@^2.0.1":
   version "2.0.1"
