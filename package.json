@@ -37,13 +37,13 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "workbox-cacheable-response": "^6.3.0",
+    "workbox-cacheable-response": "^6.4.1",
     "workbox-expiration": "^6.3.0",
     "workbox-routing": "^6.3.0",
     "workbox-strategies": "^6.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^14.1.0",
+    "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@parcel/packager-raw-url": "^2.0.1",
     "@parcel/transformer-sass": "^2.0.1",
@@ -69,7 +69,7 @@
     "sass": "^1.43.4",
     "stylelint": "^14.1.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-recommended-scss": "^5.0.1",
+    "stylelint-config-recommended-scss": "^5.0.2",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.0.0"
