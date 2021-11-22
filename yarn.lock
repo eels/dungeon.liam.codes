@@ -3965,7 +3965,7 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   dependencies:
     postcss "^7.0.14"
 
-idb@^6.0.0:
+idb@^6.1.4:
   version "6.1.5"
   resolved "https://registry.yarnpkg.com/idb/-/idb-6.1.5.tgz#dbc53e7adf1ac7c59f9b2bf56e00b4ea4fce8c7b"
   integrity sha512-IJtugpKkiVXQn5Y+LteyBCNk1N8xpGV3wWZk9EVtZWH8DYkjBn0bX1XnGP9RkyZF0sAcywa6unHqSWKe7q4LGw==
@@ -7819,13 +7819,13 @@ workbox-core@6.4.1:
   resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-6.4.1.tgz#41d181d52e86d3263d48b69253bcae66c2d7286a"
   integrity sha512-5hosqpSK+48jHlj+5EHN5dtH1Ade4fqTe4+xX3U9wWK1SDaXEqXpVxdHuBqYfg75UE1PUINA0rhMZWTqeGoLFg==
 
-workbox-expiration@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/workbox-expiration/-/workbox-expiration-6.3.0.tgz#1d36c456f9282c39cda6b59a32b99732da7c3535"
-  integrity sha512-teYuYfM3HFbwAD/nlZDw/dCMOrCKjsAiMRhz0uOy9IkfBb7vBynO3xf118lY62X6BfqjZdeahiHh10N0/aYICg==
+workbox-expiration@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/workbox-expiration/-/workbox-expiration-6.4.1.tgz#422e61f9a1ba41fdf27255d1d6d0cbfb2120489b"
+  integrity sha512-N912AGhi95vhf2vebE3wPhnGjnR+t5W4yALDY7Pl6bcuhySNbwkkp2RjQcBB+dxrdiX2rOvavvdcf/q1LSnEyg==
   dependencies:
-    idb "^6.0.0"
-    workbox-core "6.3.0"
+    idb "^6.1.4"
+    workbox-core "6.4.1"
 
 workbox-routing@^6.4.1:
   version "6.4.1"
