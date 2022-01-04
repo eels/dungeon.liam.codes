@@ -48,7 +48,7 @@
     "@parcel/packager-raw-url": "^2.0.1",
     "@parcel/transformer-sass": "^2.0.1",
     "@parcel/transformer-webmanifest": "^2.0.1",
-    "eslint": "^8.5.0",
+    "eslint": "^8.6.0",
     "eslint-config-semistandard": "^16.0.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-alias": "^1.1.2",
