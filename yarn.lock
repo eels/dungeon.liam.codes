@@ -563,7 +563,7 @@
     nullthrows "^1.1.1"
     semver "^5.7.1"
 
-"@parcel/diagnostic@^2.2.0", "@parcel/diagnostic@^2.2.1":
+"@parcel/diagnostic@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@parcel/diagnostic/-/diagnostic-2.2.1.tgz#9f75d6c6d9b9705ffbdb5c3f29ed421200e14bb1"
   integrity sha512-M7P1tu+o+F9XWZQhj/0uojVrD/c3cmH3uP2E8RwfbCVnCLuCbvTJ3tAmE6+ddUuzGIehNC2ZhOI+sYRGPeA6gw==
@@ -821,7 +821,7 @@
     "@parcel/utils" "^2.2.1"
     posthtml "^0.16.4"
 
-"@parcel/plugin@^2.2.0", "@parcel/plugin@^2.2.1":
+"@parcel/plugin@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.2.1.tgz#14d46cababae45d89afcf4a26b67880870d4fcfc"
   integrity sha512-UrmAmtCO+Ma78ojhG9LSB5bYSkcjTwyPexfcpgCsZiLrv4cXDjKe7gEYfxWbrJw4ahkUhfgRsrTfUzD/TPYxiA==
@@ -1084,7 +1084,7 @@
     "@parcel/workers" "^2.2.1"
     utility-types "^3.10.0"
 
-"@parcel/utils@^2.2.0", "@parcel/utils@^2.2.1":
+"@parcel/utils@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@parcel/utils/-/utils-2.2.1.tgz#f32653e81205c0145b8edc7e2d4d853070ad6b02"
   integrity sha512-5Bn6W7Ey1gYovEGavD+Pml265/LG6/lMw+1V0N/JfbA4xFpcX8P0RgwDWYXtKfblb0/naeICqlwwgqvxiLEDzg==
@@ -2810,10 +2810,10 @@ eslint-visitor-keys@^3.1.0, eslint-visitor-keys@^3.2.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.2.0.tgz#6fbb166a6798ee5991358bc2daa1ba76cc1254a1"
   integrity sha512-IOzT0X126zn7ALX0dwFiUQEdsfzrm4+ISsQS8nukaJXwEyYKRSnEIIDULYg1mCtGp7UUXgfGl7BIolXREQK+XQ==
 
-eslint@^8.7.0:
-  version "8.7.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.7.0.tgz#22e036842ee5b7cf87b03fe237731675b4d3633c"
-  integrity sha512-ifHYzkBGrzS2iDU7KjhCAVMGCvF6M3Xfs8X8b37cgrUlDt6bWRTpRh6T/gtSXv1HJ/BUGgmjvNvOEGu85Iif7w==
+eslint@^8.8.0:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.8.0.tgz#9762b49abad0cb4952539ffdb0a046392e571a2d"
+  integrity sha512-H3KXAzQGBH1plhYS3okDix2ZthuYJlQQEGE5k0IKuEqUSiyu4AmxxlJ2MtTYeJ3xB4jDhcYCwGOg2TXYdnDXlQ==
   dependencies:
     "@eslint/eslintrc" "^1.0.5"
     "@humanwhocodes/config-array" "^0.9.2"
