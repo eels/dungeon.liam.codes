@@ -544,7 +544,7 @@
     "@parcel/utils" "2.3.1"
     posthtml "^0.16.4"
 
-"@parcel/plugin@2.3.1", "@parcel/plugin@^2.2.1":
+"@parcel/plugin@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.3.1.tgz#d7abc685ede4d7ae25bb15ccfcfa2a59e8d7c51d"
   integrity sha512-ROOWbgFze7BCF3RkEh8VbcKGlR5UGBuJ8lfCaFrG1VOk7Rxgl8Bmk96TRbZREm/1jB74p2O8twVKyPSC13riow==
@@ -738,12 +738,12 @@
     "@parcel/utils" "2.3.1"
     react-refresh "^0.9.0"
 
-"@parcel/transformer-sass@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.2.1.tgz#25a3a2c1cbd71f96f902385722e85680111912af"
-  integrity sha512-OV58Jze0/WF3soYFoHBN922uuiJCFX5wlYLumcNG9vM3EMtAtWQ51Ax71h0PQm1TGfy3TXhmJH4/tgBFy3mjkw==
+"@parcel/transformer-sass@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.3.1.tgz#aee8d952d37515dc594f591226e6c28b9c145278"
+  integrity sha512-lbbY/zhOx7EwWsoACx0sTgAEaPpIWnJyLA7/n1T52ApvSwzL1ogTaMzjb7FQY11v6LsOXhiyyPLFPqR2qo4LMA==
   dependencies:
-    "@parcel/plugin" "^2.2.1"
+    "@parcel/plugin" "2.3.1"
     "@parcel/source-map" "^2.0.0"
     sass "^1.38.0"
 
@@ -784,7 +784,7 @@
     "@parcel/workers" "2.3.1"
     utility-types "^3.10.0"
 
-"@parcel/utils@2.3.1", "@parcel/utils@^2.2.1":
+"@parcel/utils@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/utils/-/utils-2.3.1.tgz#e1e582c850e7f7b131292cb45b8a177f59903413"
   integrity sha512-OFdh/HuAcce753/U3QoORzYU3N5oZqCfQNRb0i3onuz/qpli5TyxUl/k1BuTqlKYr6Px3kj05g6GFi9kRBOMbw==
