@@ -338,7 +338,7 @@
     nullthrows "^1.1.1"
     semver "^5.7.1"
 
-"@parcel/diagnostic@2.3.1", "@parcel/diagnostic@^2.2.1":
+"@parcel/diagnostic@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/diagnostic/-/diagnostic-2.3.1.tgz#821040ab49c862463f47b44b8c7725b3ec3bf9bb"
   integrity sha512-hBMcg4WVMdSIy6RpI4gSto5dZ3OoUbnrCZzVw3J1tzQJn7x9na/+014IaE58vJtAqJ8/jc/TqWIcwsSLe898rA==
@@ -761,14 +761,14 @@
     posthtml-render "^3.0.0"
     semver "^5.7.1"
 
-"@parcel/transformer-webmanifest@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.2.1.tgz#54cc2508f5269111b788984248abd0cd5e1797a0"
-  integrity sha512-A2bfv4IQHLpqD9YkU5x1QlnhfrcZ8dwbhbgeLh7R4omf/kxn4Z2pVVS4sBJPozzdRWDfCJno/PwAjvNH/Tzd1w==
+"@parcel/transformer-webmanifest@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.3.1.tgz#effef26b4e0864d52fd3b3f12edd06d6a1649ec6"
+  integrity sha512-7AiFq1Hm7g7Q79INxSuDzRBAHijBlatusiPB39XMvpUEySP530EuaVA60+oMYbIW8K+tnuusMZtmtmHPixVhBQ==
   dependencies:
-    "@parcel/diagnostic" "^2.2.1"
-    "@parcel/plugin" "^2.2.1"
-    "@parcel/utils" "^2.2.1"
+    "@parcel/diagnostic" "2.3.1"
+    "@parcel/plugin" "2.3.1"
+    "@parcel/utils" "2.3.1"
     json-source-map "^0.6.1"
 
 "@parcel/types@2.3.1":
