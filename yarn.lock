@@ -258,16 +258,6 @@
     "@parcel/utils" "2.3.1"
     lmdb "^2.0.2"
 
-"@parcel/cache@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/cache/-/cache-2.2.1.tgz#dbbfebde0e965aad1ecb1ad384e94abbdf008eb0"
-  integrity sha512-sO4+sKErJFfAhAsOiG7HUid0XgtfwoXbc6TT2Dvpjbd/hCGoUWZNfvs8l5cq7/Ip6pgUuXzPV4Pz7HX+cshTsw==
-  dependencies:
-    "@parcel/fs" "^2.2.1"
-    "@parcel/logger" "^2.2.1"
-    "@parcel/utils" "^2.2.1"
-    lmdb "^2.0.2"
-
 "@parcel/codeframe@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/codeframe/-/codeframe-2.3.1.tgz#7855498b51d43c19181d6cd6dc8177dab2c83f40"
@@ -368,7 +358,7 @@
   dependencies:
     detect-libc "^1.0.3"
 
-"@parcel/fs@2.3.1", "@parcel/fs@^2.2.1":
+"@parcel/fs@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/fs/-/fs-2.3.1.tgz#f60503921e1d3c17c6b43cf26fb76b08fe3fee2b"
   integrity sha512-FKqyf8KF0zOw8gfj/feEAMj4Kzqkgt9Zxa2A7UDdMWRvxLR8znqnWjD++xqq6rxJp2Y1zm4fH3JOTK4CRddUSg==
@@ -395,7 +385,7 @@
     detect-libc "^1.0.3"
     xxhash-wasm "^0.4.2"
 
-"@parcel/logger@2.3.1", "@parcel/logger@^2.2.1":
+"@parcel/logger@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/logger/-/logger-2.3.1.tgz#042f8742c6655ca01b5a64a041c228525e72c9c2"
   integrity sha512-swNPInULCJrpCJCLOgZcf+xNcUF0NjD7LyNcB349BkyO7i6st14nfBjXf6eAJJu0z7RMmi6zp9CQB47e4cI6+g==
@@ -482,7 +472,7 @@
     nullthrows "^1.1.1"
     terser "^5.2.0"
 
-"@parcel/package-manager@2.3.1", "@parcel/package-manager@^2.2.1":
+"@parcel/package-manager@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/package-manager/-/package-manager-2.3.1.tgz#c0f49fab9d1108bc9bf8d4357c53eead8d28c48d"
   integrity sha512-w2XOkD3SU8RxhUDW+Soy/TjvEVvfUsBmHy02asllt4b/ZtyZVAsQmonGExHDDkRn3TNDR6Y96Yw6M7purt+b9w==
@@ -529,13 +519,13 @@
     globals "^13.2.0"
     nullthrows "^1.1.1"
 
-"@parcel/packager-raw-url@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/packager-raw-url/-/packager-raw-url-2.2.1.tgz#8ef628176654ad0b41906d36a731b03d66ca8ed7"
-  integrity sha512-EW9VMFJSEhzhlDH8RHYTVKYEYZfrGqXTPMHYLyRCgozmq0MoJ3rAc32yGYVcYRyakxl3Hr2ziBcYOA4s+qVutQ==
+"@parcel/packager-raw-url@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@parcel/packager-raw-url/-/packager-raw-url-2.3.1.tgz#e34312313035c57f19ab94c09829c7edb0a5d93b"
+  integrity sha512-KSdLKSSGEfsh9RArIGk5LcNB99q4sw4QBQ/QalTdz1cU0r32dLv0cjiKtQ9xbdhUEr2OAnccVJhik+jh+PJ26w==
   dependencies:
-    "@parcel/plugin" "^2.2.1"
-    "@parcel/utils" "^2.2.1"
+    "@parcel/plugin" "2.3.1"
+    "@parcel/utils" "2.3.1"
 
 "@parcel/packager-raw@2.3.1":
   version "2.3.1"
@@ -554,19 +544,12 @@
     "@parcel/utils" "2.3.1"
     posthtml "^0.16.4"
 
-"@parcel/plugin@2.3.1":
+"@parcel/plugin@2.3.1", "@parcel/plugin@^2.2.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.3.1.tgz#d7abc685ede4d7ae25bb15ccfcfa2a59e8d7c51d"
   integrity sha512-ROOWbgFze7BCF3RkEh8VbcKGlR5UGBuJ8lfCaFrG1VOk7Rxgl8Bmk96TRbZREm/1jB74p2O8twVKyPSC13riow==
   dependencies:
     "@parcel/types" "2.3.1"
-
-"@parcel/plugin@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.2.1.tgz#14d46cababae45d89afcf4a26b67880870d4fcfc"
-  integrity sha512-UrmAmtCO+Ma78ojhG9LSB5bYSkcjTwyPexfcpgCsZiLrv4cXDjKe7gEYfxWbrJw4ahkUhfgRsrTfUzD/TPYxiA==
-  dependencies:
-    "@parcel/types" "^2.2.1"
 
 "@parcel/reporter-cli@2.3.1":
   version "2.3.1"
@@ -801,19 +784,6 @@
     "@parcel/workers" "2.3.1"
     utility-types "^3.10.0"
 
-"@parcel/types@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.2.1.tgz#c27d57dbc5be5bdee18ab22222f731b3de494d4c"
-  integrity sha512-h25EMpnypXHJ05Gx2WxGpRbokgCdmro98AlDbQ39XkddBkjUSodj8+efQWiDxSB/IPS1kPf1drBtS0bI0zCeXA==
-  dependencies:
-    "@parcel/cache" "^2.2.1"
-    "@parcel/diagnostic" "^2.2.1"
-    "@parcel/fs" "^2.2.1"
-    "@parcel/package-manager" "^2.2.1"
-    "@parcel/source-map" "^2.0.0"
-    "@parcel/workers" "^2.2.1"
-    utility-types "^3.10.0"
-
 "@parcel/utils@2.3.1", "@parcel/utils@^2.2.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/utils/-/utils-2.3.1.tgz#e1e582c850e7f7b131292cb45b8a177f59903413"
@@ -844,18 +814,6 @@
     "@parcel/logger" "2.3.1"
     "@parcel/types" "2.3.1"
     "@parcel/utils" "2.3.1"
-    chrome-trace-event "^1.0.2"
-    nullthrows "^1.1.1"
-
-"@parcel/workers@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@parcel/workers/-/workers-2.2.1.tgz#952c5c208ca29c18a8c8de7eed90d6e3869bae9d"
-  integrity sha512-ham7/qFYSOvvUUMcRACH/HJc3W7Ng/YLWt23kvXIniA4d9bqGoNKl0oCTiGQzDZ2emx1SmaEN52zG6cJ+xh/lQ==
-  dependencies:
-    "@parcel/diagnostic" "^2.2.1"
-    "@parcel/logger" "^2.2.1"
-    "@parcel/types" "^2.2.1"
-    "@parcel/utils" "^2.2.1"
     chrome-trace-event "^1.0.2"
     nullthrows "^1.1.1"
 
