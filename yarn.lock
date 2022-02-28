@@ -603,13 +603,13 @@
     globals "^13.2.0"
     nullthrows "^1.1.1"
 
-"@parcel/packager-raw-url@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@parcel/packager-raw-url/-/packager-raw-url-2.3.1.tgz#e34312313035c57f19ab94c09829c7edb0a5d93b"
-  integrity sha512-KSdLKSSGEfsh9RArIGk5LcNB99q4sw4QBQ/QalTdz1cU0r32dLv0cjiKtQ9xbdhUEr2OAnccVJhik+jh+PJ26w==
+"@parcel/packager-raw-url@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@parcel/packager-raw-url/-/packager-raw-url-2.3.2.tgz#9dc8e9a5cb3f12a41ec15603aa81e973e015fcd4"
+  integrity sha512-xkV/fC5OtMi8xIOO6aRAQcIR2rmRfKvVCME4aXfMj4pKSqvZKyF75/UsIezAt41GTaO0H/hYIUTQUJdzI0wq5g==
   dependencies:
-    "@parcel/plugin" "2.3.1"
-    "@parcel/utils" "2.3.1"
+    "@parcel/plugin" "2.3.2"
+    "@parcel/utils" "2.3.2"
 
 "@parcel/packager-raw@2.3.1":
   version "2.3.1"
