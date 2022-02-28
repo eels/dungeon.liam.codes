@@ -5948,11 +5948,6 @@ workbox-cacheable-response@^6.5.0:
   dependencies:
     workbox-core "6.5.0"
 
-workbox-core@6.4.2:
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-6.4.2.tgz#f99fd36a211cc01dce90aa7d5f2c255e8fe9d6bc"
-  integrity sha512-1U6cdEYPcajRXiboSlpJx6U7TvhIKbxRRerfepAJu2hniKwJ3DHILjpU/zx3yvzSBCWcNJDoFalf7Vgd7ey/rw==
-
 workbox-core@6.5.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-6.5.0.tgz#076e03840ca568bd04284e9f9f30e86c8dd09f1c"
@@ -5973,12 +5968,12 @@ workbox-routing@^6.5.0:
   dependencies:
     workbox-core "6.5.0"
 
-workbox-strategies@^6.4.2:
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/workbox-strategies/-/workbox-strategies-6.4.2.tgz#50c02bf2d116918e1a8052df5f2c1e4103c62d5d"
-  integrity sha512-YXh9E9dZGEO1EiPC3jPe2CbztO5WT8Ruj8wiYZM56XqEJp5YlGTtqRjghV+JovWOqkWdR+amJpV31KPWQUvn1Q==
+workbox-strategies@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/workbox-strategies/-/workbox-strategies-6.5.0.tgz#40269f7bd8b3160b42f06fa027230370a8b6f981"
+  integrity sha512-Ngnwo+tfGw4uKSlTz3h1fYKb/lCV7SDI/dtTb8VaJzRl0N9XssloDGYERBmF6BN/DV/x3bnRsshfobnKI/3z0g==
   dependencies:
-    workbox-core "6.4.2"
+    workbox-core "6.5.0"
 
 wrap-ansi@^6.2.0:
   version "6.2.0"
