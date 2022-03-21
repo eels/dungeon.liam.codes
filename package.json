@@ -43,7 +43,7 @@
     "workbox-strategies": "^6.5.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
+    "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@parcel/packager-raw-url": "^2.3.2",
     "@parcel/transformer-sass": "^2.3.2",
