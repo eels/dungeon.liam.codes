@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "workbox-cacheable-response": "^6.5.1",
+    "workbox-cacheable-response": "^6.5.2",
     "workbox-expiration": "^6.5.1",
     "workbox-routing": "^6.5.1",
     "workbox-strategies": "^6.5.1"
@@ -45,9 +45,9 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
-    "@parcel/packager-raw-url": "^2.3.2",
-    "@parcel/transformer-sass": "^2.3.2",
-    "@parcel/transformer-webmanifest": "^2.3.2",
+    "@parcel/packager-raw-url": "^2.4.0",
+    "@parcel/transformer-sass": "^2.4.0",
+    "@parcel/transformer-webmanifest": "^2.4.0",
     "eslint": "^8.11.0",
     "eslint-config-semistandard": "^16.0.0",
     "eslint-config-standard": "^16.0.3",
@@ -64,7 +64,7 @@
     "imagemin-cli": "^7.0.0",
     "lint-staged": "^12.3.7",
     "parcel": "^2.3.2",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.1",
     "rimraf": "^3.0.2",
     "sass": "^1.49.9",
     "stylelint": "^14.6.0",
