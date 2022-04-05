@@ -3900,8 +3900,9 @@ node-gyp-build@^4.2.3, node-gyp-build@^4.3.0:
   resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.4.0.tgz#42e99687ce87ddeaf3a10b99dc06abc11021f3f4"
   integrity sha512-amJnQCcgtRVw9SvoebO3BKGESClrfXGCUTX9hSn1OuGQTQBOZmVd0Z0OlecpuRksKvbsUqALE8jls/ErClAPuQ==
 
-"node-gyp-build@github:kriszyp/node-gyp-build#optional-packages":
+node-gyp-build@kriszyp/node-gyp-build#optional-packages:
   version "4.3.0"
+  uid c9952cb77e89d2cd8b6c2d4d056a06d41834b305
   resolved "https://codeload.github.com/kriszyp/node-gyp-build/tar.gz/c9952cb77e89d2cd8b6c2d4d056a06d41834b305"
 
 node-releases@^2.0.2:
@@ -5182,12 +5183,17 @@ stylelint-config-recommended@^6.0.0:
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-6.0.0.tgz#fd2523a322836005ad9bf473d3e5534719c09f9d"
   integrity sha512-ZorSSdyMcxWpROYUvLEMm0vSZud2uB7tX1hzBZwvVY9SV/uly4AvvJPPhCcymZL3fcQhEQG5AELmrxWqtmzacw==
 
-stylelint-config-standard@^24.0.0:
-  version "24.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-24.0.0.tgz#6823f207ab997ae0b641f9a636d007cc44d77541"
-  integrity sha512-+RtU7fbNT+VlNbdXJvnjc3USNPZRiRVp/d2DxOF/vBDDTi0kH5RX2Ny6errdtZJH3boO+bmqIYEllEmok4jiuw==
+stylelint-config-recommended@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-7.0.0.tgz#7497372ae83ab7a6fffc18d7d7b424c6480ae15e"
+  integrity sha512-yGn84Bf/q41J4luis1AZ95gj0EQwRX8lWmGmBwkwBNSkpGSpl66XcPTulxGa/Z91aPoNGuIGBmFkcM1MejMo9Q==
+
+stylelint-config-standard@^25.0.0:
+  version "25.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-25.0.0.tgz#2c916984e6655d40d6e8748b19baa8603b680bff"
+  integrity sha512-21HnP3VSpaT1wFjFvv9VjvOGDtAviv47uTp3uFmzcN+3Lt+RYRv6oAplLaV51Kf792JSxJ6svCJh/G18E9VnCA==
   dependencies:
-    stylelint-config-recommended "^6.0.0"
+    stylelint-config-recommended "^7.0.0"
 
 stylelint-order@^3.1.1:
   version "3.1.1"
