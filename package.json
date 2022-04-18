@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "workbox-cacheable-response": "^6.5.2",
+    "workbox-cacheable-response": "^6.5.3",
     "workbox-expiration": "^6.5.2",
     "workbox-routing": "^6.5.2",
     "workbox-strategies": "^6.5.3"
