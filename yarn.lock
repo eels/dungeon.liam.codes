@@ -933,15 +933,15 @@
     posthtml-render "^3.0.0"
     semver "^5.7.1"
 
-"@parcel/transformer-webmanifest@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.5.0.tgz#2892c3103bbee93a07ab5f756acd5a18e84172df"
-  integrity sha512-7RtE4f+QUzQqXHJ9kVL80x0xrOYdI7EDBl0jZbJ3Kiec8hE/aB1I3c2bmjyU44tGnd3z9mLzmRS9IaU/gZvXkw==
+"@parcel/transformer-webmanifest@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.6.0.tgz#b3caaa14c9b69e6fd434c7082a066fdc09ef9c8d"
+  integrity sha512-SYTFZ4eMLU3/FS0YZlOGviGwkqjFznG3b+tgdoYKrs03faQOy5fQPcFSeXl3z0iCh6Jh1KdW8ccjDpxLB3OLpg==
   dependencies:
     "@mischnic/json-sourcemap" "^0.1.0"
-    "@parcel/diagnostic" "2.5.0"
-    "@parcel/plugin" "2.5.0"
-    "@parcel/utils" "2.5.0"
+    "@parcel/diagnostic" "2.6.0"
+    "@parcel/plugin" "2.6.0"
+    "@parcel/utils" "2.6.0"
 
 "@parcel/types@2.5.0":
   version "2.5.0"
