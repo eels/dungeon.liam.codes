@@ -64,7 +64,7 @@
     "imagemin-cli": "^7.0.0",
     "lint-staged": "^12.4.2",
     "parcel": "^2.6.0",
-    "prettier": "^2.6.2",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "sass": "^1.52.2",
     "stylelint": "^14.9.1",
