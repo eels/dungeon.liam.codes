@@ -842,14 +842,7 @@
     "@parcel/utils" "2.7.0"
     nullthrows "^1.1.1"
 
-"@parcel/source-map@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@parcel/source-map/-/source-map-2.0.2.tgz#9aa0b00518cee31d5634de6e9c924a5539b142c1"
-  integrity sha512-NnUrPYLpYB6qyx2v6bcRPn/gVigmGG6M6xL8wIg/i0dP1GLkuY1nf+Hqdf63FzPTqqT7K3k6eE5yHPQVMO5jcA==
-  dependencies:
-    detect-libc "^1.0.3"
-
-"@parcel/source-map@^2.1.1":
+"@parcel/source-map@^2.0.0", "@parcel/source-map@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@parcel/source-map/-/source-map-2.1.1.tgz#fb193b82dba6dd62cc7a76b326f57bb35000a782"
   integrity sha512-Ejx1P/mj+kMjQb8/y5XxDUn4reGdr+WyKYloBljpppUy8gs42T+BNoEOuRYqDVdgPc6NxduzIDoJS9pOFfV5Ew==
@@ -975,13 +968,13 @@
     "@parcel/utils" "2.7.0"
     react-refresh "^0.9.0"
 
-"@parcel/transformer-sass@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.7.0.tgz#651b7a88bbc1ef452ace90ccb0883c1ad8cff721"
-  integrity sha512-6m2T6Y5eQLX7ckIeuOjXXIZbzhyovnl69AvJ2FujoWb2nA55H/kg6ZdbKjo3CfXkOfg9LyG3nVnOE5PMgMpRFQ==
+"@parcel/transformer-sass@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.8.0.tgz#94fd2603f80e160ec51c2e96d1c4edfdb72f5716"
+  integrity sha512-DtjbC+4G7pdTaUgIesCoL67hiU88tC5LL4xHH0XspA9DmlFehJsDHOWc2q/pGfI22/Ck0eTOwNcMeYdkE0gCDw==
   dependencies:
-    "@parcel/plugin" "2.7.0"
-    "@parcel/source-map" "^2.0.0"
+    "@parcel/plugin" "2.8.0"
+    "@parcel/source-map" "^2.1.1"
     sass "^1.38.0"
 
 "@parcel/transformer-svg@2.7.0":
