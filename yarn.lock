@@ -1032,15 +1032,15 @@
     posthtml-render "^3.0.0"
     semver "^5.7.1"
 
-"@parcel/transformer-webmanifest@^2.8.1":
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.8.1.tgz#67f35f21281e8e91a4e6bdff058995ba453e4d8c"
-  integrity sha512-AjS4bLN0m5P83d/JBA7sfrnMv9lUPRiUCmxpkyVWjqFOBo10+lsFGgeh04TQtJdo26NC+u16SENDTw9jB3cY+w==
+"@parcel/transformer-webmanifest@^2.8.2":
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.8.2.tgz#d810063267e15e8ab84d1feb96c1da9bb74e83e9"
+  integrity sha512-GHUW+AHwehjMRu/qtJENyMY8+hbQpOS/M3TW0rOsWzGjfXJhtv40sl5gdz1skKJANk8W1yFPCNUNp7ftTgjiQg==
   dependencies:
     "@mischnic/json-sourcemap" "^0.1.0"
-    "@parcel/diagnostic" "2.8.1"
-    "@parcel/plugin" "2.8.1"
-    "@parcel/utils" "2.8.1"
+    "@parcel/diagnostic" "2.8.2"
+    "@parcel/plugin" "2.8.2"
+    "@parcel/utils" "2.8.2"
 
 "@parcel/types@2.8.0":
   version "2.8.0"
