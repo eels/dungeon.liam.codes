@@ -4,6 +4,10 @@
   border: 5px solid $palette--white;
   margin-bottom: 10px;
 
+  &--hit {
+    background-color: rgba($palette--red, 0.3);
+  }
+
   &__creature {
     position: relative;
   }

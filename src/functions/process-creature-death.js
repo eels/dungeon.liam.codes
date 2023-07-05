@@ -12,6 +12,11 @@ export default function processCreatureDeath() {
   Player.setState({ totalGold: Player.totalGold + creature.raw.gold }).commit();
   Player.setState({ kills: Player.kills + 1 }).commit();
 
+  const board = document.querySelector('.tm-c-board');
+
+  setTimeout(() => board.classList.add('tm-c-board--hit'), 0);
+  setTimeout(() => board.classList.remove('tm-c-board--hit'), 200);
+
   Dungeon.advance();
 
   log(messages.CREATURE_DEATH_CALL, [creature.name], 'CREATURE_DEATH');

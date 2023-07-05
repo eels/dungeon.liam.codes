@@ -23,13 +23,17 @@ export default function Creature() {
         <div class="tm-c-creature__attribute">
           <div class="tm-c-creature__attribute-label">Weakness</div>
           <div class="tm-c-creature__attribute-icon">
-            ${creature.raw.weakness ? `<img src="${image(creature.raw.weakness)}" />` : ''}
+            ${creature.raw.weakness ? `<img alt="" src="${image(creature.raw.weakness)}" />` : ''}
           </div>
         </div>
         <div class="tm-c-creature__attribute">
           <div class="tm-c-creature__attribute-label">Resistance</div>
           <div class="tm-c-creature__attribute-icon">
-            ${creature.raw.resistance ? `<img src="${image(creature.raw.resistance)}" />` : ''}
+            ${
+              creature.raw.resistance
+                ? `<img alt="" src="${image(creature.raw.resistance)}" />`
+                : ''
+            }
           </div>
         </div>
       </div>
@@ -50,7 +54,7 @@ export default function Creature() {
           <div class="tm-c-creature__status-label">Status Effect</div>
           <div class="tm-c-creature__status-effect">
             <div class="tm-c-creature__status-icon">
-              ${hasStatusEffect ? `<img src="${image(creature.status)}" />` : ''}
+              ${hasStatusEffect ? `<img alt="" src="${image(creature.status)}" />` : ''}
             </div>
             <div class="tm-c-creature__status-duration">
               ${hasStatusEffect ? `x ${creature.statusDuration} turns` : ''}

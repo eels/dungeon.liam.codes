@@ -1,10 +1,12 @@
-/* TEAM */
+/* --- TEAM ---------------------------------- */
+
 Webmaster: Liam Howell
-Contact: liam [at] liam.codes
 Website: https://liam.codes
+Contact: liam [at] liam.codes
 From: London, England
 
-/* SITE */
-Last update: 2021/11/14
+/* --- SITE ---------------------------------- */
+
+Last update: 2023/07/05
 Language: English
 Doctype: HTML5

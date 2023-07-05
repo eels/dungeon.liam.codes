@@ -7,7 +7,7 @@ export default function StartScreen() {
     <div class="tm-c-start">
       <div class="tm-c-start__heading">You approach the dungeon gate</div>
       <div class="tm-c-start__icon">
-        <img src="${image('dungeon-gate')}" />
+        <img alt="" src="${image('dungeon-gate')}" />
       </div>
       <div class="tm-c-start__name">"${shuffle(dungeons)[0]}"</div>
       <div class="tm-c-start__description">
