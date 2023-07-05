@@ -44,11 +44,12 @@ jobs:
         run: |
           yarn clean
           yarn build
-          touch dist/.nojekyll
-          echo "dungeon.liam.codes" > dist/CNAME
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          directory: ./dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
